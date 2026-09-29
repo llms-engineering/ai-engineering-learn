@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>关于 · 从零造 AI</title>
+<link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+<div id="site-header-slot"></div>
+<main class="wrap">
+  <div class="page-head">
+    <h1>关于「从零造 AI」</h1>
+    <p class="sub">学习优先的中文本地化产品 · 非官方中文版</p>
+  </div>
+  <article class="reader" style="max-width:720px;margin:0 auto 40px">
+    <h2 style="font-size:18px;color:var(--brand);margin:0 0 12px">这是什么</h2>
+    <p>「从零造 AI」是面向会写代码的中国开发者的简体中文学习站：按阶段读课、按路径完课、在本机记录进度。首发开放 <strong>SKU-A（Phase 0–3）</strong>，完整目录可浏览。</p>
+
+    <h2 style="font-size:18px;color:var(--brand);margin:24px 0 12px;padding-top:16px;border-top:1px solid var(--border)">这不是什么</h2>
+    <ul style="margin-left:1.2em;margin-bottom:12px">
+      <li>不是上游项目的官方中文站</li>
+      <li>不做赞助商中心、认证商城、星标墙</li>
+      <li>当前无付费闸、无账号云同步（进度仅 localStorage）</li>
+    </ul>
+
+    <h2 style="font-size:18px;color:var(--brand);margin:24px 0 12px;padding-top:16px;border-top:1px solid var(--border)">上游与许可</h2>
+    <p>课程内容改编自
+      <a href="https://github.com/rohitg00/ai-engineering-from-scratch" target="_blank" rel="noopener">AI Engineering from Scratch</a>
+      （MIT License），作者 <a href="https://github.com/rohitg00" target="_blank" rel="noopener">Rohit Ghumare</a> 与贡献者。
+      规范站点：<a href="https://aiengineeringfromscratch.com" target="_blank" rel="noopener">aiengineeringfromscratch.com</a>。
+    </p>
+    <p style="margin-top:12px"><strong>本站为独立中文本地化学习产品，并非官方中文版。</strong>保留 MIT 署名与许可证义务。</p>
+
+    <h2 style="font-size:18px;color:var(--brand);margin:24px 0 12px;padding-top:16px;border-top:1px solid var(--border)">运行时说明</h2>
+    <p>课时正文从本机/服务器上的 <code>phases/</code> 与 <code>i18n/zh/</code> 读取，<strong>不依赖 GitHub 运行时拉取</strong>。优先展示中文 <code>zh.md</code>，缺失时回退英文。</p>
+
+    <div class="note" style="margin-top:28px">
+      反馈与纠错可后续走飞书/企微班级渠道（本站不做社区大厅）。
+    </div>
+  </article>
+</main>
+<div id="site-footer-slot"></div>
+<script src="/js/progress.js"></script>
+<script src="/js/common.js"></script>
+<script>CLZAI.mountChrome("about.html");</script>
+</body>
+</html>

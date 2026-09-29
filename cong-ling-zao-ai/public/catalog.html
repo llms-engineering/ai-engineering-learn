@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>课程目录 · 从零造 AI</title>
+<link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+<div id="site-header-slot"></div>
+<main class="wrap">
+  <div class="page-head">
+    <h1>课程目录</h1>
+    <p class="sub" id="catalogSub">加载中…</p>
+    <div class="search-row">
+      <input class="search-input" id="search" type="search" placeholder="搜索课名 / 英文关键词" autocomplete="off" />
+    </div>
+  </div>
+  <div id="phaseList"></div>
+</main>
+<div id="site-footer-slot"></div>
+<script src="/js/progress.js"></script>
+<script src="/js/common.js"></script>
+<script>
+CLZAI.mountChrome("catalog.html");
+(async () => {
+  const catalog = await CLZAI.loadCatalog();
+  const done = CLZAI.Progress.countCompleted();
+  document.getElementById("catalogSub").textContent =
+    `${catalog.totalLessons} 课 · ${catalog.phases.length} 阶段 · 已完成 ${done} · Phase 0–3 可学，其余可浏览`;
+
+  const list = document.getElementById("phaseList");
+  function render(filter) {
+    const q = (filter || "").trim().toLowerCase();
+    list.innerHTML = catalog.phases.map((ph) => {
+      let lessons = ph.lessons;
+      if (q) {
+        lessons = lessons.filter((l) =>
+          (l.title + " " + l.titleEn + " " + l.slug).toLowerCase().includes(q)
+        );
+        if (!lessons.length) return "";
+      }
+      const completed = CLZAI.Progress.completedInPhase(ph.id, ph.lessons);
+      const pct = ph.lessons.length ? Math.round((completed / ph.lessons.length) * 100) : 0;
+      const badgeClass = ph.skuOpen ? "badge-open" : "badge-soon";
+      const openAttr = (!q && ph.id === 0) || (q && lessons.length) || location.hash === `#phase-${ph.id}` ? " open" : "";
+      const rows = lessons.map((l) => {
+        const isDone = CLZAI.Progress.isDone(l.path);
+        const href = l.open ? CLZAI.lessonUrl(l.path) : "#";
+        const cls = l.open ? "lesson-row" : "lesson-row disabled";
+        return `<li><a class="${cls}" href="${href}">
+          <span class="num">${l.num}</span>
+          <span class="title">${l.title}</span>
+          <span class="time">${l.time || ""}</span>
+          <span class="done">${isDone ? "✓" : ""}</span>
+        </a></li>`;
+      }).join("");
+      return `<div class="phase-block${openAttr}" id="phase-${ph.id}" data-id="${ph.id}">
+        <button type="button" class="phase-head" aria-expanded="${openAttr ? "true" : "false"}">
+          <span class="chev">▶</span>
+          <h2>阶段 ${ph.id}：${ph.name} <span class="badge ${badgeClass}">${ph.badge}</span></h2>
+          <span class="phase-meta">${ph.lessonCount} 课 · ${completed}/${ph.lessonCount}</span>
+          <span class="phase-progress"><i style="width:${pct}%"></i></span>
+        </button>
+        <ul class="lesson-list">${rows}</ul>
+      </div>`;
+    }).join("");
+
+    CLZAI.qsa(".phase-head", list).forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const block = btn.closest(".phase-block");
+        block.classList.toggle("open");
+        btn.setAttribute("aria-expanded", block.classList.contains("open") ? "true" : "false");
+      });
+    });
+  }
+
+  render("");
+  document.getElementById("search").addEventListener("input", (e) => render(e.target.value));
+
+  if (location.hash) {
+    const el = document.querySelector(location.hash);
+    if (el) {
+      el.classList.add("open");
+      setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
+    }
+  }
+})().catch((e) => {
+  document.getElementById("phaseList").innerHTML = `<div class="error-box">${e.message}</div>`;
+});
+</script>
+</body>
+</html>

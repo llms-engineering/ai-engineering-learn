@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>课页 · 从零造 AI</title>
+<link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+<header class="site-header" style="height:52px">
+  <div class="lesson-top">
+    <a class="logo" href="index.html">从零造 <span>AI</span></a>
+    <div class="crumb" id="crumb">加载中…</div>
+  </div>
+</header>
+
+<div id="app" class="loading">正在加载课文…</div>
+
+<div class="mobile-bar" id="mobileBar" style="display:none">
+  <a class="btn btn-ghost btn-sm" id="mPrev" href="catalog.html">目录</a>
+  <button type="button" class="btn btn-accent btn-sm" id="mDone" style="flex:1">标记完成</button>
+  <a class="btn btn-accent btn-sm" id="mNext" href="#">下一课</a>
+</div>
+
+<script src="/js/marked.min.js"></script>
+<script src="/js/progress.js"></script>
+<script src="/js/common.js"></script>
+<script>
+CLZAI.Progress.applyTheme();
+
+function getPathParam() {
+  const u = new URL(location.href);
+  return u.searchParams.get("path") || "phases/00-setup-and-tooling/01-dev-environment";
+}
+
+function enhanceCodeBlocks(root) {
+  root.querySelectorAll("pre").forEach((pre) => {
+    if (pre.parentElement && pre.parentElement.classList.contains("code-wrap")) return;
+    const wrap = document.createElement("div");
+    wrap.className = "code-wrap";
+    pre.parentNode.insertBefore(wrap, pre);
+    wrap.appendChild(pre);
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "copy-btn";
+    btn.textContent = "复制";
+    btn.addEventListener("click", async () => {
+      const text = pre.innerText;
+      try {
+        await navigator.clipboard.writeText(text);
+        btn.textContent = "已复制";
+        setTimeout(() => { btn.textContent = "复制"; }, 1500);
+      } catch (_) {
+        btn.textContent = "失败";
+      }
+    });
+    wrap.appendChild(btn);
+  });
+}
+
+function renderQuiz(quiz, container) {
+  if (!quiz) return;
+  const questions = quiz.questions || quiz.post || quiz.items || [];
+  if (!questions.length && quiz.pre) {
+    // some formats nest differently — try flatten
+  }
+  let qs = questions;
+  if (!qs.length) {
+    // try common shapes
+    if (Array.isArray(quiz)) qs = quiz;
+    else if (quiz.post_lesson) qs = quiz.post_lesson;
+    else if (quiz.checks) qs = quiz.checks;
+  }
+  if (!qs || !qs.length) {
+    container.innerHTML = `<div class="quiz-card"><h3>本节练习</h3><p>本课附带测验文件，结构暂未解析。可在仓库 quiz.json 中查看。</p></div>`;
+    return;
+  }
+  // Limit to first 5 for UI lightness
+  const slice = qs.slice(0, 5);
+  let html = `<div class="quiz-card" id="quiz"><h3>本节练习</h3><p>${slice.length} 道短题 · 本地自评，不上传</p>`;
+  slice.forEach((q, i) => {
+    const prompt = q.question || q.prompt || q.text || `题目 ${i + 1}`;
+    const options = q.options || q.choices || [];
+    const answer = q.answer ?? q.correct ?? q.correctIndex;
+    html += `<div class="quiz-q" data-answer="${answer}"><div><strong>${i + 1}.</strong> ${prompt}</div><ul class="opts">`;
+    options.forEach((opt, j) => {
+      const label = typeof opt === "string" ? opt : (opt.text || opt.label || String(opt));
+      html += `<li data-idx="${j}">${label}</li>`;
+    });
+    html += `</ul></div>`;
+  });
+  html += `<button type="button" class="btn btn-accent btn-sm" id="quizCheck">核对答案</button></div>`;
+  container.innerHTML = html;
+  container.querySelectorAll(".opts li").forEach((li) => {
+    li.addEventListener("click", () => {
+      li.parentElement.querySelectorAll("li").forEach((x) => x.classList.remove("selected"));
+      li.classList.add("selected");
+    });
+  });
+  const check = container.querySelector("#quizCheck");
+  if (check) {
+    check.addEventListener("click", () => {
+      container.querySelectorAll(".quiz-q").forEach((block) => {
+        const ans = block.dataset.answer;
+        block.querySelectorAll(".opts li").forEach((li) => {
+          li.classList.remove("correct", "wrong");
+          const idx = li.dataset.idx;
+          const selected = li.classList.contains("selected");
+          // answer may be index or letter
+          let correct = false;
+          if (ans === idx || ans === String(idx) || Number(ans) === Number(idx)) correct = true;
+          if (typeof ans === "string" && ans.length === 1) {
+            const letterIdx = ans.toUpperCase().charCodeAt(0) - 65;
+            if (letterIdx === Number(idx)) correct = true;
+          }
+          if (correct) li.classList.add("correct");
+          else if (selected) li.classList.add("wrong");
+        });
+      });
+    });
+  }
+}
+
+(async () => {
+  const path = getPathParam();
+  const app = document.getElementById("app");
+  try {
+    const [catalog, lessonRes] = await Promise.all([
+      CLZAI.loadCatalog(),
+      fetch(`/api/lesson?path=${encodeURIComponent(path)}`),
+    ]);
+    if (!lessonRes.ok) {
+      const err = await lessonRes.json().catch(() => ({}));
+      throw new Error(err.error || "课文加载失败");
+    }
+    const data = await lessonRes.json();
+    const found = CLZAI.findLesson(catalog, data.path);
+    const phase = found ? found.phase : catalog.phases.find((p) => p.id === data.phaseId);
+    const lesson = found ? found.lesson : null;
+    const title = lesson ? lesson.title : (data.markdown.match(/^#\s+(.+)$/m) || [, "未命名课"])[1];
+
+    document.title = `${title} · 从零造 AI`;
+    document.getElementById("crumb").innerHTML =
+      `<a href="catalog.html">课程目录</a> / <a href="catalog.html#phase-${data.phaseId}">阶段 ${data.phaseId}</a> / <strong>${data.lessonNum} ${title}</strong>`;
+
+    CLZAI.Progress.setLast(data.path, { title, phaseId: data.phaseId });
+
+    const prev = CLZAI.prevLesson(catalog, data.path);
+    const next = CLZAI.nextLesson(catalog, data.path);
+    const done = CLZAI.Progress.isDone(data.path);
+    const phaseDone = phase ? CLZAI.Progress.completedInPhase(phase.id, phase.lessons) : 0;
+    const phaseTotal = phase ? phase.lessons.length : 1;
+    const pct = Math.round((phaseDone / phaseTotal) * 100);
+
+    const tocItems = (phase ? phase.lessons : []).map((l) => {
+      const cls = [
+        l.path === data.path ? "current" : "",
+        CLZAI.Progress.isDone(l.path) ? "done" : "",
+      ].filter(Boolean).join(" ");
+      return `<li class="${cls}"><a href="${CLZAI.lessonUrl(l.path)}">${l.num} ${l.title}</a></li>`;
+    }).join("");
+
+    marked.setOptions({ gfm: true, breaks: false });
+    let md = data.markdown;
+    // Strip noisy figure/mermaid placeholders lightly — leave as code-ish
+    md = md.replace(/^```figure\n[\s\S]*?```/gm, "> （示意图：请在原仓库查看）");
+    const htmlBody = marked.parse(md);
+
+    const langNote = data.lang === "zh" ? "中文" : "英文原文（暂无中文）";
+
+    app.className = "lesson-layout";
+    app.innerHTML = `
+      <aside class="toc panel">
+        <h2>阶段 ${data.phaseId} · ${phase ? phase.name : ""}</h2>
+        <ol>${tocItems}</ol>
+      </aside>
+      <article class="reader">
+        <div class="reader-badge">阶段 ${data.phaseId} · 第 ${data.lessonNum} / ${String(phaseTotal).padStart(2,"0")} 课 · ${langNote}</div>
+        <h1>${title}</h1>
+        <div class="meta">${lesson && lesson.time ? lesson.time : ""} · 进度保存在本机</div>
+        <div class="md-body">${htmlBody}</div>
+        <div id="quizSlot"></div>
+        <div class="nav-lessons">
+          <a class="btn btn-ghost" href="${prev ? CLZAI.lessonUrl(prev.lesson.path) : "catalog.html"}">${prev ? "← " + prev.lesson.title : "← 返回目录"}</a>
+          <a class="btn btn-accent" href="${next ? CLZAI.lessonUrl(next.lesson.path) : "progress.html"}">${next ? "下一课：" + next.lesson.title + " →" : "查看进度 →"}</a>
+        </div>
+      </article>
+      <aside class="side panel">
+        <div class="stat">本阶段进度</div>
+        <div class="bar"><i style="width:${pct}%"></i></div>
+        <div class="stat" style="margin-bottom:14px">${phaseDone} / ${phaseTotal} 课</div>
+        <button type="button" class="btn btn-ghost" id="btnTheme">阅读模式</button>
+        <button type="button" class="btn btn-accent" id="btnDone">${done ? "取消完成" : "标记完成"}</button>
+        <p class="side-note">进度默认保存在本机。登录与云同步为后续选项。</p>
+      </aside>`;
+
+    enhanceCodeBlocks(app.querySelector(".md-body"));
+    if (data.quiz) renderQuiz(data.quiz, document.getElementById("quizSlot"));
+    else {
+      document.getElementById("quizSlot").innerHTML =
+        `<div class="quiz-card"><h3>本节练习</h3><p>读完六节拍后，可在侧栏「标记完成」记录进度。</p></div>`;
+    }
+
+    const btnDone = document.getElementById("btnDone");
+    const mDone = document.getElementById("mDone");
+    function toggleDone() {
+      if (CLZAI.Progress.isDone(data.path)) {
+        CLZAI.Progress.unmark(data.path);
+      } else {
+        CLZAI.Progress.markDone(data.path, { title, phaseId: data.phaseId });
+      }
+      location.reload();
+    }
+    btnDone.addEventListener("click", toggleDone);
+    mDone.addEventListener("click", toggleDone);
+    mDone.textContent = done ? "取消完成" : "标记完成";
+
+    document.getElementById("btnTheme").addEventListener("click", () => {
+      const cur = CLZAI.Progress.getTheme();
+      CLZAI.Progress.setTheme(cur === "dark" ? "light" : "dark");
+    });
+
+    // mobile bar
+    const mb = document.getElementById("mobileBar");
+    mb.style.display = "";
+    document.getElementById("mPrev").href = prev ? CLZAI.lessonUrl(prev.lesson.path) : "catalog.html";
+    document.getElementById("mNext").href = next ? CLZAI.lessonUrl(next.lesson.path) : "progress.html";
+    document.getElementById("mNext").textContent = next ? "下一课" : "进度";
+  } catch (e) {
+    app.className = "wrap";
+    app.innerHTML = `<div class="error-box"><strong>无法打开课文</strong><br>${e.message}<br><br><a href="catalog.html">返回目录</a></div>`;
+  }
+})();
+</script>
+</body>
+</html>

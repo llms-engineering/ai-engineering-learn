@@ -1,70 +1,20 @@
 # Self-host deployment
 
-This instance is a self-hosted copy of the MIT-licensed curriculum
-[AI Engineering from Scratch](https://github.com/rohitg00/ai-engineering-from-scratch)
-by [Rohit Ghumare](https://github.com/rohitg00) and contributors.
+## Current production UI: 从零造 AI
 
-- Upstream: https://github.com/rohitg00/ai-engineering-from-scratch
-- Canonical site: https://aiengineeringfromscratch.com
-- License: MIT (see `LICENSE`)
+Public site: `http://43.153.0.177/`
 
-## Runtime is GitHub-free
+The live UI is the Chinese learning product **从零造 AI**, served from:
 
-**Serving this site does not call GitHub** (`raw.githubusercontent.com`,
-`api.github.com`, or `github.com` HTTP APIs) for lessons, i18n UI strings,
-translated markdown, code/output directory listings, or curriculum assets.
+- App: `/root/code/cong-ling-zao-ai` (systemd `cong-ling-zao-ai.service`)
+- Curriculum (read-only): this repo (`phases/`, `i18n/zh/`, …)
 
-All of that is read from local disk under this repository:
+See [`cong-ling-zao-ai/DEPLOY.md`](./cong-ling-zao-ai/DEPLOY.md) for cutover, catalog rebuild, and acceptance checks.
 
-| Path | Purpose |
-|------|---------|
-| `site/` | Built static UI |
-| `phases/`, `certifications/`, … | English curriculum source |
-| `i18n/<lang>/` | Vendored UI dictionaries + translated lesson markdown |
-| `deploy/server.js` | Static + API server (local files only) |
+**Runtime is GitHub-free** for lessons: markdown is read from local disk only.
 
-Updates are **deploy-time only**: `git pull` / re-vendor translations / rebuild,
-then restart the service. There is no cache-miss proxy to upstream at runtime.
+### Legacy English UI
 
-## How this server is run
+The previous `site/` + `deploy/server.js` stack remains in-tree for reference but is **not** bound to port 80. Service `ai-engineering-learn` is disabled.
 
-```bash
-# Build generated site assets
-node site/build.js
-
-# Serve site/ + /lesson + /certification APIs
-PORT=80 node deploy/server.js
-# or: systemctl start ai-engineering-learn
-```
-
-Service unit: `/etc/systemd/system/ai-engineering-learn.service`
-
-## Internationalization (vendored)
-
-Switcher languages (see `site/langs.js` / `languages.json`) ship with full trees
-under `i18n/` (at minimum complete `zh`, plus `hi` `es` `ar` `fr` `pt` `tr` `vi`).
-
-Client code sets `window.__AIFS_SELF_HOST = true` and loads:
-
-- `/i18n/<lang>/ui.json`
-- `/i18n/<lang>/phases/.../docs/<lang>.md`
-- `/api/contents?path=...` for lesson `code/` / `outputs/` listings
-
-### Refreshing translations (build / deploy time)
-
-Upstream translations live on the `translations` branch. Re-vendor once, then
-restart — do **not** rely on live GitHub fetches while serving:
-
-```bash
-git clone --depth 1 --branch translations --single-branch \
-  https://github.com/rohitg00/ai-engineering-from-scratch.git /tmp/aifs-translations
-rsync -a --delete /tmp/aifs-translations/i18n/ ./i18n/
-systemctl restart ai-engineering-learn
-```
-
-## Residual non-critical remotes
-
-Optional / secondary third-party loads (not required for lessons or language
-switch) may still appear in HTML as ordinary links or CDNs, e.g. sponsor badge
-images, fonts, or outbound “open on GitHub” hyperlinks. Those are not used by
-the Node server when handling page/lesson/i18n requests.
+Upstream: https://github.com/rohitg00/ai-engineering-from-scratch (MIT).

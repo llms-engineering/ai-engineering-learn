@@ -1,0 +1,14 @@
+{
+  "name": "cong-ling-zao-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "从零造 AI — Chinese learning UI for AI Engineering from Scratch (MIT)",
+  "scripts": {
+    "build:catalog": "node scripts/build-catalog.js",
+    "start": "node server.js",
+    "dev": "CONTENT_ROOT=${CONTENT_ROOT:-/root/code/ai-engineering-learn} PORT=8080 node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

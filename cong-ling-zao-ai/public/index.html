@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>从零造 AI · 从零手写核心算法</title>
+<meta name="description" content="面向会写代码的中国开发者。523 课 · 20 阶段 · 简体中文可读。改编自 MIT 开源课程 AI Engineering from Scratch。" />
+<link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+<div id="site-header-slot"></div>
+<main class="wrap">
+  <div class="hero">
+    <div class="eyebrow">简体中文学习站 · SKU-A 可学</div>
+    <h1>从零手写核心算法，再上生产栈</h1>
+    <p class="lead">面向会写代码的中国开发者。523 课 · 20 阶段 · 简体中文可读。改编自 MIT 开源课程，独立本地化产品。</p>
+    <div class="cta-row" id="ctaRow">
+      <a class="btn btn-primary" id="btnContinue" href="lesson.html?path=phases/00-setup-and-tooling/01-dev-environment">开始学习：阶段 0 · 开发环境</a>
+      <a class="btn btn-accent" href="paths.html#foundations">开始基础营</a>
+      <a class="btn btn-ghost" href="catalog.html">浏览全部目录</a>
+    </div>
+  </div>
+
+  <section>
+    <div class="section-title">推荐路径</div>
+    <div class="cards" id="pathCards"></div>
+  </section>
+
+  <section>
+    <div class="section-title">怎么学（每课六节拍）</div>
+    <div class="beats">
+      <span class="beat">箴言</span><span class="beat-arrow">→</span>
+      <span class="beat">问题</span><span class="beat-arrow">→</span>
+      <span class="beat">概念</span><span class="beat-arrow">→</span>
+      <span class="beat">手写实现</span><span class="beat-arrow">→</span>
+      <span class="beat">用库</span><span class="beat-arrow">→</span>
+      <span class="beat">交付</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">阶段速览 · <a href="catalog.html">打开完整目录</a></div>
+    <div class="phases" id="phaseChips"></div>
+    <div class="note">
+      基于 <strong>AI Engineering from Scratch</strong>（MIT License）改编。本站为独立中文本地化学习产品，<strong>并非官方中文版</strong>。保留原作者与许可证署名。
+    </div>
+  </section>
+</main>
+<div id="site-footer-slot"></div>
+<script src="/js/progress.js"></script>
+<script src="/js/common.js"></script>
+<script>
+CLZAI.mountChrome("index.html");
+(async () => {
+  try {
+    const catalog = await CLZAI.loadCatalog();
+    const cont = CLZAI.continueTarget(catalog);
+    const btn = document.getElementById("btnContinue");
+    if (cont && btn) {
+      const done = CLZAI.Progress.countCompleted();
+      const label = done
+        ? `继续学习：阶段 ${cont.phase.id} · ${cont.lesson.title}`
+        : `开始学习：阶段 ${cont.phase.id} · ${cont.lesson.title}`;
+      btn.textContent = label;
+      btn.href = CLZAI.lessonUrl(cont.lesson.path);
+    }
+    const cards = document.getElementById("pathCards");
+    cards.innerHTML = catalog.paths.map((p, i) => {
+      const badge = p.open
+        ? '<span class="badge badge-open">可学</span>'
+        : '<span class="badge badge-soon">即将上线</span>';
+      return `<article class="card ${i === 0 ? "accent-left" : ""}">
+        <h3>${p.name}${badge}</h3>
+        <p>${p.desc}</p>
+        <div class="meta">${p.meta} · ${p.lessonCount} 课</div>
+        <a class="link" href="paths.html#${p.slug}">进入路径 →</a>
+      </article>`;
+    }).join("");
+    const chips = document.getElementById("phaseChips");
+    chips.innerHTML = catalog.phases.map((ph) =>
+      `<a class="chip" href="catalog.html#phase-${ph.id}"><strong>${ph.id}</strong> ${ph.short}</a>`
+    ).join("");
+  } catch (e) {
+    console.error(e);
+  }
+})();
+</script>
+</body>
+</html>

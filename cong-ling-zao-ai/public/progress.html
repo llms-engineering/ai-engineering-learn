@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>我的进度 · 从零造 AI</title>
+<link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+<div id="site-header-slot"></div>
+<main class="wrap">
+  <div class="page-head">
+    <h1>我的进度</h1>
+    <p class="sub">进度保存在本机浏览器（localStorage）。清空浏览器数据会丢失。</p>
+  </div>
+  <div class="stat-grid" id="stats"></div>
+  <section>
+    <div class="section-title">基础营进度（Phase 0–3）</div>
+    <div id="foundationsBar"></div>
+  </section>
+  <section>
+    <div class="section-title">最近完成</div>
+    <div id="recent"></div>
+  </section>
+  <section>
+    <div class="section-title">管理</div>
+    <div class="cta-row">
+      <button type="button" class="btn btn-ghost" id="btnExport">导出进度 JSON</button>
+      <button type="button" class="btn btn-ghost" id="btnClear">清空本机进度</button>
+      <a class="btn btn-accent" id="btnContinue" href="catalog.html">继续学习</a>
+    </div>
+    <pre id="exportBox" style="display:none;margin-top:16px;background:var(--code-bg);color:var(--code-text);padding:14px;border-radius:8px;font-size:12px;overflow:auto;max-height:240px"></pre>
+  </section>
+</main>
+<div id="site-footer-slot"></div>
+<script src="/js/progress.js"></script>
+<script src="/js/common.js"></script>
+<script>
+CLZAI.mountChrome("progress.html");
+(async () => {
+  const catalog = await CLZAI.loadCatalog();
+  const done = CLZAI.Progress.countCompleted();
+  const skuLessons = catalog.phases.filter((p) => p.id <= 3).flatMap((p) => p.lessons);
+  const skuDone = skuLessons.filter((l) => CLZAI.Progress.isDone(l.path)).length;
+  const pct = skuLessons.length ? Math.round((skuDone / skuLessons.length) * 100) : 0;
+
+  document.getElementById("stats").innerHTML = `
+    <div class="stat-card"><div class="label">已完成课时</div><div class="value">${done}</div></div>
+    <div class="stat-card"><div class="label">基础营完成</div><div class="value">${skuDone}<span style="font-size:14px;color:var(--text-secondary);font-weight:500"> / ${skuLessons.length}</span></div></div>
+    <div class="stat-card"><div class="label">全库课数</div><div class="value">${catalog.totalLessons}</div></div>`;
+
+  document.getElementById("foundationsBar").innerHTML = `
+    <div class="bar-wide"><i style="width:${pct}%"></i></div>
+    <div class="meta">${pct}% · ${skuDone} / ${skuLessons.length} 课</div>`;
+
+  const recent = CLZAI.Progress.recent(5);
+  const recentEl = document.getElementById("recent");
+  if (!recent.length) {
+    recentEl.innerHTML = `<p class="sub">还没有完成记录。<a href="paths.html#foundations">从基础营开始</a></p>`;
+  } else {
+    recentEl.innerHTML = `<ul style="list-style:none">${recent.map((r) =>
+      `<li style="padding:10px 0;border-bottom:1px solid var(--border)">
+        <a href="${CLZAI.lessonUrl(r.path)}">${r.title || r.path}</a>
+        <span class="meta" style="display:inline;margin-left:8px">${r.at ? new Date(r.at).toLocaleString("zh-CN", { hour12: false }) : ""}</span>
+      </li>`
+    ).join("")}</ul>`;
+  }
+
+  const cont = CLZAI.continueTarget(catalog);
+  if (cont) {
+    const btn = document.getElementById("btnContinue");
+    btn.href = CLZAI.lessonUrl(cont.lesson.path);
+    btn.textContent = `继续：${cont.lesson.title}`;
+  }
+
+  document.getElementById("btnExport").onclick = () => {
+    const box = document.getElementById("exportBox");
+    box.style.display = "block";
+    box.textContent = CLZAI.Progress.export();
+  };
+  document.getElementById("btnClear").onclick = () => {
+    if (confirm("确定清空本机全部学习进度？此操作不可撤销。")) {
+      CLZAI.Progress.clear();
+      location.reload();
+    }
+  };
+})().catch((e) => {
+  document.getElementById("stats").innerHTML = `<div class="error-box">${e.message}</div>`;
+});
+</script>
+</body>
+</html>

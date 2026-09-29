@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>学习路径 · 从零造 AI</title>
+<link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+<div id="site-header-slot"></div>
+<main class="wrap">
+  <div class="page-head">
+    <h1>学习路径</h1>
+    <p class="sub">选一条有序短路径，比从 523 课墙上跳更好完课。目前<strong>基础营（Phase 0–3）</strong>完整可学。</p>
+  </div>
+  <div class="path-list" id="pathList"></div>
+  <div id="pathDetail" style="margin-top:32px"></div>
+</main>
+<div id="site-footer-slot"></div>
+<script src="/js/progress.js"></script>
+<script src="/js/common.js"></script>
+<script>
+CLZAI.mountChrome("paths.html");
+(async () => {
+  const catalog = await CLZAI.loadCatalog();
+  const list = document.getElementById("pathList");
+  const detail = document.getElementById("pathDetail");
+
+  function showDetail(slug) {
+    const p = catalog.paths.find((x) => x.slug === slug);
+    if (!p) { detail.innerHTML = ""; return; }
+    const phases = catalog.phases.filter((ph) => p.phases.includes(ph.id));
+    let totalDone = 0, total = 0;
+    const blocks = phases.map((ph) => {
+      const completed = CLZAI.Progress.completedInPhase(ph.id, ph.lessons);
+      totalDone += completed; total += ph.lessons.length;
+      const rows = ph.lessons.map((l) => {
+        const isDone = CLZAI.Progress.isDone(l.path);
+        return `<li><a class="lesson-row" href="${CLZAI.lessonUrl(l.path)}">
+          <span class="num">${l.num}</span>
+          <span class="title">${l.title}</span>
+          <span class="time">${l.time || ""}</span>
+          <span class="done">${isDone ? "✓" : ""}</span>
+        </a></li>`;
+      }).join("");
+      return `<div class="phase-block open" style="margin-top:12px">
+        <div class="phase-head" style="cursor:default">
+          <h2>阶段 ${ph.id}：${ph.name}</h2>
+          <span class="phase-meta">${completed}/${ph.lessonCount}</span>
+        </div>
+        <ul class="lesson-list" style="display:block">${rows}</ul>
+      </div>`;
+    }).join("");
+    const first = phases[0] && phases[0].lessons[0];
+    const startHref = first ? CLZAI.lessonUrl(first.path) : "catalog.html";
+    const badge = p.open
+      ? '<span class="badge badge-open">可学</span>'
+      : '<span class="badge badge-soon">即将上线 · 有中文可预览</span>';
+    detail.innerHTML = `
+      <div class="page-head" style="padding-top:8px">
+        <h1>${p.name} ${badge}</h1>
+        <p class="sub">${p.desc} · ${p.meta} · ${total} 课 · 已完成 ${totalDone}</p>
+        <div class="cta-row" style="margin-top:16px">
+          <a class="btn btn-accent" href="${startHref}">开始第 1 课</a>
+          <a class="btn btn-ghost" href="catalog.html">返回目录</a>
+        </div>
+      </div>
+      ${blocks}`;
+    history.replaceState(null, "", "#" + slug);
+  }
+
+  list.innerHTML = catalog.paths.map((p) => {
+    const badge = p.open
+      ? '<span class="badge badge-open">可学</span>'
+      : '<span class="badge badge-soon">即将上线</span>';
+    return `<article class="path-item ${p.recommended ? "recommended" : ""}" id="${p.slug}">
+      <h2>${p.name} ${badge}</h2>
+      <p>${p.desc}</p>
+      <div class="meta">${p.meta} · ${p.lessonCount} 课</div>
+      <button type="button" class="btn btn-sm btn-primary" data-slug="${p.slug}">查看路径</button>
+    </article>`;
+  }).join("");
+
+  CLZAI.qsa("[data-slug]", list).forEach((btn) => {
+    btn.addEventListener("click", () => showDetail(btn.dataset.slug));
+  });
+
+  const hash = (location.hash || "").replace("#", "");
+  if (hash && catalog.paths.some((p) => p.slug === hash)) showDetail(hash);
+  else showDetail("foundations");
+})().catch((e) => {
+  document.getElementById("pathList").innerHTML = `<div class="error-box">${e.message}</div>`;
+});
+</script>
+</body>
+</html>

@@ -2,12 +2,11 @@
 
 > 亚华斯的DevOps代理进入GA,Resolve AI发布了K8s的游戏书籍,NeuBird演示了语义监测,Metro将AI SRE与每服务SLO联系起来. 制作形状已经确定:一个警报网络火,一个代理阅读远程测量,行走K8s对象的图表,排列根源假设, 默认情况下只能读取. 每个被人类关门的补救措施. 这块顶石是那个代理, 通过20起合成事件进行评估,
 
-**Type:** Capstone
-**Languages:** Python (agent), TypeScript (Slack integration)
-**Prerequisites:** Phase 11 (LLM engineering), Phase 13 (tools and MCP), Phase 14 (agents), Phase 15 (autonomous), Phase 17 (infrastructure), Phase 18 (safety)
-**Phases exercised:**子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子
-**Time:** 30 hours
-
+**类型：** 毕业设计
+**语言：** Python（代理），TypeScript（Slack 集成）
+**先决条件：** 第11阶段（LLM工程）、第13阶段（工具和MCP）、第14阶段（代理）、第15阶段（自主）、第17阶段（基础设施）、第18阶段（安全）
+**进行的阶段：** P11 · P13 · P14 · P15 · P17 · P18
+**时间：**30小时
 ## 问题
 
 根据"人工智能"的描述,人工智能代理会对事件进行分类,人类会批准修复. 代理阅读普罗梅斯指标,洛基日志,泰波指标,Kube状态指标,以及K8对象的知识图. 它在不到五分钟内产生了与远程测量引用的排列根原因假设. 它从来没有通过Slack得到人类的明确批准.

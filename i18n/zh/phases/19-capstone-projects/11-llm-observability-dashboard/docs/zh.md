@@ -2,12 +2,11 @@
 
 > 兰格斯是开放的. 亚里兹·尼克斯发表了2026年GenAI Semconv映射. 机和BrainTrust都增加了每用户成本的倍率. 特拉塞洛普的OpenLLMetry成为了实际的SDK仪器. 制作形式是ClickHouse为痕迹,Postgres为元数据,Next.js为UI,以及一个小规模的评估工作 (DeepEval,RAGAS,LLM-judge) 通过样本的痕迹. 建立一个自主托管,从至少四个SDK家庭中摄入,并在不到五分钟内证明了接入后退.
 
-**Type:** Capstone
-**Languages:** TypeScript (UI), Python / TypeScript (ingest + evals), SQL (ClickHouse)
-**Prerequisites:** Phase 11 (LLM engineering), Phase 13 (tools), Phase 17 (infrastructure), Phase 18 (safety)
-**Phases exercised:**子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子
-**Time:** 25 hours
-
+**类型：** 毕业设计
+**语言:** TypeScript（前端界面），Python / TypeScript（数据摄取与评估），SQL（ClickHouse）
+**前提条件：**第11阶段（大型语言模型工程）、第13阶段（工具）、第17阶段（基础设施）、第18阶段（安全性）
+**练习阶段：** P11 · P13 · P17 · P18
+**时间：**25小时
 ## 问题
 
 每个在2026年运行生产流量的人工智能团队都会在模型旁边保持可观测平面. 成本归因. 发现幻觉. 水监测. 入监狱的信号. 机器的仪表板. 信息泄露警报. 开源引用 兰格斯,尼克斯,OpenLLMetry 作为摄入方案融合在OpenTelemetry GenAI语义公约. 现在可以使用一个SDK和运输兼容的跨度工具 OpenAI,Anthropic,Google,LangChain,LlamaIndex和vLLM.
@@ -18,8 +17,14 @@
 
 输入是OTLP HTTP. SDK生成了GenAI-semconv跨度: `gen_ai.system`现在`gen_ai.request.model`现在`gen_ai.usage.input_tokens`现在`gen_ai.response.id`现在`llm.prompts`现在`llm.completions`对于列分析,ClickHouse的地址;对元数据 (用户,会议,应用程序) 的地址是Postgres.
 
-根据Eval的数据,Eval 测量了数据的数据,并将其运行在数据库中.Eval 测量了数据库中的数据库.Eval 测量了数据库中的数据库.Eval 测量了数据库中的数据库.Eval 测量了数据库中的数据库.Eval 测量了数据库中的数据库.Eval 测量了数据库中的数据库.Eval 测量了数据库中的数据库.Eval 测量了数据库的数据库.Eval 测量了数据库的数据库.Eval 测量了数据库的数据库.Eval 测量数据库的数据库的数据库.Eval 测量数据库的数据库的数据库.Eval 测量数据库的数据库的数据库的数据库.Eval 测量数据库的数据库的数据库的数据库的数据库.Eval 测量数据库的数据库的数据库的数据库的数据库的数据库的数据库的数据库,数据库的数据库的数据库的数据库,数据库的数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库,数据库
-
+- [Langfuse](https://github.com/langfuse/langfuse) — 参考开源核心可观测性平台
+- [Arize Phoenix](https://github.com/Arize-ai/phoenix) — 支持强漂移的备用参考
+- [OpenLLMetry (Traceloop)](https://github.com/traceloop/openllmetry) — 自动化检测SDK系列
+- [OpenTelemetry GenAI 语义约定](https://opentelemetry.io/docs/specs/semconv/gen-ai/) — 吞吐架构
+- [Helicone](https://www.helicone.ai) — 备用托管可观测性
+- [Braintrust](https://www.braintrust.dev) — 另一种以评估为先的平台
+- [ClickHouse 文档](https://clickhouse.com/docs) — 列式跨度存储
+- [DeepEval](https://github.com/confident-ai/deepeval) — 评估器库
 漂移检测时间内嵌入空间分布 (PSI或KL差异在快速嵌入) 加上评估分数趋势.警报输送Prometheus Alertmanager然后Slack / PagerDuty.用户界面是Next.js 15与Recharts.
 
 ## 建筑

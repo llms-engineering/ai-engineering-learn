@@ -256,8 +256,11 @@ t3-ui-sandbox
 
 ## 建立它
 
-`code/main.py`通过Skype,它可以通过Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Skype,Syyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy`server/discover`列出工具和资源,执行工具,并提供一个独立的HTML资源.
-
+```bash
+cd phases/13-tools-and-protocols/14-mcp-apps
+python3 code/main.py
+python3 -m unittest discover code/tests -v
+```
 该模型已经接受了分析的体体和路由标题. 它不是完整的HTTP适配器,也不解析`Content-Type`或`Accept`. 使用第09课程来完成需要的完整的流通 HTTP 适配器`Content-Type: application/json`其他`Accept`含有两者中的值`application/json`其他`text/event-stream`现在,我们要去.
 
 运行它:

@@ -1,4 +1,4 @@
-# 散变压器和调整流量
+# Diffusion Transformer 与 Rectified Flow
 
 > 转换一个变压器,换一个直线流量,突然间你就有了SD3,FLUX,以及每一个2026年的文字到图像模型.
 

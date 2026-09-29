@@ -123,7 +123,7 @@ L = L_cross_entropy + lambda * L_dice       (lambda ~ 1)
 - **Dice (F1 on pixels)**类似于IU;`Dice = 2 * IoU / (1 + IoU)`医疗成像更喜欢Days,驾驶社区更喜欢IoU;它们是单调的关系.
 - **Boundary F1**测量预测边界与地面真相边界有多近,即使是小变量也会受到惩罚.
 
-平均平均平均平均平均每班人15%而其他9班人85%
+平均每班人15%而其他9班人85%
 
 ### 输入分辨率交易
 

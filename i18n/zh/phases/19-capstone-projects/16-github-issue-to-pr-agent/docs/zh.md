@@ -2,12 +2,11 @@
 
 > 标签一个问题,获得一个PR  2026自主编码代理产品形状:运行一个代理在云沙箱,验证测试通过,并发布一个准备备好审查的PR, 它们都在运输中,包括 AWS 远程SWE 代理,Cursor 背景代理,OpenAI Codex 云和Google Jules. 硬部分是自动复制 repo 的构建环境, 防止凭证泄露, 执行每次 repo 预算, 这块顶石构建了自主托管版本,并将其比较在成本和通过率上与托管的替代品.
 
-**Type:** Capstone
-**Languages:** Python (agent), TypeScript (GitHub App), YAML (Actions)
-**Prerequisites:** Phase 11 (LLM engineering), Phase 13 (tools), Phase 14 (agents), Phase 15 (autonomous), Phase 17 (infrastructure)
-**Phases exercised:**子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子
-**Time:** 30 hours
-
+**类型：** 毕业设计
+**语言：** Python（代理），TypeScript（GitHub 应用），YAML（操作）
+**先决条件：** 第11阶段（大型语言模型工程）、第13阶段（工具）、第14阶段（代理）、第15阶段（自主）、第17阶段（基础设施）
+**执行阶段：** P11 · P13 · P14 · P15 · P17
+**时间：**30小时
 ## 问题
 
 无同步云编码代理是与互动编码代理 (capstone 01) 独立的产品类别.UX是一个GitHub标签.你标签一个问题`@agent fix this`工作者在云沙箱中旋转,克隆备忘录,运行测试,编辑文件,验证,并打开一个与代理的逻辑在身体中的 PR.没有交互循环,没有终端. AWS 远程SWE 代理,Cursor 背景代理,OpenAI Codex 云,谷歌 Jules 和工厂 Droid 都会汇聚在这里.

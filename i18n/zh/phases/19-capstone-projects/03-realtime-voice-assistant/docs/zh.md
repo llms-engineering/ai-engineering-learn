@@ -2,12 +2,11 @@
 
 > 听到声音的代理人可以使用800ms以下的端到端延迟,知道你何时停止说话,处理入, 雷特尔,瓦皮,莱维基特代理和皮皮卡特都在2026年进入这个酒吧. 它们用相同的形式进行: 流媒体ASR,转变检测器,流媒体LLM, 建立一个,测量WER和MOS和错误切断率,然后运行在输入输入下.
 
-**Type:** Capstone
-**Languages:** Python (agent + pipeline), TypeScript (web client)
-**Prerequisites:** Phase 6 (speech and audio), Phase 7 (transformers), Phase 11 (LLM engineering), Phase 13 (tools), Phase 14 (agents), Phase 17 (infrastructure)
-**Phases exercised:**子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子
-**Time:** 30 hours
-
+**类型：** 毕业设计
+**语言：** Python（代理 + 流水线），TypeScript（Web 客户端）
+**先决条件：** 第6阶段（语音和音频）、第7阶段（变压器）、第11阶段（大语言模型工程）、第13阶段（工具）、第14阶段（代理）、第17阶段（基础设施）
+**执行阶段：** P6 · P7 · P11 · P13 · P14 · P17
+**时间：**30小时
 ## 问题
 
 语音是2025-2026年最快发展的AI UX类别. 技术上限每季度都下降. 开放AI实时API,双子 2.5 现场,卡特西亚索尼克-2,ElevenLabs Flash v3,LiveKit Agents 1.0和皮皮卡特 0.0.70都能实现800ms下载. 酒吧不是一个人的延迟. 互动感觉:不切断用户,不切断,从句子中断中恢复,在谈话中调用工具,

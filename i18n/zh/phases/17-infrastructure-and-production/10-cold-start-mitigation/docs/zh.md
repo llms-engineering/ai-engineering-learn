@@ -122,9 +122,9 @@ cold-start-pipeline
 
 ## 进一步阅读
 
-- [Modal — Cold start performance](https://modal.com/docs/guide/cold-start)莫达尔发布的基准和检查点架构.
-- [AWS Bottlerocket](https://github.com/bottlerocket-os/bottlerocket)预先播种数据量快照模式.
-- [NVIDIA Run:ai Model Streamer](https://github.com/run-ai/runai-model-streamer)重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量重量
-- [Baseten — Cold starts](https://docs.baseten.co/deployment/autoscaling/cold-starts)预热的游戏手册.
-- [ServerlessLLM paper (USENIX OSDI'24)](https://www.usenix.org/conference/osdi24/presentation/fu) 层次装载设计.
-- [NVIDIA — Disaggregated LLM Inference on Kubernetes](https://developer.nvidia.com/blog/deploying-disaggregated-llm-inference-workloads-on-kubernetes/) 活迁移,用于分类部署.
+- [Modal — 冷启动性能](https://modal.com/docs/guide/cold-start) — Modal 发布的基准测试和检查点架构。
+- [AWS Bottlerocket](https://github.com/bottlerocket-os/bottlerocket) — 预置数据卷快照模式。
+- [NVIDIA Run:ai 模型流服务](https://github.com/run-ai/runai-model-streamer) — 在计算设置时加载重叠权重。
+- [Baseten — 冷启动](https://docs.baseten.co/deployment/autoscaling/cold-starts) — 预热操作手册。
+- [ServerlessLLM 论文 (USENIX OSDI'24)](https://www.usenix.org/conference/osdi24/presentation/fu) — 分层加载设计。
+- [NVIDIA — 在 Kubernetes 上进行分离式 LLM 推理](https://developer.nvidia.com/blog/deploying-disaggregated-llm-inference-workloads-on-kubernetes/) — 分离式部署的实时迁移。

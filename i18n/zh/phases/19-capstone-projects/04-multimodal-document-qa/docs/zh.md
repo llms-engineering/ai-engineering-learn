@@ -2,12 +2,11 @@
 
 > 2026年,文件-QA界限从OCR转移到视觉-第一的后期互动.  ColPali, ColQwen2.5 和 ColQwen3-omni将每个 PDF 页面视为图像,将其嵌入多向量迟交互, 在金融10K,科学论文和手写的笔记上, 建立一个终端的管道,在10万页,并将其发布一边对抗OCR-then-text.
 
-**Type:** Capstone
-**Languages:** Python (pipeline), TypeScript (viewer UI)
-**Prerequisites:** Phase 4 (computer vision), Phase 5 (NLP), Phase 7 (transformers), Phase 11 (LLM engineering), Phase 12 (multimodal), Phase 17 (infrastructure)
-**Phases exercised:**子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子
-**Time:** 30 hours
-
+**类型：** 毕业设计
+**语言：** Python（管道），TypeScript（查看器界面）
+**先决条件：**第4阶段（计算机视觉）、第5阶段（自然语言处理）、第7阶段（变换器）、第11阶段（大语言模型工程）、第12阶段（多模态）、第17阶段（基础设施）
+**执行阶段：** P4 · P5 · P7 · P11 · P12 · P17
+**时间：**30小时
 ## 问题
 
 企业使用OCR管道破碎的PDF文件:扫描10K的轮换表, 让这些信息成为第一条短信意味着失去一半的信号. 2026年答案是在原始页面图像上进行迟到互动的多向量检索. 科尔帕利 (伊利科技) 推出了它;科尔2.5v0.2和科尔3omni推进了精度. 在 ViDoRe v3 中,视觉首先检索的分数比OCR然后是文字高出了有意义的边缘,图表,表格和手写的差距扩大.

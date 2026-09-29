@@ -90,8 +90,7 @@ cc-atomic-checkpoint
 
 ### 步骤1:捕获和恢复RNG状态
 
-`capture_rng_state`返回一个字符串的字符串.`random.getstate`,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,`np.random.get_state`每个部分都作为平常的Python数字, tuples和列表存储 (NumPy的关键阵列通过`tolist()`),以便步骤3中的载体可以在不选任意物体的情况下重新读取. `restore_rng_state`处理器子是PyTorch的RNG知道如何消耗的8字节缓冲器.
-
+`capture_rng_state` 返回一个包含 Python 的 `random.getstate`、NumPy 的 `np.random.get_state` 以及 PyTorch CPU 和 CUDA RNG 字节的字典。每一部分都以普通的 Python 数字、元组和列表存储（NumPy 的 key 数组通过 `tolist()`），因此步骤 3 中的加载器可以在不反序列化任意对象的情况下读取它。`restore_rng_state` 会将其逆转。CPU 张量是一个 uint8 字节缓冲区，PyTorch 的 RNG 知道如何使用它。
 ### 步骤2:原子储存
 
 `atomic_save`写到目标目录中的临时文件,然后`os.replace`换成最后名字.`atomic_write_json`对于分碎的指数也是如此.

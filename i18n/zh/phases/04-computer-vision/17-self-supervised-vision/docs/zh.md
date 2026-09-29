@@ -1,4 +1,4 @@
-# 自我监督视觉  SimCLR,DINO,MAE
+# 自监督视觉  SimCLR,DINO,MAE
 
 > 标签是监督视觉的瓶. 自主监督预训练消除了它们:从100万个未标记的图像中学习视觉特征,
 
@@ -98,11 +98,11 @@ Loss:     MSE between reconstructed and original pixels on masked patches only
 
 经过自我监督的预训,标准评估是**linear probe**通过将编码器结,将单个线性分类器放在图像网标签上.
 
-- 升级率: 低于50%
-- 子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子
-- 果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果果
-- 酸 (酸) 含量:
-
+```
+Encoder:  visible 25% of patches -> features
+Decoder:  features + mask tokens at masked positions -> reconstructed pixels
+Loss:     MSE between reconstructed and original pixels on masked patches only
+```
 线性探测器是特征质量的纯度衡量;细调通常增加2-5个点,但也会产生头部重训效果.
 
 ```figure

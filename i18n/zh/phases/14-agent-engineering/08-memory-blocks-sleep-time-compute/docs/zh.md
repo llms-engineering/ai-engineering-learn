@@ -82,11 +82,10 @@ memory-blocks
 
 `code/main.py`执行:
 
-- `Block` id,标签,值,限制,描述.
-- `BlockStore`   `near_limit(label)`帮助人.
-- 两名经纪人`PrimaryAgent`子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子`SleepTimeAgent`转折之间结合.
-- 显示了与区块的三轮对话,加上一个睡眠时间的传递,
-
+- `Block` — id, label, value, limit, description.
+- `BlockStore` — CRUD + `near_limit(label)` helper.
+- 两个脚本代理——`PrimaryAgent` 执行一次操作，`SleepTimeAgent` 在操作之间进行整合。
+- 一个显示三轮对话并包含块写入的追踪，加上一个睡眠时间通道，用于总结一个块并使过时的事实无效。
 运行它:
 
 ```

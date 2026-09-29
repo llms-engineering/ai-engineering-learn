@@ -130,8 +130,7 @@ dpo-margin
 
 ## 运送它
 
-这一课产生了`outputs/skill-preference-loss-selector.md`鉴于数据集统计数据 (对对对对对对对对对对对对对变量对均偏好强度,长度分布) 和目标 (单阶段或SFT-then-preference),建议对偏好损失进行报告,并报告它保护的故障模式.
-
+本课生成 `outputs/skill-preference-loss-selector.md`。根据数据集统计（配对与未配对，偏好强度的可变性与均匀性，长度分布）和目标（单阶段或先 SFT 后偏好），推荐一个偏好损失函数并报告其防护的失败模式。
 ## 运动
 
 1. 跑步`code/main.py`报告DPO和BPO的最后选择日志检查下降.BPO应该保持更高的选择绝对概率验证这一点.

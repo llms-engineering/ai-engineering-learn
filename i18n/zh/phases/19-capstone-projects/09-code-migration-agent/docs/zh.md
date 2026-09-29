@@ -2,12 +2,11 @@
 
 > 亚马逊的迁移 (Java 8至17),谷歌的应用引擎Py2至Py3迁移器设定了2026年. 现代的OpenRewrite在尺度上进行了确定性AST重写. 格里特对代码模式式DSL的解决方案也是如此. 生产模式结合了两种:安全重写的确定性基板,以及模糊的案例的代理层,每分支构建的沙盒,以及在公交开幕前变绿的测试带. 终点是迁移50个真实存储器,并发布一个失败类别的通过率.
 
-**Type:** Capstone
-**Languages:** Python (agent), Java / Python (targets), TypeScript (dashboard)
-**Prerequisites:** Phase 5 (NLP), Phase 7 (transformers), Phase 11 (LLM engineering), Phase 13 (tools), Phase 14 (agents), Phase 15 (autonomous), Phase 17 (infrastructure)
-**Phases exercised:**子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子子
-**Time:** 30 hours
-
+**类型：** 毕业设计
+**语言：** Python（代理），Java / Python（目标），TypeScript（仪表板）
+**先决条件:** 第5阶段（自然语言处理），第7阶段（变压器），第11阶段（大语言模型工程），第13阶段（工具），第14阶段（代理），第15阶段（自主），第17阶段（基础设施）
+**已练习阶段：** P5 · P7 · P11 · P13 · P14 · P15 · P17
+**时间：**30小时
 ## 问题
 
 扩大代码迁移是2026年编码剂生产的最清洁应用之一. 实地真相是显而易见的 (测试套件在迁移之后是否通过?),奖励是真实的 (Java-8舰队迁移是人数规模项目),基准是公开的 (MigrationBench 50-repo子集). 现代的OpenRewrite处理了确定性方面. 代理层处理了OpenRewrite的食谱不能处理的一切:模糊的重写,构建系统漂移,长尾语法,过渡的依赖性破裂.

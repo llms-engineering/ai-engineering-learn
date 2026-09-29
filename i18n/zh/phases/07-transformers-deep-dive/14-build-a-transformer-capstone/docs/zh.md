@@ -1,4 +1,4 @@
-# 创建一个变压器从零开始  石头
+# 从零搭建 Transformer（综合练习）
 
 > 十三课,一个模型,没有快捷方式.
 
@@ -49,7 +49,6 @@ logits (B, N, V)
    ▼
 shift-by-one cross-entropy            ◀── Lesson 07
 ```
-
 ### 我们运送的东西
 
 - `GPTConfig`一个配置所有超参数的地方.

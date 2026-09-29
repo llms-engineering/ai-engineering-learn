@@ -186,8 +186,11 @@ def nms(boxes, scores, iou_threshold=0.45):
     return np.array(keep, dtype=np.int64)
 ```
 
-确定性主义者`O(N log N)`,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,`torchvision.ops.nms`在相同的输入.
-
+# 对含有物体的细胞的分类损失
+cls_pred = pred[..., 5:][has_obj_t]
+cls_true = target_t[..., 5:][has_obj_t]
+loss_cls = torch.nn.functional.binary_cross_entropy_with_logits(
+cls_pred, cls_true, reduction="sum"）
 ### 步骤3: 框编码和解码
 
 转换像素坐标和`(tx, ty, tw, th)`网络实际上会退缩.

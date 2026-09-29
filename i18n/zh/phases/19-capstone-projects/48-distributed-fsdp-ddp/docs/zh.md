@@ -72,8 +72,7 @@ flowchart LR
 
 ### 处理器和暗黑后端
 
-虽然CUDA是生产目标,但CPU上存在相同的代码路径.`gloo`它们的速度比 CPU 的速度慢.`nccl`课程过程组始化为`backend="gloo"`许多人都以此为代号.`torch.multiprocessing`而不是`torchrun`两者都在同一场比赛中结束`torch.distributed`在多GPU节点上,唯一的变化是`backend="nccl"`电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气电气`torchrun`发射.
-
+CUDA 是生产目标，但相同的代码路径也存在于 CPU 上。`gloo` 是 CPU 集体通信后端。它比 GPU 上的 `nccl` 慢几个数量级，但 API 接口是相同的。本教程的进程组是使用 `backend="gloo"` 初始化的，并且使用 `torch.multiprocessing` 而不是 `torchrun` 来生成进程；两者最终都会调用相同的 `torch.distributed` 函数。在多 GPU 节点上，唯一的变化是 `backend="nccl"`、设备张量，以及使用 `torchrun` 启动。
 ```figure
 cg-allreduce-ring
 ```

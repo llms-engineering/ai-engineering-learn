@@ -1,7 +1,13 @@
 # 案例研究和2026年最新技术
 
-> 对于研究的结尾到结尾,每一个都说明了多代理工程的不同部分. **Anthropic's Research system**,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,**MetaGPT / ChatDev**(软件工程的SOP编码角色专业化;ChatDev的"沟通性幻觉化";通过DAG扩展到1000个代理, arXiv:2406.07155) 是正规的角色分解案例. **OpenClaw / Moltbook**(原本由彼得·斯坦伯格 (Peter Steinberger) 命名为Clawdbot,2025年11月;两次改名;2026年3月247万个GitHub星;本地ReAct-loop代理;Moltbook作为一个仅供代理商使用的社交网络,在发行几天内拥有约2.3万个代理账户,Meta收购2026-03-10) 说明了人口规模发生的事情:新兴的经济活动,即时注射风险,国家级监管 (中国限制了OpenClaw在政府计算机上,2026年3月).**Framework landscape April 2026:**兰格拉夫和克鲁艾的首席生产;AG2是社区的AutoGen延续;微软的AutoGen处于维护模式 (融入微软代理框架,RC Feb 2026);OpenAI代理SDK是生产Swarm的继任者;谷歌ADK (4月 2025) 是A2A原生参与者. 现在每个主要框架都提供MCP支持;大多数都提供A2A. 这一课将每个案例都读完, 并将常见的模式进行分析,
-
+- [Anthropic——我们如何构建多代理研究系统](https://www.anthropic.com/engineering/multi-agent-research-system)——监督-工作者生产参考
+- [MetaGPT — 多智能体协作框架的元编程](https://arxiv.org/abs/2308.00352) — SOP角色分解
+- [ChatDev —— 用于软件开发的交流代理](https://arxiv.org/abs/2307.07924) —— 交流去幻觉
+- [MacNet — 将基于角色的代理扩展到1000+](https://arxiv.org/abs/2406.07155) — 基于DAG的规模
+- [OpenClaw 在维基百科](https://en.wikipedia.org/wiki/OpenClaw) — 生态系统概览
+- [WMAC 2026](https://multiagents.org/2026/) — AAAI 2026 多智能体协调桥接项目研讨会
+- [LangGraph 文档](https://docs.langchain.com/oss/python/langgraph/workflows-agents) — 生产领导者
+- [CrewAI 文档](https://docs.crewai.com/en/introduction) — 基于角色的框架
 **Type:** Learn (capstone)
 **Languages:** —
 **Prerequisites:** all of Phase 16 (Lessons 01-24)

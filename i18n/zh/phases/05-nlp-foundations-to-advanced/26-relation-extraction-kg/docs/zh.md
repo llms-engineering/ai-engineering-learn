@@ -209,8 +209,8 @@ Refuse any LLM-based RE pipeline without span verification (source provenance). 
 
 ## 进一步阅读
 
-- [Mintz et al. (2009). Distant supervision for relation extraction without labeled data](https://www.aclweb.org/anthology/P09-1113.pdf)远程监督论文.
-- [Huguet Cabot, Navigli (2021). REBEL: Relation Extraction By End-to-end Language generation](https://aclanthology.org/2021.findings-emnlp.204.pdf)后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后后
-- [Wadden et al. (2019). Entity, Relation, and Event Extraction with Contextualized Span Representations (DyGIE++)](https://arxiv.org/abs/1909.03546) 联合 IE.
-- [AEVS — Anchor-Extraction-Verification-Supplement framework](https://www.mdpi.com/2073-431X/15/3/178) 2026年幻觉减轻设计.
-- [Wikidata SPARQL tutorial](https://www.wikidata.org/wiki/Wikidata:SPARQL_tutorial)可信图表查询.
+- [Mintz 等人（2009 年）。无需标注数据的关系抽取远程监督](https://www.aclweb.org/anthology/P09-1113.pdf) — 远程监督论文。
+- [Huguet Cabot, Navigli (2021). REBEL: 通过端到端语言生成的关系抽取](https://aclanthology.org/2021.findings-emnlp.204.pdf) — seq2seq 关系抽取工作马。
+- [Wadden 等人（2019）。使用上下文跨度表示的实体、关系和事件抽取（DyGIE++）](https://arxiv.org/abs/1909.03546) — 联合信息抽取。
+- [AEVS — 锚点提取验证补充框架](https://www.mdpi.com/2073-431X/15/3/178) — 2026 年幻觉缓解设计。
+- [Wikidata SPARQL 教程](https://www.wikidata.org/wiki/Wikidata:SPARQL_tutorial) — 典型的图查询。

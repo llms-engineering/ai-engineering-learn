@@ -42,8 +42,7 @@
 
 ### 为什么分离关系很重要
 
-在v0.2模型中,调用`agent_a.chat(agent_b)`在v0.4中, 除了除了除了除了除了除了除.`send(agent_b, msg)`运行时间后会传递.
-
+在 v0.2 模型中，调用 `agent_a.chat(agent_b)` 会同步阻塞 agent_a，直到 agent_b 返回。在 v0.4 中，`send(agent_b, msg)` 会将消息放入 agent_b 的收件箱并返回。运行时稍后进行传递。三个后果：
 - **Fault isolation.**运行时间抓住B的处理器失败,决定要做什么 (登录,重新尝试,死字母).
 - **Natural concurrency.**许多消息同时飞行;演员同时处理收件箱.
 - **Distribution-ready.**收件箱+运输是同一抽象,无论演员是正在进行或在另一个主机上.

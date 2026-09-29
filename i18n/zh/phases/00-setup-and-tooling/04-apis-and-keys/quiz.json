@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "调用LLM服务时API密钥有什么用？",
+      "options": [
+        "加密发送到服务器的数据",
+        "验证你的身份并授权请求",
+        "压缩请求以减少带宽",
+        "选择服务器使用哪种编程语言"
+      ],
+      "correct": 1,
+      "explanation": "API 密钥是一个唯一的字符串，用于识别你的帐户、授权你的请求并允许提供商跟踪使用情况和计费。"
+    },
+    {
+      "stage": "pre",
+      "question": "为什么 API 密钥永远不应该直接硬编码在源代码中？",
+      "options": [
+        "Python 无法读取长度超过 50 个字符的字符串",
+        "API 提供商阻止出现在源文件中的密钥",
+        "硬编码键使代码运行速度变慢",
+        "它们可能会意外地提交给 git 并公开暴露"
+      ],
+      "correct": 3,
+      "explanation": "源代码中的硬编码密钥存在被提交版本控制并推送到公共仓库的风险，在那里它们可能被其他人抓取和滥用。"
+    },
+    {
+      "stage": "post",
+      "question": "为本地开发存储 API 密钥的推荐方法是什么？",
+      "options": [
+        "在 .gitignore 中列出的 .env 文件中",
+        "在 README.md 中以便于访问",
+        "在脚本顶部的 Python 变量中",
+        "在requirements.txt中与包版本一起"
+      ],
+      "correct": 0,
+      "explanation": ".env 文件将密钥存储为环境变量，并应添加到 .gitignore 中，这样它就不会被提交到版本控制。 SDK 自动从环境变量中读取密钥。"
+    },
+    {
+      "stage": "post",
+      "question": "在对 Anthropic 的原始 HTTP API 调用中，哪个标头携带 API 密钥？",
+      "options": [
+        "授权：承载sk-ant-...",
+        "内容类型：application/json",
+        "人类版本：2023-06-01",
+        "x-api-key: sk-ant-..."
+      ],
+      "correct": 3,
+      "explanation": "Anthropic 的 API 使用“x-api-key”标头进行身份验证，而不是更常见的“Authorization：Bearer”模式。这是特定于他们的 API 设计的。"
+    },
+    {
+      "stage": "post",
+      "question": "当超过 API 的速率限制时会发生什么？",
+      "options": [
+        "你的请求将排队并稍后自动处理",
+        "服务器返回错误（通常为 HTTP 429），你必须等待才能重试",
+        "你的 API 密钥已被永久撤销",
+        "API 默默地丢弃你的请求，没有任何响应"
+      ],
+      "correct": 1,
+      "explanation": "速率限制返回 HTTP 429（请求过多）。你需要等待并重试，通常采用指数退避。速率限制可防止滥用并确保公平使用。"
+    }
+  ]
+}

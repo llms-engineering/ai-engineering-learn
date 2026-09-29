@@ -2,12 +2,12 @@
 /**
  * Self-host server for AI Engineering from Scratch site.
  * Serves site/ statically and routes Vercel-style API handlers for lessons.
+ * Runtime is GitHub-free: all curriculum/i18n is read from local disk only.
  * Based on https://github.com/rohitg00/ai-engineering-from-scratch (MIT).
  */
 "use strict";
 
 const http = require("http");
-const https = require("https");
 const fs = require("fs");
 const path = require("path");
 const { URL } = require("url");
@@ -122,48 +122,11 @@ function wantsMarkdown(req) {
   return md && (!html || accept.indexOf("text/markdown") < accept.indexOf("text/html"));
 }
 
-
-const TRANSLATIONS_RAW =
-  "https://raw.githubusercontent.com/rohitg00/ai-engineering-from-scratch/translations/";
-
 function isSafeI18nRel(rel) {
   if (!rel || rel.includes("\\") || rel.includes("\0")) return false;
   if (rel.includes("..")) return false;
   // i18n/<lang>/ui.json or i18n/<lang>/phases/.../docs/<lang>.md etc.
   return /^i18n\/[A-Za-z0-9._-]+(?:\/[A-Za-z0-9._-]+)+$/.test(rel);
-}
-
-function fetchTranslationsAndCache(rel, destPath) {
-  return new Promise((resolve, reject) => {
-    const url = TRANSLATIONS_RAW + rel.split("/").map(encodeURIComponent).join("/");
-    https
-      .get(url, { headers: { "User-Agent": "ai-engineering-learn-selfhost" } }, (gres) => {
-        if (gres.statusCode === 302 || gres.statusCode === 301) {
-          gres.resume();
-          reject(new Error("redirect"));
-          return;
-        }
-        if (gres.statusCode !== 200) {
-          gres.resume();
-          reject(new Error("upstream " + gres.statusCode));
-          return;
-        }
-        const chunks = [];
-        gres.on("data", (c) => chunks.push(c));
-        gres.on("end", () => {
-          const buf = Buffer.concat(chunks);
-          try {
-            fs.mkdirSync(path.dirname(destPath), { recursive: true });
-            fs.writeFileSync(destPath, buf);
-          } catch (e) {
-            // Still serve even if cache write fails
-            return resolve(buf);
-          }
-          resolve(buf);
-        });
-      })
-      .on("error", reject);
-  });
 }
 
 function sendI18n(res, rel, method) {
@@ -172,33 +135,62 @@ function sendI18n(res, rel, method) {
     res.statusCode = 403;
     return res.end("Forbidden");
   }
-  fs.stat(filePath, (err, st) => {
-    if (!err && st.isFile()) return sendFile(res, filePath, method);
-    // Cache-miss: pull from upstream translations branch (server can reach GitHub;
-    // browsers in restricted networks often cannot).
-    fetchTranslationsAndCache(rel, filePath)
-      .then((buf) => {
-        const ext = path.extname(filePath).toLowerCase();
-        res.statusCode = 200;
-        res.setHeader("Content-Type", MIME[ext] || "application/octet-stream");
-        res.setHeader("Cache-Control", "public, max-age=3600");
-        if (method === "HEAD") {
-          res.setHeader("Content-Length", String(buf.length));
-          return res.end();
-        }
-        res.end(buf);
-      })
-      .catch(() => {
-        const notFound = path.join(SITE, "404.html");
-        fs.readFile(notFound, (e2, body) => {
-          res.statusCode = 404;
-          res.setHeader("Content-Type", "text/html; charset=utf-8");
-          res.end(e2 ? "Not Found" : body);
-        });
-      });
-  });
+  // Local disk only — never proxy to GitHub at runtime.
+  return sendFile(res, filePath, method);
 }
 
+function isSafeContentsPath(rel) {
+  if (!rel || rel.includes("\\") || rel.includes("\0") || rel.includes("..")) return false;
+  const top = rel.split("/").filter(Boolean)[0];
+  if (!EXTRA_ROOTS.includes(top)) return false;
+  return /^[A-Za-z0-9._/-]+$/.test(rel);
+}
+
+function sendContentsListing(res, rel) {
+  const clean = String(rel || "").replace(/^\/+/, "").replace(/\/+$/, "");
+  if (!isSafeContentsPath(clean)) {
+    res.statusCode = 403;
+    res.setHeader("Content-Type", "application/json; charset=utf-8");
+    return res.end(JSON.stringify({ error: "Forbidden" }));
+  }
+  const dirPath = safeJoin(ROOT, clean);
+  if (!dirPath) {
+    res.statusCode = 403;
+    res.setHeader("Content-Type", "application/json; charset=utf-8");
+    return res.end(JSON.stringify({ error: "Forbidden" }));
+  }
+  fs.readdir(dirPath, { withFileTypes: true }, (err, entries) => {
+    if (err) {
+      res.statusCode = 404;
+      res.setHeader("Content-Type", "application/json; charset=utf-8");
+      return res.end(JSON.stringify({ error: "Not Found" }));
+    }
+    const out = [];
+    for (const ent of entries) {
+      if (!ent || !ent.name || ent.name.startsWith(".")) continue;
+      const entryPath = clean + "/" + ent.name;
+      const abs = path.join(dirPath, ent.name);
+      let size = 0;
+      try {
+        const st = fs.statSync(abs);
+        size = st.isFile() ? st.size : 0;
+      } catch (_) {}
+      const type = ent.isDirectory() ? "dir" : "file";
+      out.push({
+        name: ent.name,
+        path: entryPath,
+        size: size,
+        type: type,
+        html_url: "/" + entryPath,
+        download_url: type === "file" ? "/" + entryPath : null,
+      });
+    }
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "application/json; charset=utf-8");
+    res.setHeader("Cache-Control", "public, max-age=60");
+    res.end(JSON.stringify(out));
+  });
+}
 
 const server = http.createServer((req, res) => {
   try {
@@ -218,6 +210,9 @@ const server = http.createServer((req, res) => {
     }
     if (pathname === "/api/markdown" || pathname === "/api/v1/markdown") {
       return markdownHandler(wrapReq(req, urlObj), res);
+    }
+    if (pathname === "/api/contents") {
+      return sendContentsListing(res, urlObj.searchParams.get("path") || "");
     }
 
     // Accept: text/markdown negotiation for key pages
@@ -263,5 +258,5 @@ const server = http.createServer((req, res) => {
 
 server.listen(PORT, HOST, () => {
   console.log(`AI Engineering Learn listening on http://${HOST}:${PORT}`);
-  console.log(`Serving ${SITE}`);
+  console.log(`Serving ${SITE} (GitHub-free runtime)`);
 });

@@ -25,6 +25,8 @@
 
   function rawRepoUrl(path) {
     var safe = clean(path);
+    // Self-host runtime never touches GitHub raw — same-origin only.
+    if (window.__AIFS_SELF_HOST) return '/' + safe;
     var configured = window.__AIFS_SOURCE || {};
     var owner = /^[A-Za-z0-9-]+$/.test(configured.owner || '') ? configured.owner : 'rohitg00';
     var repo = /^[A-Za-z0-9_.-]+$/.test(configured.repo || '') && !hasDotSegment(configured.repo)

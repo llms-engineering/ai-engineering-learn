@@ -134,6 +134,11 @@
       paint(cached);
       return;
     }
+    // Self-host runtime: do not call api.github.com (GitHub-free serving).
+    if (window.__AIFS_SELF_HOST) {
+      paint(0);
+      return;
+    }
     fetch('https://api.github.com/repos/' + REPO, {
       headers: { Accept: 'application/vnd.github+json' },
     })

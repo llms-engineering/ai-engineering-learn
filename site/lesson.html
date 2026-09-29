@@ -3569,10 +3569,14 @@
         var source = window.AIFSContentSource;
         var localPreview = !!(source && typeof source.isLocal === 'function' && source.isLocal());
         var fetchOptions = localPreview ? { cache: 'no-store' } : undefined;
+        var selfHost = !!window.__AIFS_SELF_HOST;
         var primary = source && source.repoUrl
           ? source.repoUrl(relativePath)
-          : 'https://raw.githubusercontent.com/' + SOURCE_OWNER + '/' + SOURCE_REPO + '/' + ACTIVE_REF + '/' + relativePath;
-        var fallback = source && source.rawRepoUrl ? source.rawRepoUrl(relativePath) : primary;
+          : (selfHost
+            ? ('/' + String(relativePath || '').replace(/^\/+/, ''))
+            : ('https://raw.githubusercontent.com/' + SOURCE_OWNER + '/' + SOURCE_REPO + '/' + ACTIVE_REF + '/' + relativePath));
+        // Self-host: never fall back to raw.githubusercontent.com.
+        var fallback = selfHost ? null : (source && source.rawRepoUrl ? source.rawRepoUrl(relativePath) : primary);
 
         return fetch(primary, fetchOptions).then(function (response) {
           if (response.ok) return response;
@@ -3612,10 +3616,8 @@
         // missing local file use the branch-aware raw source from build-meta.
         var enPath = path + '/docs/en.md';
         var lang = currentLang();
-        var translatedUrl = (window.__AIFS_SELF_HOST
-          ? ('/i18n/' + lang + '/' + path + '/docs/' + lang + '.md')
-          : ('https://raw.githubusercontent.com/rohitg00/ai-engineering-from-scratch/translations/i18n/'
-            + lang + '/' + path + '/docs/' + lang + '.md'));
+        // Self-host: translated markdown is always same-origin /i18n (vendored).
+        var translatedUrl = '/i18n/' + lang + '/' + path + '/docs/' + lang + '.md';
 
         if (!retried || !lessonQuizPromise) {
           lessonQuizPromise = fetchRepositoryFile(path + '/quiz.json')
@@ -5178,6 +5180,15 @@
         });
       }
 
+      function localContentsFetch(apiPath) {
+        return fetch('/api/contents?path=' + encodeURIComponent(apiPath), {
+          headers: { 'Accept': 'application/json' }
+        }).then(function (res) {
+          if (!res.ok) throw new Error(res.status);
+          return res.json();
+        });
+      }
+
       function repositoryDirectoryFetch(apiPath, cb) {
         if (repositoryDirectoryCache[apiPath]) {
           cb(null, repositoryDirectoryCache[apiPath]);
@@ -5185,9 +5196,15 @@
         }
 
         var source = window.AIFSContentSource;
-        var request = source && typeof source.isLocal === 'function' && source.isLocal() && typeof source.localDirectoryFiles === 'function'
-          ? source.localDirectoryFiles(apiPath).catch(function () { return githubDirectoryFetch(apiPath); })
-          : githubDirectoryFetch(apiPath);
+        var request;
+        if (window.__AIFS_SELF_HOST) {
+          // GitHub-free: list from local disk via same-origin API.
+          request = localContentsFetch(apiPath);
+        } else if (source && typeof source.isLocal === 'function' && source.isLocal() && typeof source.localDirectoryFiles === 'function') {
+          request = source.localDirectoryFiles(apiPath).catch(function () { return githubDirectoryFetch(apiPath); });
+        } else {
+          request = githubDirectoryFetch(apiPath);
+        }
 
         request.then(function (data) {
           repositoryDirectoryCache[apiPath] = data;

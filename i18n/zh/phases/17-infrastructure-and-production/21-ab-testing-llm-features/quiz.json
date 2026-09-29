@@ -1,0 +1,78 @@
+{
+  "lesson": "21-ab-testing-llm-features",
+  "title": "A/B 测试 LLM 特性—— GrowthBook, Statsig 和 Vibes 问题",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "在课程中,Evals和A/B测试之间的确切区别是什么?",
+      "options": [
+        "只需要A/B测试",
+        "Evals)在标签集中回答\"模型能做工作吗?\";A/B测试以直播随机流量回答\"用户关心吗?\".",
+        "Evals 是用户界面; A/B 测试离线",
+        "它们是可交换的"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "CUPED做实验做什么?",
+      "options": [
+        "禁用多比较校正",
+        "在比较后期之前退出前期差异,通常减少30%-70%的差异,提高有效样本规模",
+        "通过雇用更多的用户增加样本规模",
+        "完全替换顺序测试"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么运行许多A/B时需要多个比较的更正(Bonferroni或Benjamini-Hochberg)?",
+      "options": [
+        "他们加速实验",
+        "仅用于连续测试",
+        "GDPR要求它们",
+        "以95%的置信度进行20次测试,偶然产生1个假阳性;纠正因家庭原因造成的误差或假发现率"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "SRM( 样本比例不匹配) 检测到什么 ?",
+      "options": [
+        "缓慢的显示器性能",
+        "PII 渗漏",
+        "任务吸尘器产生的分数与预定的分数不同(例如,针对50/50时的47/53)",
+        "实验平台内存泄漏"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "为什么LLM非定型需要缓冲样本大小?",
+      "options": [
+        "非决定因素减少所需样品",
+        "它违反了ID假设;有效的样本大小下降,因此将所需大小乘以大约1.3-1.5x作为安全比值",
+        "与电量计算无关",
+        "只管下线"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "教训如何与Statsig和GrowthBook相对?",
+      "options": [
+        "GrowthBook 是关闭源",
+        "同樣的功能集",
+        "Statsig 仅仅是仓库内部的",
+        "Statsig是全自动SaaS(由OpenAI September 2025,1.1B获得);GrowthBook是开源的麻省理工学院,仓库内置,拥有巴耶西亚/佛罗伦萨/斯凯特发动机和CUPED/SRM/BH."
+      ],
+      "correct": 3,
+      "explanation": ""
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "lesson": "02-inference-platform-economics",
+  "title": "推论平台经济学 — 烟火, 一起, Baseten, Modal, 复制, 任意比例",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "哪些市场部门的经验用来组织2026年的推论供应商?",
+      "options": [
+        "单租户,多租户,预科",
+        "免费、有偿的企业",
+        "开源、商业、混合",
+        "自定义硅、 GPU 平台、 API 第一市场"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "大约每分钟的计费(Baseten, Modal)开始用什么维持GPU使用?",
+      "options": [
+        "5%",
+        "90%",
+        "60%",
+        "30%"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "哪个平台被描述为Python-native无服务器,每秒计费,2-4s冷在升温前开始?",
+      "options": [
+        "任意比例",
+        "基础",
+        "烟火",
+        "模式"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "烟火公司显著的LORA定价不同者是什么?",
+      "options": [
+        "LoRA请求需要单独的专用GPU合同",
+        "由LORA服务的请求按基数模型的每吨费率收费",
+        "与基准模型相比,LORA服务请求的费用更高",
+        "完全不支持LORA系统"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "哪个平台适合一个需要SOC 2型,HIPAA型状态以及专用GPU的受监管的保健客户?",
+      "options": [
+        "一起来",
+        "任意比例",
+        "基础",
+        "复制"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "为何该课认为定制引擎主张主要是平台层的营销阴影?.",
+      "options": [
+        "自定义引擎从未超过 vLLM",
+        "按键定价是唯一真正不同的",
+        "vLLM和SGLang代表了大约80%的生产开源推论,所以平台的区分更多来自DX,归属,以及SLA比引擎.",
+        "所有自定义引擎都是TensorRT-LLM的叉"
+      ],
+      "correct": 2,
+      "explanation": ""
+    }
+  ]
+}

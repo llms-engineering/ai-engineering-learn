@@ -1,0 +1,78 @@
+{
+  "lesson": "33-multihead-self-attention",
+  "title": "多头自留",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么高效的自注意块使用一个输出3*D特性的单线性层?",
+      "options": [
+        "它在数学上相当于三个线性(D,D)层,并作为一个matmul运行",
+        "它减少模型参数数",
+        "它执行Q,K,和V之间的体重共享",
+        "免得戴着因果面具"
+      ],
+      "correct": 0,
+      "explanation": "将三个(D,D)的投影矩阵堆成一个(3D,D)矩阵产生相同的输出,但前传是一个单一加速器友好的matmul."
+    },
+    {
+      "stage": "check",
+      "question": "d model, n heads, 和 d head 之间的关系是什么 ?",
+      "options": [
+        "d 头=d 型号 * n 头",
+        "d 头=d 型号+n 头",
+        "d 头独立于 d  型号",
+        "d head = d model // n heads 和 d model 必须被 n heads 分割"
+      ],
+      "correct": 3,
+      "explanation": "该区平分d 型号在头部。 限制d 型号% n heads ===0 建筑时执行."
+    },
+    {
+      "stage": "check",
+      "question": "扩大对点产品关注的尺度因素有何价值?",
+      "options": [
+        "sqrt( 头)",
+        "sqrt( 无标题)",
+        "sqrt(d 型号)",
+        "sqrt( seq  len) (韩语)"
+      ],
+      "correct": 0,
+      "explanation": "分数由sqrt(d head)除以,matmul合同的头尺寸. 这保持了以 d  head 生长为界的分数差异 。"
+    },
+    {
+      "stage": "check",
+      "question": "因果面具如何执行该位置 t不能处理位置 t+1 ?",
+      "options": [
+        "将未来位置的键乘以0",
+        "将分数项设置在对角上方, 在软度前设置为负无限",
+        "从输入中删除未来符号",
+        "未来用不同的注意头"
+      ],
+      "correct": 1,
+      "explanation": "设置未来的条目至 -inf 强制软马克以给它们零重量 。 过去和现在的位置保持有效的重量分配。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么块在合并头后以线性(D,D)输出投影结束?",
+      "options": [
+        "使模型能够将信息混为一谈",
+        "要匹配模型的词汇大小",
+        "使激活正常化为0",
+        "需要自动分级来跟踪梯度"
+      ],
+      "correct": 0,
+      "explanation": "没有产出预测,头级产出只会在后几层合并。 投影给区块一个位置,在同一步中混合头部."
+    },
+    {
+      "stage": "post",
+      "question": "一个注意量的形状矩阵(B,H,T,T)告诉你什么?",
+      "options": [
+        "每个查询位置每个头,每个批次元素都注意哪个关键位置",
+        "查询和值向量的余弦相似性",
+        "下一个符号的输出日志",
+        "每个头有多少个参数"
+      ],
+      "correct": 0,
+      "explanation": "每头矩阵的行 t 是查询位置 t 所使用的关键位置的分布 。 检查显示每个头部的外观."
+    }
+  ]
+}

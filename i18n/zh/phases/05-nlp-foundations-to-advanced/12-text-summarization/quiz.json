@@ -1,0 +1,102 @@
+{
+  "lesson": "12-text-summarization",
+  "title": "文本摘要",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "采掘和抽象归纳的关键行为区别是什么?",
+      "options": [
+        "提取只使用多种语言",
+        "从源头逐字返回句子; 抽象生成新的文本并可产生幻觉",
+        "提取使用 TF- IDF; 抽象使用 Word2Vec",
+        "提取比抽象慢"
+      ],
+      "correct": 1,
+      "explanation": "提取句子逐字取消;抽象重写,有产生幻觉的危险."
+    },
+    {
+      "stage": "pre",
+      "question": "ROUGE测量什么?",
+      "options": [
+        "托肯层次的复杂度",
+        "嵌入相似性",
+        "N-gram和最长的共同子序列系统与参考摘要之间的重叠",
+        "阅读时间"
+      ],
+      "correct": 2,
+      "explanation": "ROUGE-1/2/L 测量unigram、bigram和LCS与参考文献重叠。"
+    },
+    {
+      "stage": "check",
+      "question": "TextRank如何在采掘归纳中得分?",
+      "options": [
+        "通过将 PageRank 样式的迭代运行在边缘为句式- 类似加权的图表上",
+        "将余弦嵌入问题",
+        "比较参考摘要",
+        "按原始字数"
+      ],
+      "correct": 0,
+      "explanation": "TextRank使用PageRank在句子相似图之上;高度连接的句子得分最高."
+    },
+    {
+      "stage": "check",
+      "question": "为什么在计算ROUGE时能够阻止呢?",
+      "options": [
+        "不终止,“ 运行” 和“ 运行” 算作不同的符号, ROUGE 低估了真正的重叠",
+        "处理正常案件",
+        "rouge-score 软件包需要安装",
+        "来加快鲁格的速度"
+      ],
+      "correct": 0,
+      "explanation": "Stemming融合了形态学变体,因此ROUGE的学分在组分上是等效的."
+    },
+    {
+      "stage": "check",
+      "question": "2026公尺是专为检测通过NLI产生的即时幻觉而设计的?",
+      "options": [
+        "在来源和简要索赔之间使用NLI进行可信度检查(例如事实CC或RAGAS的可靠性)",
+        "溴化铀",
+        "铬",
+        "鲁格 L级"
+      ],
+      "correct": 0,
+      "explanation": "NLI基于忠诚的评分旗在摘要中声称来源不涉及."
+    },
+    {
+      "stage": "post",
+      "question": "为什么偏好将采掘归纳到与遵约相符合的内容?",
+      "options": [
+        "采掘支持较长的产出",
+        "产出从源头逐字取消,消除抽象的幻觉类",
+        "快点",
+        "ROUGE的分数更高"
+      ],
+      "correct": 1,
+      "explanation": "平面提取不能发明内容,这关系到对事实的规范。"
+    },
+    {
+      "stage": "post",
+      "question": "其中哪一种是抽象的幻觉类型来监测的?",
+      "options": [
+        "长刑",
+        "实体互换( 如“ John Smith ” 作为“ John Brown ” 渲染)、 数字漂移、 极性翻转或事实发明)",
+        "标点漂移",
+        "停止字词删除"
+      ],
+      "correct": 1,
+      "explanation": "实体互换,数字漂移,极性翻转,以及发明的事实都是空洞抽象的失败模式."
+    },
+    {
+      "stage": "post",
+      "question": "你什么时候才能在BART大型CNN上空 找到飞马检查站?",
+      "options": [
+        "评估BLEU时",
+        "需要提取输出时",
+        "对于像科学摘要这样的领域,Pegasus的空隙判决前培训目标是更紧密的",
+        "当输入短"
+      ],
+      "correct": 2,
+      "explanation": "Pegasus的空隙-判罚目标在长形域汇总(如pubmed)上表现优异."
+    }
+  ]
+}

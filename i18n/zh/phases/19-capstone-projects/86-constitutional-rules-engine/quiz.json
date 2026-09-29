@@ -1,0 +1,78 @@
+{
+  "lesson": "86-constitutional-rules-engine",
+  "title": "Capstone 86 — 宪法规则引擎",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么要使用宣布的YAML宪法而不是临时编码检查?.",
+      "options": [
+        "因为 YAML 支持主播",
+        "因为YAML比Python分析得快",
+        "因为YAML中的规则可以被非引擎人审查,生活在版本控制中,并且可以替换而不修改代码",
+        "因为标准库更喜欢YAML"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "每个规则至少必须拥有哪些领域?",
+      "options": [
+        "名称、 regex、 修正",
+        "身份证、车主、时间戳",
+        "上游、严重性、所有者",
+        "姓名、严重程度、必须、解释"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "发动机如何构成上游?",
+      "options": [
+        "仅通过单个规则包含 regex",
+        "乘以信心分数",
+        "通过神经分类器",
+        "通过所有,任何,而不是 , 递归性地包裹原子的上游"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "何时适用的作用是什么?",
+      "options": [
+        "它超越了严重性",
+        "它会选固定器操作",
+        "它使必须超越,所以不适用的规则被记录为不适用而不是违反",
+        "它总是评价真实"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "修补者是做什么的?",
+      "options": [
+        "它叫远程模型来修复文本",
+        "它采用按规则宣布的固定办法(附录、预留、替换 regex)来产生订正案文",
+        "它重写规则文件",
+        "它从修补中计算出严重性"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "演示为何在固定器之后第二次运行引擎?.",
+      "options": [
+        "因为第一次通过只是一次演习",
+        "重新装填宪法",
+        "放大报告大小",
+        "校验修改后的案文符合规则 并显示任何规则 固定者无法修复当地"
+      ],
+      "correct": 3,
+      "explanation": ""
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "lesson": "14-autogen-actor-model",
+  "title": "Async 信件和输入运行时的代理演员模型",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "AutoGen v0.4中演员互动的唯一法律途径是什么?",
+      "options": [
+        "直接获得共同法令",
+        "调换对方的提示",
+        "共享 SQL 交易",
+        "通过收件箱交换同步消息; 没有共享内存"
+      ],
+      "correct": 3,
+      "explanation": "演员有私人状态和一个收件箱;消息是唯一的互动."
+    },
+    {
+      "stage": "pre",
+      "question": "AutoGen v0.4的三个API层是什么?",
+      "options": [
+        "核心、 代理聊天、 扩展",
+        "前端、 后端、 数据库",
+        "工具、模型、内存",
+        "计划、行动、反映"
+      ],
+      "correct": 0,
+      "explanation": "核心是低级演员框架,AgentChat是任务驱动的高级API,扩展是集成."
+    },
+    {
+      "stage": "check",
+      "question": "为什么把交货与处理脱钩 导致断层隔离?",
+      "options": [
+        "运行时间捕获处理器在 B 不崩溃 A 中失败 ; A 的发送( ) 立即返回, 从未被屏蔽",
+        "每个演员用一台单独的机器运行",
+        "处理器是纯函数",
+        "运行时间在失败时重新启动 OS"
+      ],
+      "correct": 0,
+      "explanation": "send () 将消息放入收件人的收件箱并返回; 处理器崩溃是该演员的本地地址 。"
+    },
+    {
+      "stage": "check",
+      "question": "哪个Chat代理地形按固定顺序旋转代理?",
+      "options": [
+        "选择器分组聊天",
+        "紫色一号",
+        "回合罗宾小组聊天",
+        "主管"
+      ],
+      "correct": 2,
+      "explanation": "roundRobinGroupChat是固定旋转;选择器GroupChat使用选择器来选择下一个."
+    },
+    {
+      "stage": "check",
+      "question": "这课上什么是紫金一号?",
+      "options": [
+        "在 AgentChat 上建立的用于网页浏览、代码执行和文件处理的多代理参考团队",
+        "OTel 出口国",
+        "新的 LLM 模型",
+        "序列化格式"
+      ],
+      "correct": 0,
+      "explanation": "Magentic-One是微软的参考团队,展示了AgentChat API."
+    },
+    {
+      "stage": "post",
+      "question": "2026年初AutoGen v0.4的学说状况是什么?.",
+      "options": [
+        "折旧和删除",
+        "由 LangGraph 替换",
+        "刚刚宣布",
+        "稳定但处于维护模式; 微软代理框架是前进路径"
+      ],
+      "correct": 3,
+      "explanation": "AutoGen v0.7.x为研究稳定;积极开发已转向微软代理框架."
+    },
+    {
+      "stage": "post",
+      "question": "AutoGen v0.4 默认发射的可观察性标准是什么 ?",
+      "options": [
+        "数据犬 APM",
+        "仅限普罗米修斯度量衡",
+        "OpenTeleometry 跨度为 gen ai. * 属性按 OTel GenAI 语义常规",
+        "目标数"
+      ],
+      "correct": 2,
+      "explanation": "每个消息都发出一个跨度;工具调用包含 gen ai.* 属性 otel GenAI 常规。"
+    }
+  ]
+}

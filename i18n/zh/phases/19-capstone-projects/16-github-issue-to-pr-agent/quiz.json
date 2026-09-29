@@ -1,0 +1,90 @@
+{
+  "lesson": "16-github-issue-to-pr-agent",
+  "title": "Capstone 16 — GitHub 问题对PR自主代理",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "合成云编码剂在生产过程中是如何触发的?",
+      "options": [
+        "一个GitHub webhook被一个问题标签或公关评论解雇,发给一个沙盒工人。",
+        "手动上传文件",
+        "一个长寿的SSH会话进入 VM",
+        "预定的重案组"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "为什么代理机必须使用寿命短的GitHub App安装符而不是个人访问符来运行?.",
+      "options": [
+        "个人访问令牌无法打开 PR",
+        "App 标志 授予适合每个任务工人的精细、范围大、寿命短的证书",
+        "Apps 完全避免 GitHub 利率限制",
+        "Apps 需要比 PAT 少的代码"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "哪两种保护能防止毒剂在主干线上打乱?",
+      "options": [
+        "使工人致残",
+        "分支保护执行不直接推或强行推向主机,应用程序不在绕行列表中",
+        "要求每推一次抓捕",
+        "复制前加密重播"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么对. github/workflows的路径范围保护是在工人身上执行的,而不是作为GitHub App的许可?",
+      "options": [
+        ". github/ workflows 是一个虚拟路径",
+        "GitHub App 权限没有路径扫描, 因此工人对拟议 diff 的许可列表检查是执行它的适当地点 。",
+        "任何形式的路径范围都不可能",
+        "工作流程存储在repo之外"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "代理循环结束后,在开启公关前会发生什么游戏?",
+      "options": [
+        "审查者模式重写 diff",
+        "公关立即打开,没有支票",
+        "完整 CI 运行在沙盒中; 覆盖三角洲被计算; 返回超过阈值的PR 被标记为需要审查",
+        "重罚被强行推向主"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "调度员每天执行每笔押金的预算是多少?",
+      "options": [
+        "只有转弯盖",
+        "每公关1美元上限加上每笔每日最高公关数",
+        "无限公关和无限费用",
+        "只有墙角的帽子"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "特工的公关机构是什么?",
+      "options": [
+        "理由,diff摘要,微量URL,成本,并转数,使审查人员能够审计和跟进",
+        "只有阴茎",
+        "什么都没有;公关是空的",
+        "只生成更改日志"
+      ],
+      "correct": 0,
+      "explanation": ""
+    }
+  ]
+}

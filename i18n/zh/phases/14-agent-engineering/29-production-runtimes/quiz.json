@@ -1,0 +1,90 @@
+{
+  "lesson": "29-production-runtimes",
+  "title": "生产运行时间: 队列、 事件、 Cron",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "6个跑步时间是多少?",
+      "options": [
+        "映射、过滤、减少、折叠、扫描、组",
+        "请求响应、流线、持久执行、基于队列、事件驱动、排程",
+        "REST、gRPC、GraphQL、WebSocket、SSE、MQTT",
+        "读、写、执行、叉、退出、等待"
+      ],
+      "correct": 1,
+      "explanation": "这些是六个运行时的形状;在选择框架之前先选择一个形状."
+    },
+    {
+      "stage": "pre",
+      "question": "请求答复什么时候才合适?",
+      "options": [
+        "内部事务",
+        "当任务耗时超过30秒,用户挂断时工人堆积",
+        "在 REST API 上",
+        "1秒的分类"
+      ],
+      "correct": 1,
+      "explanation": "同步 HTTP 只对短的任务可行;长的任务需要队列/可持久/活动形状."
+    },
+    {
+      "stage": "check",
+      "question": "持久处决的核心财产是什么?",
+      "options": [
+        "代号费用较低",
+        "更快的推断",
+        "原声支持",
+        "每一步后都会检查状态,以便运行时间从失败的最后一个成功步骤恢复"
+      ],
+      "correct": 3,
+      "explanation": "检查点和复修是不同的;朗格拉夫是课的参考."
+    },
+    {
+      "stage": "check",
+      "question": "哪个Anthropic观察为长视距特工的排队运行提供了理由?",
+      "options": [
+        "任务必须同步运行",
+        "任务总是在5秒内完成",
+        "计算机使用公告:每任务数十至数百步是正常的",
+        "Cron解决一切"
+      ],
+      "correct": 2,
+      "explanation": "Anthropic将每项任务的数十至数百步标为正常;工作量需要排队或持久的运行时间."
+    },
+    {
+      "stage": "check",
+      "question": "“可观察性”是什么意思?",
+      "options": [
+        "供货商需要它才能开帐单",
+        "木头很漂亮",
+        "盘子满了",
+        "没有 OTel GenAI 跨度和 Langfuse/ Phoenix/ Opik 后端, 您无法调试在第 40 步失败的多步代理 。"
+      ],
+      "correct": 3,
+      "explanation": "对多步代理来说,可观察性不是可选的;它是调试和从零开始重放的区别."
+    },
+    {
+      "stage": "post",
+      "question": "为什么排队工人必须有一个死字母排队(DLQ)?",
+      "options": [
+        "DLQ 让工作更快",
+        "没有 DLQ , 失败的工作会悄悄消失",
+        "DLQ 已加密",
+        "DLQ 是由 AWS 要求的"
+      ],
+      "correct": 1,
+      "explanation": "没有 DLQ 失败的工作消失; DLQ 是失败工作的停车场 。"
+    },
+    {
+      "stage": "post",
+      "question": "课上建议用什么来配对 圆形的特工?",
+      "options": [
+        "持久执行, 失败的夜间运行会恢复下一个勾选",
+        "网络RTC",
+        "GPU 自动缩放器",
+        "流线SSE"
+      ],
+      "correct": 0,
+      "explanation": "Cron + 持久执行从失败的预定运行中恢复干净."
+    }
+  ]
+}

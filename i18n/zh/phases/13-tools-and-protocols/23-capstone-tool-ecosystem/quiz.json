@@ -1,0 +1,78 @@
+{
+  "lesson": "23-capstone-tool-ecosystem",
+  "title": "Capstone: 无国籍工具生态系统",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "成功运用这个教训能证明什么?",
+      "options": [
+        "处理中的政策和数据流动如所声称的那样",
+        "真正的MCP运输完成初始化",
+        "OAuth 授权服务器发布了有效的符号",
+        "一个收藏家收到每个 OpenTelection 跨度"
+      ],
+      "correct": 0,
+      "explanation": "牵引装置使用Python函数,静态符号,固定装置,以及内膜跨度. 它验证这些本地边界,同时将协议,授权,导出,浏览器和沙盒集成留给以后的测试."
+    },
+    {
+      "stage": "check",
+      "question": "哪些流量符合MCP 2026-07-28修订,用于发现服务器和投票长期运行的工作?.",
+      "options": [
+        "服务器/连接、工具/投放、任务/状态",
+        "服务器/发现、工具/调用返回任务控件、任务/获取",
+        "初始化、工具/呼叫、任务/结果",
+        "获取/mcp、工具/呼叫、任务/列表"
+      ],
+      "correct": 1,
+      "explanation": "无国籍修订使用强制性的`服务器/发现 ' 。 可选的“io.modelcontextprotocol/ tasks”扩展返回任务控件,并使用“任务/get”;终端任务带有最终结果。 旧的握手、获得终点、 \" 任务/结果 \" 和 \" 任务/清单 \" 不属于这种情况。"
+    },
+    {
+      "stage": "check",
+      "question": "A2A v1 如何在其 gRPC 和 JSON- RPC 中命名发送消息操作 ?",
+      "options": [
+        "代理消息",
+        "信件/创建",
+        "任务/发送",
+        "发送消息"
+      ],
+      "correct": 3,
+      "explanation": "A2A v1在gRPC和JSON-RPC中使用了‘SendMessage'. 它的HTTP+JSON绑定暴露了‘POST/消息:发送'."
+    },
+    {
+      "stage": "check",
+      "question": "哪个 MCP Apps SDK 调用让 App 请求在其源服务器上使用一个工具 ?",
+      "options": [
+        "主机. callTool( 名称, 参数)",
+        "app.callServerToole({名称,参数})",
+        "app.invoke( 名称、 参数)",
+        "服务器.tools.call(args)"
+      ],
+      "correct": 1,
+      "explanation": "App实例称`调用服务工具 ' ,其对象包括`名称 ' 和可选`论据 ' ;主机代表基本的`工具/调用 ' 请求。"
+    },
+    {
+      "stage": "post",
+      "question": "顶岩特工Skill在MCP工具和沙盒上提供了什么权威?",
+      "options": [
+        "它在明确援引之后绕过批准",
+        "它赋予身体中所有被命名的工具",
+        "它允许只读网络访问",
+        "无;主机适配器和政策仍然授权每个能力"
+      ],
+      "correct": 3,
+      "explanation": "技能供应程序。 发现,引用,工具曝光,授权,资质,和隔离由主机和外部运行时间边界强制实施."
+    },
+    {
+      "stage": "post",
+      "question": "哪些证据能最好地证明遥测跨越了生产出口边界?",
+      "options": [
+        "说要发射的技巧",
+        "包含 trackId 密钥的本地词典",
+        "计划跨度等级图",
+        "接收方收集器数据,并附有跟踪和母词"
+      ],
+      "correct": 3,
+      "explanation": "接收方观测证明SDK、传播者、出口者、运输和收集者路径有效。 本地数据和图表仅证明本地构造或意图."
+    }
+  ]
+}

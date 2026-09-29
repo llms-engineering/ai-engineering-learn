@@ -1,0 +1,78 @@
+{
+  "lesson": "24-chaos-engineering-llm",
+  "title": "LLM生产混凝土工程",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "教训在制造混乱之前需要哪五个先决条件?",
+      "options": [
+        "黑频道、贴纸包、吉祥物、标签、博客文章",
+        "只有矢量数据库",
+        "SLI/SLO,可观察性,自动回滚,结构化运行本,待命",
+        "三种前沿模式"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "混沌结构的哪四架飞机 加上反馈循环?",
+      "options": [
+        "前端、后端、移动、网络",
+        "娱乐,改造,储存,服务",
+        "列车 eval 部署 存档",
+        "控制、目标、安全、可观察性——反馈SLO调整"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "在混沌实验中,燃烧率警报护栏会做什么?",
+      "options": [
+        "当每日错误预算燃烧超过约 2x 时暂停实验",
+        "自动推动生产实验",
+        "禁用可观察性",
+        "加速实验"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "哪些是LLM特有的混沌实验?",
+      "options": [
+        "随机减少风扇速度",
+        "重新启动整个数据中心",
+        "KV驱逐风暴迫使vLLM块预算饱和",
+        "丢弃全部 DNS"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "课上推荐的混沌演习是哪一节节奏?",
+      "options": [
+        "每年",
+        "每日全面停电",
+        "永远",
+        "每周一次的小金丝雀、每月一次的游戏日以及验尸日、每季度一次的跨团队复原力审计"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "LLM的特异性失败模式是怎样的,错误的瞬间实验发现的?",
+      "options": [
+        "Tokenizer stops 锁住一个工人 输入像深层的unicode 或者巨大的UTF-8代码点",
+        "GPU 压低",
+        "网络包丢失",
+        "磁盘 I/O 参数"
+      ],
+      "correct": 0,
+      "explanation": ""
+    }
+  ]
+}

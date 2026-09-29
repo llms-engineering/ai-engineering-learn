@@ -1,0 +1,102 @@
+{
+  "lesson": "26-relation-extraction-kg",
+  "title": "关系提取和知识图构建",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "知识图中的原子单位是什么?",
+      "options": [
+        "标志",
+        "POS 标签",
+        "A(主题、关系、对象)",
+        "一个句子"
+      ],
+      "correct": 2,
+      "explanation": "KGs 将信息存储为 (s, r, o) 三重; 聚合三重构成图 。"
+    },
+    {
+      "stage": "pre",
+      "question": "AEVS在2026年关系提取中代表什么?.",
+      "options": [
+        "合计实体-Value Schema",
+        "Async 实体验证服务",
+        "自动编码矢量搜索",
+        "Anchor-Extraction-Verification-Supplement:主锚跨度,提取三进制,对照来源进行校验,补充覆盖."
+      ],
+      "correct": 3,
+      "explanation": "AEVS是2026年的幻觉缓解框架,用于被禁用RE."
+    },
+    {
+      "stage": "check",
+      "question": "为什么每个三重载货源(doc id + sister)?",
+      "options": [
+        "SPARQL要求证明",
+        "它能加速提取",
+        "证据改变了本体学",
+        "证明允许您审核三重并拒绝其跨度与源文本不符的幻觉"
+      ],
+      "correct": 3,
+      "explanation": "证明能够进行审核,是AEVS型幻觉检测的核心."
+    },
+    {
+      "stage": "check",
+      "question": "将关系化有什么作用?",
+      "options": [
+        "添加嵌入",
+        "删除三进制",
+        "将表面动词短语( 如“ 生于 ” , “ 原生于 ” ) 映射到固定属性 ID 上, 因此图表可以查询",
+        "翻译文档"
+      ],
+      "correct": 2,
+      "explanation": "Canonicalization的崩溃将解译为canonic KG 属性 ids."
+    },
+    {
+      "stage": "check",
+      "question": "为什么关系提取通常需要先对齐解析?",
+      "options": [
+        "类似“ 他创建的苹果” 的代词必须在三重提取前解决到一个命名实体",
+        "Coref 正常化案件",
+        "科雷夫提供职位",
+        "Coref 添加嵌入"
+      ],
+      "correct": 0,
+      "explanation": "没有coref,RE将关系归结为代名词而不是基础命名实体."
+    },
+    {
+      "stage": "post",
+      "question": "哪个选项会打开 IE 提醒以显示图表可查询性 ?",
+      "options": [
+        "三重采样",
+        "仅嵌入的图表",
+        "在合并到 KG 之前将开放- IE 关系映射到已关闭的本体学上( 如 Wikidata 属性)",
+        "跳过 NER"
+      ],
+      "correct": 2,
+      "explanation": "封闭的本体学使图可以查询;犬科化步骤在下游支付自身费用."
+    },
+    {
+      "stage": "post",
+      "question": "为什么许多生产KG使用时间限定符(开始/结束时间)?",
+      "options": [
+        "卢旺达国防军要求",
+        "删除NIL 实体",
+        "更快的 SPARQL",
+        "许多关系有时限(雇主、配偶、角色);限定词可以防止“永远真实”的主张。"
+      ],
+      "correct": 3,
+      "explanation": "限时关系需要限定词(如Wikidata P580/P582)或事实静默地停留."
+    },
+    {
+      "stage": "post",
+      "question": "什么是雷贝尔?",
+      "options": [
+        "标识器",
+        "引用模式",
+        "输出已存在于 Wikidata 属性 ids 中的三进制关系提取器",
+        "矢量数据库"
+      ],
+      "correct": 2,
+      "explanation": "REBEL(英语:Babelscape)是一款在远程监管的Wikidata三重机上训练的bexet2seq RE模型."
+    }
+  ]
+}

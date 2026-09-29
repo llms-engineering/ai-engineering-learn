@@ -1,0 +1,78 @@
+{
+  "lesson": "37-loading-pretrained-weights",
+  "title": "装入预装重量",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "装载机为何需要名称地图?.",
+      "options": [
+        "已出版的GPT-2重量使用wte,wpe,h.N.attn.c attn等名称;本地模型使用tok embed,pos embed,块. N.attn.qkv; 加载器将一个翻译到另一个",
+        "安全源文件已加密",
+        "预选的借数和本地参数同名",
+        "火炬需要这个"
+      ],
+      "correct": 0,
+      "explanation": "两种命名惯例是不同的历史;地图是每层扩展的字面标志。"
+    },
+    {
+      "stage": "check",
+      "question": "弯曲1d的转动器是什么, 和哪些抗震器需要它?",
+      "options": [
+        "所有重量计",
+        "已出版的GPT-2存储 c attn, c proj, 和 c fc 重量在 lamorflow conv1d 的布局中,这是什么nn的转录. 线性. 重量预期; 装载器调用任务期间的 . t ()",
+        "仅嵌入",
+        "仅图层"
+      ],
+      "correct": 1,
+      "explanation": "3个后缀需要转换;偏差和图层诺姆已经成形了."
+    },
+    {
+      "stage": "check",
+      "question": "为什么LM头不在保险箱里?",
+      "options": [
+        "太大了 这么大了",
+        "从一个单独的文件中装入",
+        "它在运行时从日志中计算",
+        "重量绑定: LM 头用符号嵌入( wte) 来共享存储, 因此加载 wte 和别名 lm head 。 重量 = tok embed。 负载后重构头部"
+      ],
+      "correct": 3,
+      "explanation": "设置 lm head. weight = tok embed. weight 在wte lands 后还原别名;复制则将参数数增加一倍."
+    },
+    {
+      "stage": "check",
+      "question": "装填器在形状不匹配上做什么?",
+      "options": [
+        "支持较小的呼声",
+        "崩溃进程",
+        "在装入报告记录不匹配 。 形状   mism 匹配并拒绝指定,使本地参数未受影响",
+        "截断更大的声道"
+      ],
+      "correct": 2,
+      "explanation": "一半装入的模型是静态故障机;拒绝指定保持报告诚实."
+    },
+    {
+      "stage": "post",
+      "question": "为什么这台演示机的支架固定不是真正的GPT-2下载?.",
+      "options": [
+        "真实文件不以安全更新格式显示",
+        "真实重量被加密",
+        "演示必须离线并快速运行; stub 使用精确的事先训练过的命名常规, 所以加载器代码路径相同, 在真实文件中互换不会改变加载器",
+        "安全计数器不能存储大计数器"
+      ],
+      "correct": 2,
+      "explanation": "相同的密码路径, 较小的有效载荷; 装载器工作在任一。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么要在装货前后生成样品?",
+      "options": [
+        "测量推断速度",
+        "要设置随机种子",
+        "如果装货后的样品与预装样品完全相同,则载货没有改变模型,这意味着绘图默默地错过了每个载荷",
+        "暖和 GPU 缓存"
+      ],
+      "correct": 2,
+      "explanation": "Sanity生成是最便宜的门:一个未能改变的样本指纹暴露出一个破碎的负载,LoadReport摘要将无法独自捕捉到."
+    }
+  ]
+}

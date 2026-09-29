@@ -1,0 +1,78 @@
+{
+  "lesson": "09-production-quantization",
+  "title": "生产量化——AWQ、GPTQ、GGUF K-quants、FP8、MXFP4/NVFP4",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "教程将CPU和边缘服务的生产默认调用到哪一种量化格式?",
+      "options": [
+        "GGUF Q4 K M / Q5 K M",
+        "NVFP4 自动取款机",
+        "FP8 目标",
+        "AWQ INT4 化学式"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "当 vLLM 中需要多 LORA 时, 用于服务的数据中心GPU 的课选是哪种格式 ?",
+      "options": [
+        "NVFP4 自动取款机",
+        "GGUF 问题4 K M",
+        "带有 Marlin 内核的 GPTQ",
+        "阿瓦克语"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "什么是\"我的模型是4GB 现在\"陷阱与AWQ?",
+      "options": [
+        "AWQ 并不实际缩小重量",
+        "AWQ 与 vLLM 不兼容",
+        "AWQ只收缩重量;KV缓存和激活是分开的,可以在生产批量大小时添加30-50 GB.",
+        "AWQ 需要 INT8 KV 缓存"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么校准通用网络文本上的AWQ会伤害域模型?.",
+      "options": [
+        "它能增加模型的尺寸",
+        "它只在AMD GPU上工作过",
+        "该算法对要保护的权重, 降下域精度做出错误的决定( 例如, 在 HumanEval 上的若干 Pass@ 1 点)",
+        "它禁用马林内核"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "在质量不容谈判的推理繁重工作量方面,经验教训默认建议如何精确?",
+      "options": [
+        "NVFP4 重量",
+        "GPTQ INT4 (英语).",
+        "FP8 重量",
+        "INT2 GGUF (英语)."
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "在2026年初的NVFP4上课时,",
+      "options": [
+        "无法与 FP8 KV 缓存合并",
+        "只运行在 CPU",
+        "还没有LORA支持",
+        "在 H100 上不支持"
+      ],
+      "correct": 2,
+      "explanation": ""
+    }
+  ]
+}

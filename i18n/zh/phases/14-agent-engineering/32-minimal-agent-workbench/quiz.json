@@ -1,0 +1,90 @@
+{
+  "lesson": "32-minimal-agent-workbench",
+  "title": "最小代理工作台",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "哪三个文件是最小的有用的工作台?",
+      "options": [
+        "模型.py, poils.py, 工具.py",
+        "Dockerfile, Makefile, . gitignore 页面存档备份,存于互联网档案馆",
+        "AGENTS.md(路由),代理 state.json(状态), task board.json(队列)",
+        "(英文) README.md, ChangeGelog.md, LICENSE"
+      ],
+      "correct": 2,
+      "explanation": "一个短路由器,耐久状态,以及任务队列都是地板."
+    },
+    {
+      "stage": "pre",
+      "question": "AGENTS.MD是什么课?",
+      "options": [
+        "一个秘密 隐藏在回扣之外",
+        "纯快速缓存键",
+        "指向更深的Docs和状态及板的短路由器",
+        "一本3000在线登机手册"
+      ],
+      "correct": 2,
+      "explanation": "AGENTS.md是路由器,不是手册;长的手册被忽略."
+    },
+    {
+      "stage": "check",
+      "question": "AGENTS.MD的数据怎么说的?",
+      "options": [
+        "一个好的 AGENTS.md 提供了相当于从海库升级到奥普斯的质量跳跃;一个糟糕的跳跃比没有文件更糟糕",
+        "长度总是有帮助",
+        "只有克劳德读过",
+        "它没有可衡量的效果"
+      ],
+      "correct": 0,
+      "explanation": "增量码的度量:最好的文件是模型升级的形状,最糟糕的比没有更糟糕."
+    },
+    {
+      "stage": "check",
+      "question": "为何该课推荐文件支持状态,",
+      "options": [
+        "文件较小",
+        "碟子比较便宜",
+        "聊天历史多变; 文件在会话死亡、对话修剪和工具重排后幸存",
+        "这是SOC 2的要求"
+      ],
+      "correct": 2,
+      "explanation": "会话死后聊天得到修剪;文件是持久的记录系统."
+    },
+    {
+      "stage": "check",
+      "question": "当相互矛盾的指令在AGENTS.md登陆时,",
+      "options": [
+        "费用略有增加",
+        "没什么",
+        "紧急下降",
+        "冲突指令默默地将代理从交互式模式降为贪婪模式(AMBIG-SWE:48.8%至28%解析率)"
+      ],
+      "correct": 3,
+      "explanation": "AMBIG-SWE在出现矛盾时测得大量决心率下降;代之以数字优先级."
+    },
+    {
+      "stage": "post",
+      "question": "为什么该课推荐像CLAUDE.md - > AGENTS.md这样的跨工具共鸣?",
+      "options": [
+        "满足麻省理工学院",
+        "通过审计",
+        "所以,一个单一的真相源 粉丝出到每一个编码代理 不伪造",
+        "要保存字节"
+      ],
+      "correct": 2,
+      "explanation": "Symlinks(或称Nx风格的发电机)保留一个横跨克劳德码,Codex,Cursor,Copilot等的犬形源."
+    },
+    {
+      "stage": "post",
+      "question": "AGENTS.md 文件的嵌入模式是什么?",
+      "options": [
+        "只有根文件被读取",
+        "从工作文件走到 repo 根, 将途中发现的 AGENTS. md 连接起来( 最接近胜利; 子目录扩展根)",
+        "随机选择",
+        "字母合并"
+      ],
+      "correct": 1,
+      "explanation": "OpenAI 飞船 88 AGENTS.md 文件横跨其主Repo;工具 concatenate near-up-tree."
+    }
+  ]
+}

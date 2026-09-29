@@ -1,0 +1,66 @@
+{
+  "lesson": "15-prompt-caching",
+  "title": "快速缓存和上下文缓存",
+  "questions": [
+    {
+      "stage": "post",
+      "question": "Anthropic 对缓存读取的折扣与基准输入率是多少?",
+      "options": [
+        "25%关闭",
+        "90%关闭",
+        "75%关闭",
+        "减50%"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "为什么动态时间戳必须在缓存断点下方,而不是在其上方?",
+      "options": [
+        "Anthropic 在缓存区块中明确拒绝时间戳",
+        "时间戳会混淆显示器",
+        "它们比静态文字要贵",
+        "当前缀是字节相同的时才击出卡片; 更改的时间戳会打破之后的每件事物的匹配"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "OpenAI 的快速缓存是如何配置的 ?",
+      "options": [
+        "每个项目切换的系统级别旗",
+        "无配置的自动前缀匹配",
+        "您创建和引用的缓存 API",
+        "明确的缓存  控制标记"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "对Anthropic来说,1小时延长的TTL费用与5分钟的默认费用是多少?",
+      "options": [
+        "4x 写价",
+        "2x 书面溢价(比基线高50%)",
+        "没有写溢价",
+        "一样"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "即使是在Anthropic25%的写价上,还需要多少次再利用?",
+      "options": [
+        "页:1",
+        "10个",
+        "页:1",
+        "2个"
+      ],
+      "correct": 3,
+      "explanation": ""
+    }
+  ]
+}

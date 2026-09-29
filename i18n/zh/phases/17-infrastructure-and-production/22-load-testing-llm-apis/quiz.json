@@ -1,0 +1,78 @@
+{
+  "lesson": "22-load-testing-llm-apis",
+  "title": "装入测试 LLM API —— 为什么是 k6 和 Locust Lie",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "在基于Locust的LLM载荷测试中GIL陷阱是什么?",
+      "options": [
+        "客户端符号化运行在 Python GIL 下, 并在请求生成后排队, 夸大所报的互通空格",
+        "龙卷风需要CUDA",
+        "仅工作在 Windows 上",
+        "仓库不支持 HTTP"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "何为即时不相容陷阱?",
+      "options": [
+        "制服提示总是让服务器慢下来",
+        "从真实的分布中取样 显示时间很长",
+        "循环同样的提示使前缀缓存看起来像完全并存的解码,膨胀了所报告的吞吐量",
+        "统一提示需要流线"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "课上推荐的是哪四种负载模式?",
+      "options": [
+        "仅泡泡",
+        "手动点击测试",
+        "稳态 斜坡 钉子 浸泡",
+        "固定1 RPS,10天"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "教训如何建议建立现实的迅速分发?",
+      "options": [
+        "每个请求的随机字符",
+        "总是使用相同的提示以最大化缓存点击",
+        "手写 5 个提示和洗牌",
+        "使用平均和stddev(例如 LLMPerf 的 -- mean- input-tokens / --stdev-input-tokens)或重播真实流量从真实分布中提取的样本"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "哪些2026个工具组合被定位为CI/CD SLA门和Kubernetes-native分布式运行的最佳组合?",
+      "options": [
+        "只引导",
+        "仅限蔬菜",
+        "k6 v2026.1.0 与 k6 操作器 1.0 GA (TestRun / Private LoadZone CRDs)",
+        "2.43.3 库存"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "浸泡负载模式捕获哪种失败模式 ?",
+      "options": [
+        "冷启动尾巴",
+        "Tokenizer GIL 参数",
+        "记忆漏水、连接池漂流和可观察性超过数小时",
+        "缓存驱逐风暴"
+      ],
+      "correct": 2,
+      "explanation": ""
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "lesson": "32-token-positional-embeddings",
+  "title": "托肯和位置嵌入",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "嵌入阶段从(B,T)ID产生什么样的形状?",
+      "options": [
+        "(B、T、D) 其中D为模型维度",
+        "(B,五)",
+        "(B, T, V) 其中 V 是词汇大小",
+        "(B, T) (中文(简体) )."
+      ],
+      "correct": 0,
+      "explanation": "每个ID被映射到一个D维向量. 批量保留B和T,并获得一个新的特征维度D."
+    },
+    {
+      "stage": "check",
+      "question": "此课中如何构思象征和位置嵌入?",
+      "options": [
+        "通过额外的线性投影",
+        "以元素为最大值",
+        "按元素总和,将位置向量广播到整个批次",
+        "通过沿特征轴的调合"
+      ],
+      "correct": 2,
+      "explanation": "形状的两种角数(B,T,D)和(T,D)是归纳的. 广播在批量轴上复制位置表."
+    },
+    {
+      "stage": "check",
+      "question": "Sinusoidal Positional Embedding能提供多少可学习参数?",
+      "options": [
+        "最大文本  长度 * d  型号",
+        "无",
+        "最大文本  长度",
+        "d 型号"
+      ],
+      "correct": 1,
+      "explanation": "鼻音表是从公式计算出来的,并作为缓冲器储存。 它没有提供参数。"
+    },
+    {
+      "stage": "check",
+      "question": "哪个位置编码无法接受超过其构造极限的序列?",
+      "options": [
+        "静脉定位嵌入",
+        "也没有",
+        "两者",
+        "已知位置嵌入"
+      ],
+      "correct": 2,
+      "explanation": "在此课程执行中, 两类在前期执行 max  context  长度 。 学习是内在的表框;这里的sinusoidal也是由于它使用一个预建的表而有的."
+    },
+    {
+      "stage": "post",
+      "question": "为什么sinusoidal方案在相邻的特征对上同时使用罪恶和cos?",
+      "options": [
+        "因此p+k位置上的矢量是p位置上的矢量的线性函数.",
+        "因为宇宙本身不能通过反传播",
+        "因为罪孽不是周期性的",
+        "因为它使参数数翻倍"
+      ],
+      "correct": 0,
+      "explanation": "同波长对等的罪恶和cos意味着由k进行位置移是旋转,这是线性映射. 然后,注意力可以通过线性预测来学习相对抵消."
+    },
+    {
+      "stage": "post",
+      "question": "为什么嵌入式向后只通过批次中出现的符号表的更新行?",
+      "options": [
+        "前传中未触动的行按链条规则产生零梯度",
+        "优化者跳过它没有看到的行",
+        "PyTorch 只为非零项存储梯度",
+        "Token ids 存储在一个稀少的数据结构中"
+      ],
+      "correct": 0,
+      "explanation": "未促进任何输出的行对损失有零衍生值,因此其梯度对该步骤为零."
+    }
+  ]
+}

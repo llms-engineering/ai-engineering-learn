@@ -1,0 +1,78 @@
+{
+  "lesson": "03-gpu-autoscaling-kubernetes",
+  "title": "Kubernetes上的 GPU 自动缩放 — Karpenter, KAI 调度器, 江表",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "HPA 通常在默认情况下在哪个信号上缩放,即该课会因 vLLM 风格服务而中断?",
+      "options": [
+        "P99 TTFT 软件",
+        "DCM FI DEV GPU UTIL 任务周期",
+        "队列深度",
+        "KV 缓存利用率"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "KAI调度器中的帮派排行榜主要能防止什么问题?",
+      "options": [
+        "Tokenizer GIL 参数",
+        "8个GPU中的7个闲置在第八台的 部分分配陷阱",
+        "冷启动延迟",
+        "GPU 内存分裂"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为何卡彭特的默认合并政策在GPU集合的推论中处于危险之中?",
+      "options": [
+        "只能合并现场实例",
+        "它阻止卡彭特提供新的节点",
+        "它终止运行 GPU 节点以迁移 pockes, 它驱逐运行请求并重新加载重量",
+        "它拒绝在爆炸下扩大规模"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "卡彭特在提供GPU节点方面比集束自动显示器快多少?",
+      "options": [
+        "大约快5%",
+        "一样",
+        "大约快40%(~45-60s对~90-120s)",
+        "约慢 10x"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "对于分类的预填/解码舱(第17 17阶段),教训建议哪个缩放信号?",
+      "options": [
+        "两者的集群自动缩放器",
+        "单一的值班福利方案,涵盖两个舱级",
+        "仅手工缩放",
+        "预填舱的排队深度和解码舱的 KV 缓存压力,作为单独的每个作用的 HPA"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "课程建议设置一个 GPU 池以避免驱逐运行中的工作吗 ?",
+      "options": [
+        "总是有现成实例运行, 没有合并",
+        "完全禁用卡彭特",
+        "合并政策:当整合后未充分利用:0s",
+        "合并政策:待合并后: 1h"
+      ],
+      "correct": 3,
+      "explanation": ""
+    }
+  ]
+}

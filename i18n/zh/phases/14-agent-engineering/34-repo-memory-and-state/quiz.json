@@ -1,0 +1,90 @@
+{
+  "lesson": "34-repo-memory-and-state",
+  "title": "Repo 记忆和持久状态",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "决定一块信息是否属于Repo内存的耐久性测试是什么?.",
+      "options": [
+        "用户是否标为重要",
+        "3个月后在CI重播中是否有用;如果是,则重播;如果是,则遥测",
+        "是否为JSON",
+        "是否符合 4 kB"
+      ],
+      "correct": 1,
+      "explanation": "Repo内存用于持久,3个月从现在开始使用的状态;瞬态数据为遥测."
+    },
+    {
+      "stage": "pre",
+      "question": "代理商的合同版本是哪个计划?",
+      "options": [
+        "计划( V)",
+        "模式( D)",
+        "会话( uuid)",
+        "构建( H)"
+      ],
+      "correct": 0,
+      "explanation": "schema version是整数合同;管理器拒绝从未知版本加载."
+    },
+    {
+      "stage": "check",
+      "question": "原子如何写作?",
+      "options": [
+        "同一目录中的 temfile.mkstemp, 写入, fsync, os.",
+        "仅以CRC作为附录",
+        "加密和覆盖",
+        "切换到目标"
+      ],
+      "correct": 0,
+      "explanation": "POSIX和Windows上的原子重命名是防止部分写作腐败的方法."
+    },
+    {
+      "stage": "check",
+      "question": "非本能工具调用为何需要一能键 ?",
+      "options": [
+        "如果代理服务器在工具调用后但在检查结果前崩溃, 请安全重试; 执行前日志调用 ID 并跳过调用重试",
+        "缩短产出",
+        "记帐费",
+        "要复制日志"
+      ],
+      "correct": 0,
+      "explanation": "等待  calls.jsonl 携带呼叫ID;恢复检查和跳过已经执行的工作."
+    },
+    {
+      "stage": "check",
+      "question": "大型文物(CSV,长本,生成的文件)相对于状态应在哪里生活?",
+      "options": [
+        "拼凑成一个巨大的日志",
+        "在环境变量中",
+        "内置代理  state.json",
+        "作为单独文件(或对象存储),只保留在状态中的路径,所以检查点保持小而快"
+      ],
+      "correct": 3,
+      "explanation": "单独的文物是独立于国家而生长的;检查站的读写价格低廉."
+    },
+    {
+      "stage": "post",
+      "question": "用于审计的 + shapture 的 事件来源会给你买什么?",
+      "options": [
+        "通过阅读快照来逐字重播代理决定,然后重播事件;形状与Postgres WAL相同",
+        "更快的推断",
+        "磁盘使用率降低",
+        "原声支持"
+      ],
+      "correct": 0,
+      "explanation": "在每个变异上附加 state.events.jsonl; 定期快照到 state.json; 在快照时间戳后重播事件."
+    },
+    {
+      "stage": "post",
+      "question": "当schema version不匹配时,课程会怎么说?",
+      "options": [
+        "经理默默升级",
+        "状态被删除",
+        "代理重审",
+        "管理器拒绝加载直到工具/ migrate state中的迁移脚本. py 运行"
+      ],
+      "correct": 3,
+      "explanation": "Schema 迁移或拒绝加载; 从未默默升级 。"
+    }
+  ]
+}

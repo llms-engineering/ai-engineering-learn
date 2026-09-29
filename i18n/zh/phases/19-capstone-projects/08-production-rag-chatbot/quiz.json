@@ -1,0 +1,90 @@
+{
+  "lesson": "08-production-rag-chatbot",
+  "title": "Capstone 08 — 为受管制垂直生产RAG 聊天器",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么在受监管域的RAG聊天机中 快速缓存如此重要?",
+      "options": [
+        "能消除幻觉",
+        "以60-80%的点击率,通过折扣稳定的前缀符号来削减每桶价格 3-5x",
+        "它取消了对矢量数据库的需要",
+        "它可以改善重新排位的记忆"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "缓存头和每个请求的未加标记的后缀有什么关系?",
+      "options": [
+        "点击缓存大小的随机文本粘贴",
+        "只有已检索的文档",
+        "首先用户提问, 最后系统提示",
+        "系统快速和静态政策在缓存头中,上下文重新排序为缓存扩展名,用户提问为未加后缀"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "检索层如何尊重像GDPR或HIPAA这样的管辖权标记?",
+      "options": [
+        "它重写每个区域的用户问题",
+        "它只会在生成后阻止反应",
+        "每个国家采用单独的指数",
+        "在混合搜索合并之前, 角色和权限过滤器被应用, 所以用户范围之外的块从未重新排序"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "合成阶段通过何种层式护栏组合输出?",
+      "options": [
+        "只是一个输出 PII 正则",
+        "只有Llama Guard 4进行输入",
+        "Llama Guard 4, NeMo Guardrails 政策铁路和Presidio PII 清洗,加引用执行",
+        "一个LLM法官的忠诚度检查"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "漂移仪表板的警报是什么?",
+      "options": [
+        "基本 LLM 提供者的改变",
+        "200米以上的紧急度",
+        "检索质量下降,例如,在nDCG或引用分数中每周减少5%",
+        "添加到索引中的任何新文档"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "用来打开可交付品正确度的金币是多少?",
+      "options": [
+        "200个有专家标签的问答和引文",
+        "5 个演示查询",
+        "2000年合成问题",
+        "20个问题"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "哪个RAGAS的分数是在线追踪的?",
+      "options": [
+        "布鲁、鲁格和米特尔",
+        "盘点和美元成本",
+        "忠诚、回答相关性和背景精确度",
+        "流量、 GPU 利用率和队列深度"
+      ],
+      "correct": 2,
+      "explanation": ""
+    }
+  ]
+}

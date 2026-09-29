@@ -1,0 +1,90 @@
+{
+  "lesson": "30-eval-driven-agent-development",
+  "title": "Eval-Driven代理开发公司",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "三个评价层是什么?",
+      "options": [
+        "单位,整合,端对端",
+        "烟雾、回归、接受",
+        "预科,检查,员额",
+        "静态基准、定制离线电极、在线生产电极"
+      ],
+      "correct": 3,
+      "explanation": "静态(SWE-bench,GAIA),自定义离线(LLM-judge,exec,travel),在线(重播,提醒,成本/常态)."
+    },
+    {
+      "stage": "pre",
+      "question": "Anthropic的建议起点是什么?",
+      "options": [
+        "从多代理辩论开始",
+        "以简单的提示开始,以综合评价优化,并仅在需要时添加多步代理系统",
+        "只从边框模型开始",
+        "以等级组合开始"
+      ],
+      "correct": 1,
+      "explanation": "Anthropic明确表示评价是驱动其他选择的外环."
+    },
+    {
+      "stage": "check",
+      "question": "什么是评估-优化者紧环?",
+      "options": [
+        "投标人产生产出,评价法官,在评价人员通过前细化(自译自审)",
+        "样本,排序,复制",
+        "缓存、 重试、 失败",
+        "火车、评估、部署"
+      ],
+      "correct": 0,
+      "explanation": "\" 自我参考 \" 泛指:任何流动都可以被提议法官所包围。"
+    },
+    {
+      "stage": "check",
+      "question": "2026年Evals居住的最佳做法是什么?",
+      "options": [
+        "完全由质量保证小组拥有",
+        "每季度运行一次",
+        "在代码旁边, 在每个公关上运行 CI, 门在 eval 分数上合并",
+        "仅在单独的供应商仪表板中"
+      ],
+      "correct": 2,
+      "explanation": "与代码同位,CI加成,回归跟踪是标准."
+    },
+    {
+      "stage": "check",
+      "question": "为什么教训会警告一个LLM法官不设理由?",
+      "options": [
+        "这违反了Apache 2.0",
+        "法官们也产生幻觉;与犯罪司法中心模式相配,因此判断依据是外部工具",
+        "这太慢了",
+        "它只在GPU工作过"
+      ],
+      "correct": 1,
+      "explanation": "CRITIC (Lesson 5) 适用:基于工具的验证使法官保持诚实."
+    },
+    {
+      "stage": "post",
+      "question": "过度适应爱华有什么危险?",
+      "options": [
+        "矢量指数碎片",
+        "计算费用增加",
+        "短暂的下降太远",
+        "优化eval集与生产用途的区别;旋转大小写"
+      ],
+      "correct": 3,
+      "explanation": "Eval设定旋转使优化与生产现实保持一致."
+    },
+    {
+      "stage": "post",
+      "question": "为什么片状电华会引起问题?",
+      "options": [
+        "它们超过了上下文窗口",
+        "他们无法到达数据库",
+        "双推论成本",
+        "非决定性案例产生假警报;钉子种子和快照状态"
+      ],
+      "correct": 3,
+      "explanation": "Flake使回归无法读取;需要确定性(种子,状态快照)."
+    }
+  ]
+}

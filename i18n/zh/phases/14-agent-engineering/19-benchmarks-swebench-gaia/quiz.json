@@ -1,0 +1,90 @@
+{
+  "lesson": "19-benchmarks-swebench-gaia",
+  "title": "基准:SWE-bench、GAIA、Bench代理人",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "SWE -bench的评审员对一个候选补丁有什么检查?",
+      "options": [
+        "200行以下的补丁长度",
+        "以前失败的考试现在通过(FAIL TO PASS),以前通过过的考试仍然通过(PASS TO PASS)",
+        "参照固定的BLEU分数",
+        "补丁通过一个独立的LLM法官"
+      ],
+      "correct": 1,
+      "explanation": "测试过渡时的吊带门:bug-reveal性测试必须翻转,而回归性测试必须保持绿色."
+    },
+    {
+      "stage": "pre",
+      "question": "为什么SWE -bench 验证存在?",
+      "options": [
+        "包括更多的语言",
+        "运行得更快",
+        "OpenAI 的 500 任务人类验证子集 消除了模糊的问题和不可靠的测试",
+        "它使用不同的补丁格式"
+      ],
+      "correct": 2,
+      "explanation": "核实是可靠报告的清洁子集。"
+    },
+    {
+      "stage": "check",
+      "question": "SWE-bench+发现什么成功补丁?.",
+      "options": [
+        "32.67%的解决方案文本在该问题上泄露,31.08%的测试覆盖率可疑薄弱",
+        "补丁总是超过1000行",
+        "没有污染",
+        "所有补丁都被记住"
+      ],
+      "correct": 0,
+      "explanation": "SWE-bench+标注的溶液渗漏和覆盖范围薄弱的很大一部分成功补丁."
+    },
+    {
+      "stage": "check",
+      "question": "GAIA的设计理念是什么?",
+      "options": [
+        "人类很难,AI容易",
+        "纯矢量检索基准",
+        "只有一个回合的问题",
+        "概念上对人简单(约92%),但对AI硬(早期GPT-4带有插件:约15%)"
+      ],
+      "correct": 3,
+      "explanation": "GAIA是有意为人类方便,硬AI,测试推理+工具+模式."
+    },
+    {
+      "stage": "check",
+      "question": "Bench探员的环境类别是什么?",
+      "options": [
+        "游戏( 阿尔夫世界, LTP)",
+        "网易(WebShop,Mind2Web) 互联网档案馆的存檔,存档日期2013-12-22.",
+        "渐变( RL, IRL)",
+        "代码 (Bash, DB, KG)"
+      ],
+      "correct": 2,
+      "explanation": "Bench探员覆盖了代码,游戏,网络,以及开放式的一代. 没有梯度类别。"
+    },
+    {
+      "stage": "post",
+      "question": "课程中哪些是报告SWE基准数字的错误方法?",
+      "options": [
+        "逐项报告细目",
+        "报告一个总数而不提及经核实的或SWE-benc+背景",
+        "报告步骤计数",
+        "报告时钟"
+      ],
+      "correct": 1,
+      "explanation": "单数固定会隐藏污染和成本;总是报告经核实和按分配情况。"
+    },
+    {
+      "stage": "post",
+      "question": "这些基准不衡量的是哪个方面?",
+      "options": [
+        "测试过渡",
+        "步数",
+        "每个任务的成功",
+        "真实世界的业务费用(钱包、时钟、对抗性安全以及你自己的地盘)"
+      ],
+      "correct": 3,
+      "explanation": "基准汇总;它们不能反映成本、对抗力或你的领域。"
+    }
+  ]
+}

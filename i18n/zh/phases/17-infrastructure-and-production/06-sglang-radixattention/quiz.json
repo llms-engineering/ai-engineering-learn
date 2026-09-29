@@ -1,0 +1,78 @@
+{
+  "lesson": "06-sglang-radixattention",
+  "title": "前缀- 缓存服务 — Radix 保留和 KV 重用",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "什么核心数据结构背对 SGLang 的 KV 缓存重用 ?",
+      "options": [
+        "每个节点拥有一个符号范围及其 KV 块的 radex 树",
+        "由请求 ID 键入的跳过列表",
+        "由全速键入的散列表",
+        "B树的注意力得分"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么SGLang上的FCFS前缀繁忙流量调度错误?.",
+      "options": [
+        "FCFS是推荐的SGLang政策.",
+        "FCFS 在下一个长前缀请求点击前可以驱逐热前缀分支, 打破 radex- tree 重用",
+        "FCFS 只工作于AMD GPU",
+        "FCFS 与 Paged 无法兼容"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "SGLang的缓存感知排程器用什么来匹配光圈形状?.",
+      "options": [
+        "仅每个请求",
+        "随机驱逐",
+        "单项符号",
+        "从最短的叶子开始的全枝"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "什么是最直接的 工程师的杠杆 保持光子树共享 前缀可发现?",
+      "options": [
+        "总是使用静态批量",
+        "修补快速调制的顺序 如此不可改变的内容( 系统、 工具、 计划) 总是首先",
+        "降低 GPU 内存利用率 knob",
+        "禁用连续批量"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "教程不会期望RadixAttenty获胜,",
+      "options": [
+        "具有共享工具计划的代理",
+        "带有独特提示且没有共享系统提示的单发生成",
+        "附有共享检索序言的RAG",
+        "重复序言的语音工作量"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "“发现”项目部署率从7%升至74%。",
+      "options": [
+        "将GPU数从8增加到16",
+        "禁用连续批量",
+        "将动态内容移出可缓存前缀",
+        "从 vLLM 切换到 SGLang 而不立即更改"
+      ],
+      "correct": 2,
+      "explanation": ""
+    }
+  ]
+}

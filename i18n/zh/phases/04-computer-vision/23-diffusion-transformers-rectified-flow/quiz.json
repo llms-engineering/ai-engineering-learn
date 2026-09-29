@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么2024+SOTA文本对映模型(SD3,FLUX,Z-Image)将U-Net denoiser替换为扩散变形器(DIT)?.",
+      "options": [
+        "U-Net 不再在 GPU 上支持",
+        "DiT比例比U-Net(与LLMS相同的缩放法制度)更可预测,能更好地处理快速准确生成的远程空间依赖,并通过交叉或联合注意与文本编码器自然对接",
+        "变形器更容易写",
+        "DiT 参数较少"
+      ],
+      "correct": 1,
+      "explanation": "DiT将扩散只是另一种序列建模任务. 它像语言模型一样缩放,避免了可瓶颈长程结构的演化的固定的诱导偏差,并且与变压器文本编码器进行干净的整合. 每2026SOTA型号——SD3,FLUX.1,FLUX.2,SD4,Z-Image,Quen-Image——是一种DiT."
+    },
+    {
+      "stage": "pre",
+      "question": "经校正的流线会沿着数据和噪音之间的直线插值来预测速度`v=epsilon - x 0'。 为什么这样可以进行20步而不是1000步的取样?",
+      "options": [
+        "这需要更大的模型",
+        "所学的ODE比DDPM弯曲的SDE更接近直线,因此几步Euler集成产生准确的样本;结合蒸馏,可以得到FLUX schnell等1-4步变体.",
+        "欧拉绝对比DDIM好",
+        "没有;纠正流动也需要1000步"
+      ],
+      "correct": 1,
+      "explanation": "DDPM的反向过程是一条需要许多小步骤的曲折路径. 经校正的流量定义了直线插值;所学速度在轨迹上大致不变. 整合一个近距离的ODE 很少步骤。 SD3和FLUX样本,质量为20-30级;schnell/turbo/LCM进一步分解到1-4级."
+    },
+    {
+      "stage": "post",
+      "question": "MMDIT(SD3)使用两组重心,一组用于文本符号,另一组用于图像符号,它们共享一个单联关注层. 为什么?",
+      "options": [
+        "保存内存",
+        "文本和图像嵌入在概念上是不同的分布; 单独的权重让每个模式处理自己的表示, 而联合关注则让它们相互作用; 结果是比单个共享流更好的文本图像对齐和快速跟踪",
+        "这是一个遗产设计",
+        "只有图像符号能通过注意"
+      ],
+      "correct": 1,
+      "explanation": "Stable Difusion 3的MMDIT保留了每个模式的重量流,以保存文本和图像符的不同统计,同时一个联合的自留层让它们引信. 这在结构上比Concatenate-and-share(SD1/2使用)更具表达性,经验性地提升了迅速的遵守和文本渲染. FLUX 将其延伸至交替的双流/单流块以提高效率."
+    },
+    {
+      "stage": "post",
+      "question": "AdaLN-Zero在DiT区是什么意思,",
+      "options": [
+        "仅应用 50% 时间的图层",
+        "调制层 Norm, 其调制MLP 已关闭到零, 因此块以身份开始; 培训后学习比例/ 班/ 门, 稳定非常深的传播变压器",
+        "一个无 epsilon 的层规范",
+        "带有零平均值的图层"
+      ],
+      "correct": 1,
+      "explanation": "AdaLN从调节矢量中预测了规模,转向和门. 'Zero' 表示 MLP 已禁用到 0,所以大门从 0 开始, 块作为身份 。 渐变器缓慢地将调制器从零移开,这防止了深层堆积在早期训练时出现差异. 它是ResNet剩余零闪电的DiT等效器,并用于每一个现代扩散变压器."
+    },
+    {
+      "stage": "post",
+      "question": "FLUX.1-schnell可以在4个步骤中产生图像. 什么样的技术让它做到这一点?",
+      "options": [
+        "较低精度重量",
+        "较小的参数数",
+        "Distillation——Schnell从一个缓慢的多步教师那里接受训练,使用对抗/一致性式目标,使1-4个去名阶与老师的20-30步输出相匹配.",
+        "与FLUX.1-dev不同的基础架构"
+      ],
+      "correct": 2,
+      "explanation": "Schnell / Turbo / LCM 变体使用步式蒸馏. 小步学生学习与多步教师产出相匹配. 基础架构和参数计数往往完全相同(FLUX.1-dev和schnell都是12B). 消沉是次一秒推论的实用性 这与SDXL Turbo,SD Turbo,以及Latent Consistency Models(英语:Lateent Consistency Models)相同的想法."
+    }
+  ]
+}

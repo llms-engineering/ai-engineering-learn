@@ -1,0 +1,78 @@
+{
+  "lesson": "22-differential-privacy-for-llms",
+  "title": "法学硕士的区别隐私",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "随机算法M的(epsilon, delta)-差异隐私保障是什么?.",
+      "options": [
+        "对于任何一个例子和任何事件S, P(M(D) in S) → e^epsilon * P(M(D)) + delta中的任何两个数据集,因此任何单个个人的贡献都无法可靠地推断.",
+        "M与非私人算法相当",
+        "M从不记住任何训练数据",
+        "M是决定性的到噪音"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "阿巴迪等人2016年描述的DP-SGD的哪个步骤不是?",
+      "options": [
+        "在台阶之间重新调整模型的标致器",
+        "将每个示例梯度剪切到一个阈值 C",
+        "截断梯度后加高斯音 缩放西格玛 * C",
+        "取样一个小批和计算每个实例梯度"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么LORA+DP-SGD是2025年的共同配置?.",
+      "options": [
+        "LoRA通过设计增加epsilon",
+        "LoRA 取消了对会计师的需求",
+        "前沿模型上的完整的DP-SGD是令人望而却步的;LORA将梯度更新限制在小适配器上,减少每个例梯度存储,同时仍在适配器上提供DP保证",
+        "它用LORA作为证明器"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "2025年3月的审计(arXiv:2503.06808)如何解决了金丝雀-MIA与训练-数据-提取的紧张关系?",
+      "options": [
+        "它完全消除了对金丝雀的需求",
+        "上面显示两块地产相同",
+        "证明DP-SGD是不必要的",
+        "它显示它们测量不同的东西: 在插入的金丝雀上MIA 下报记忆,因为金丝雀没有被优化成为“最可提取的”例子,"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "PMixED(arXiv:2403.15638)作为DP培训的替代办法提供了什么?",
+      "options": [
+        "Renyi DP的新会计",
+        "通过将专家混合在近吻分布上进行推论时间差的隐私,并伴有聚合噪音;完全避免DP培训",
+        "从epsilon-delta会计中计算 epsilon 的方法",
+        "一个更快的DP-SGD变体"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "通过 LLM 反馈攻击的区别隐私逆转是什么?",
+      "options": [
+        "攻击标致剂 en",
+        "加入金丝雀的反措施",
+        "使用DP训练模型的自信分数作为神谕来重新识别个人,即使产出不直接泄露",
+        "将 epsilon 重置为 0 的方法"
+      ],
+      "correct": 2,
+      "explanation": ""
+    }
+  ]
+}

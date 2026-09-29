@@ -1,0 +1,90 @@
+{
+  "lesson": "09-code-migration-agent",
+  "title": "Capstone 09 — 代码迁移代理( Repo- Level Language / 运行时升级)",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么管道将确定性底物与剂层结合,而不是只使用一层?",
+      "options": [
+        "只有特工们比食谱快",
+        "Open Rewrite 或 libcst 处理 70- 80% 的机械重写 安全和便宜, 将代理器留给模糊的长尾端",
+        "只有构建系统需要决定",
+        "决定性食谱比LLMS慢"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "管道用什么信号作为成功迁移的真相?",
+      "options": [
+        "代理自动升级",
+        "PR审查者批准",
+        "硬度以下的 Diff 大小",
+        "沙盒中的绿色 CI 覆盖回归度超过小阈值"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "代理环绕每个回扣执行哪个预算上限?",
+      "options": [
+        "30分钟时钟,8美元,20个代理",
+        "1小时时钟和100转",
+        "无限时间和成本; 仅因错误而中止",
+        "无转弯限制,100美元上限"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "在移民后覆盖率下降约2%时,有什么门火?",
+      "options": [
+        "决定性的底盘重现其食谱",
+        "退票在覆盖 递归失败类下存档,而不是打开干净的PR",
+        "代理自动强制执行固定",
+        "审阅员被绕过"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么失败分类学被视为可交付品而不是副产品?",
+      "options": [
+        "代替测试套房",
+        "GitHub 分支保护需要它",
+        "符合遵约清单",
+        "它按类分组失败重置, 所以未来的食谱作者可以瞄准顶级失败模式"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "Java 8 至 17 迁移的顶点指标是哪个公共基准?",
+      "options": [
+        "MMLU - Pro (法语)",
+        "来自亚马逊的移民奔驰",
+        "维多雷 v3",
+        "SWE-bench Pro 软件"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "关于固定分布的代理集成标点是什么?",
+      "options": [
+        "所标注的依赖数量",
+        "每笔财产的武力数目",
+        "由 OpenRewrite 处理的修饰与代理层编写",
+        "源文件的切换速度"
+      ],
+      "correct": 2,
+      "explanation": ""
+    }
+  ]
+}

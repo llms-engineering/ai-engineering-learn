@@ -1,0 +1,102 @@
+{
+  "lesson": "22-embedding-models-deep-dive",
+  "title": "嵌入型号——2026深潜",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "什么是密集嵌入?",
+      "options": [
+        "每个文本一个固定大小的矢量,其中余弦相似度按语义上的近距离排列段落",
+        "符号级对齐矩阵",
+        "每一伏卡的重量很少",
+        "文件上的图表"
+      ],
+      "correct": 0,
+      "explanation": "Dense嵌入法每个文本给出一个矢量(典型的384–3072 dim);cosine排名相似."
+    },
+    {
+      "stage": "pre",
+      "question": "Matryoshka 代表性学习能带来什么?",
+      "options": [
+        "更快的软马克",
+        "多语种培训",
+        "交叉编码器重评",
+        "将训练有素的嵌入到第一个 N 维度,并获得仍然有用的较小嵌入"
+      ],
+      "correct": 3,
+      "explanation": "Matryoshka训练使矢量的首个N凹面具有独立的用途,能够进行廉价的截断."
+    },
+    {
+      "stage": "check",
+      "question": "多向量( ColBERT) 嵌入如何得分查询文件对 ?",
+      "options": [
+        "平均集合符号向量的余弦",
+        "交叉纵横",
+        "MaxSim: 对于每个查询符, 查找最相似的文档符号, 然后总和 maxa",
+        "地球漫游者的距离"
+      ],
+      "correct": 2,
+      "explanation": "ColBERT风格的晚期交互使用MaxSim跨过每个托肯向量."
+    },
+    {
+      "stage": "check",
+      "question": "BGE-M3 同时输出什么?",
+      "options": [
+        "只是一个稀疏的矢量",
+        "只有密集的矢量",
+        "在单一推论中,一个模型中的Dense、稀有和多功能(Colbert)表述",
+        "仅是一个 colbert 向量"
+      ],
+      "correct": 2,
+      "explanation": "BGE-M3从一个模型中释放出三种检索模式,用于引信混合计分."
+    },
+    {
+      "stage": "check",
+      "question": "为什么要在同位素相似性之前 重新规范一个马特约什卡通向量?",
+      "options": [
+        "切变改变矢量规范; 不重新规范化, 点产品不再等于余弦",
+        "余弦忽略了正常化",
+        "中断培训",
+        "仅需FAISS"
+      ],
+      "correct": 0,
+      "explanation": "切换后重新规范化恢复单位规范,因此点产品再次等于余弦."
+    },
+    {
+      "stage": "post",
+      "question": "为什么BGE模型往往需要查询侧前缀字符串?",
+      "options": [
+        "压缩查询",
+        "前缀更改指示器行为",
+        "由财务信息系统处要求",
+        "BGE 接受了一个明确的查询提示;省略了3-5分召回的费用"
+      ],
+      "correct": 3,
+      "explanation": "BGE 模型期望在查询中有一个“ 代表此句用于查找... ” 前缀 。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么MTEB是必要的,但不足以选择嵌入模型?",
+      "options": [
+        "MTEB只涵盖英语",
+        "MTEB奖励更大的模型",
+        "MTEB 忽略延迟",
+        "领导板的排位在许多任务中是平均的;您的特定领域可能不同,所以总是以您的数据为基准"
+      ],
+      "correct": 3,
+      "explanation": "MTEB平均跨任务;特定域的eval可以翻转排名."
+    },
+    {
+      "stage": "post",
+      "question": "何时在密集嵌入物的同时添加 SAPDE 稀疏检索 ?",
+      "options": [
+        "只在小蝎子身上",
+        "只要编码器是多语言的",
+        "当查询为关键字重或包含密集嵌入模糊的标识符/代码时",
+        "每当使用 Matryoshka"
+      ],
+      "correct": 2,
+      "explanation": "SAPDE捕捉到密度模型可能错失的语法/关键词匹配;通过RRF与密度的引信."
+    }
+  ]
+}

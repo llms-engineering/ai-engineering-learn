@@ -1,0 +1,90 @@
+{
+  "lesson": "17-personal-ai-tutor",
+  "title": "Capstone 17——个人AI导师(Adaptive,Multimodule,带有内存).",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "当学习者直接要求答案时, Socratic 辅导政策会做什么?",
+      "options": [
+        "切换到不同的概念节点",
+        "记录请求并保持安静",
+        "问一个主要的问题 脚手架让学习者走向答案",
+        "立即提供答案并继续"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "课程图是哪个结构编码的?",
+      "options": [
+        "只有最近研究的节点",
+        "随机洗牌话题",
+        "附有先决条件边缘的概念示意图,附在操作ER内容上",
+        "不相关概念的统一清单"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "每次互动后,学习者模型会更新什么?",
+      "options": [
+        "课程图",
+        "基础LLM的重量",
+        "通过Bayesian知识追踪或类似变体实现概念掌握概率",
+        "COPPA 保留政策"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "记忆如何在散文和语义商店之间分割?",
+      "options": [
+        "Episodic是给父母的;语义是给学习者的",
+        "Episodic 持有每一次交互;语义持有紧凑的错误和偏好来自issodic",
+        "Episodic 持有嵌入; 语义持有原始音频",
+        "他们是同一数据的复制品"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "K- 12 学习者的内存保留是哪个限制?",
+      "options": [
+        "在设定窗口和父母访问后自动删除的COPPA-意识保留",
+        "基于模型上下文长度的保留",
+        "永久保留,不删除",
+        "仅限GDPR"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "用于为交付品提供大门的功效研究的结构是什么?",
+      "options": [
+        "只有一个小时的学习班",
+        "匿名互联网调查",
+        "30秒AB测试",
+        "测试前和测试后为期两周,有10名学员,而非适应性基线组别"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "导师向学习者披露哪些多模式输入路径 ?",
+      "options": [
+        "仅通过自定义的 OCR 模型拍摄",
+        "文本输入,语音通过LiveKit + Whisper,图片数学通过dots.ocr或PaliGemma 2",
+        "文本",
+        "只有没有文字或照片的声音"
+      ],
+      "correct": 1,
+      "explanation": ""
+    }
+  ]
+}

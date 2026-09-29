@@ -1,0 +1,78 @@
+{
+  "lesson": "21-tool-registry-schema-validation",
+  "title": "带有 Schema 验证的工具注册",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么一个工具的计画要和它的操作器分开注册?",
+      "options": [
+        "因为处理者无法返回JSON",
+        "因此,验证器保持纯数据,处理器保持不透明代码",
+        "因为计划必须编译",
+        "因为Schemas必须住在YAML"
+      ],
+      "correct": 1,
+      "explanation": "将计数器保留为数据,将处理器保留为代码,使校验器在计数器树上成为纯函数."
+    },
+    {
+      "stage": "check",
+      "question": "在本课程工具子集之外有哪些关键词?",
+      "options": [
+        "物项,enum",
+        "1, 任意, $ref, 全部",
+        "MinLength, 最大Length, 模式",
+        "类型、属性、要求"
+      ],
+      "correct": 1,
+      "explanation": "省略的关键词增加了周期和参考分辨率。 我们保持子集线性 这样验证器就保持一个循环行走"
+    },
+    {
+      "stage": "check",
+      "question": "为什么默认拒绝复制 ?",
+      "options": [
+        "因为计划无法重新验证",
+        "静态覆盖是制作工具目录漂移的原因",
+        "因为登记册不能存储一个以上的记录",
+        "因为处理器不能被替换"
+      ],
+      "correct": 1,
+      "explanation": "强制重置=True 显示代码的两个部分有意拥有同一工具名的情况."
+    },
+    {
+      "stage": "check",
+      "question": "当一个 schema 指定类型整数但收到 True 值时, 校验符会做什么 ?",
+      "options": [
+        "强制静态整数",
+        "把它当作1和通过",
+        "提出一个未处理的例外",
+        "返回一个类型错误, 因为 bol 在这个校验器中不是整数"
+      ],
+      "correct": 3,
+      "explanation": "Python bul 是一个 int 的子类,但验证器从整数检查中过滤 bul 。 JSON布林和整数是不同的."
+    },
+    {
+      "stage": "post",
+      "question": "当输入对象是 {'user' : {'email' : 0 } 而 schema 要求 user.email 成为字符串时, 错误路径是什么 ?",
+      "options": [
+        "/用户",
+        "用户/电子邮件",
+        "页:1",
+        "用户.电子邮件"
+      ],
+      "correct": 1,
+      "explanation": "JSON指针通过用户编码下传,然后作为/用户/电子邮件发送电子邮件."
+    },
+    {
+      "stage": "post",
+      "question": "登记为何不是安全边界?",
+      "options": [
+        "因为处理器是同步的",
+        "因为在验证合格后 处理者仍会行为不检",
+        "因为登记在案",
+        "因为计划是JSON"
+      ],
+      "correct": 1,
+      "explanation": "登记册检查形状。 行为,超时和隔离属于调度员和沙盒."
+    }
+  ]
+}

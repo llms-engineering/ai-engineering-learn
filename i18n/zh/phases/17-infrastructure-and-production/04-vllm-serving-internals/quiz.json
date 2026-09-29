@@ -1,0 +1,78 @@
+{
+  "lesson": "04-vllm-serving-internals",
+  "title": "服务引擎内部——打印、连续插管、弹簧预装",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "典型的静态批量中有哪些主要的问题?",
+      "options": [
+        "它只和FP4有关",
+        "它完全无法使用 GPU",
+        "拖动到最短的快速和最长的输出废物存储器,并按最慢的顺序拖动整批废物",
+        "它需要NVLink在每个GPU之间"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "PagedAttenty如何将 KV 缓存破碎率从60-80%降至4%以下?",
+      "options": [
+        "完全取消 KV 缓存功能",
+        "通过在 CPU RAM 中保持全速",
+        "将重量压缩到INT4",
+        "通过每序列块表格在引用的固定大小块中分配 KV 缓存( 默认 16 个令牌)"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "VLLM的V1排程器中,什么变体定义连续批量?",
+      "options": [
+        "每个请求都有自己的专用 GPU 流",
+        "调度器在运行前等待 10 ms 窗口以填充批次",
+        "调度器按请求运行一次,批次不变",
+        "调度器运行一次每个解码迭代, 接受完成的序列出和等待的序列在"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "在混合载荷下,主要保护哪些积分预填?",
+      "options": [
+        "平均吞吐量",
+        "冷启动时间",
+        "网络RTT",
+        "P99 间距(ITL)"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "vLLM v0. 18. 0 特性兼容矩阵对投机解码- enable- chunked- prefile 的描述如何 ?",
+      "options": [
+        "矩阵标记组合为兼容",
+        "无法组合到任何配置中",
+        "只有 EAGLE-1 草稿头与块预填工作",
+        "只有模版的预填程序"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "为什么没有隔离的块状预填会增加吞吐量?",
+      "options": [
+        "它更能压缩重量",
+        "它只会减少解码时间的抖动;在实际操作中,吞吐量获胜来自在长时间的预填中保持解码序列的生命力,而不是改变已完成的工作.",
+        "它运行在不同的GPU上而不是解码",
+        "它在引擎盖下使用投机解码"
+      ],
+      "correct": 1,
+      "explanation": ""
+    }
+  ]
+}

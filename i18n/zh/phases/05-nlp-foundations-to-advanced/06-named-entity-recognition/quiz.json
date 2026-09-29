@@ -1,0 +1,102 @@
+{
+  "lesson": "06-named-entity-recognition",
+  "title": "命名实体识别",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "什么是BIO标记?",
+      "options": [
+        "实体的树代表",
+        "二进制实体对非实体方案",
+        "按键标签:实体启动的B-TYPE,内部的I-TYPE,外部的O",
+        "符号化样式"
+      ],
+      "correct": 2,
+      "explanation": "BIO将跨度提取转换为带有B/I/O前缀的符号分类."
+    },
+    {
+      "stage": "pre",
+      "question": "为什么基于规则的地名录在NER生产中变得不易?",
+      "options": [
+        "他们很慢",
+        "他们不能处理多功能实体",
+        "它们对于新实体的覆盖范围为零,不能分化(如苹果水果对公司)",
+        "他们需要GPU"
+      ],
+      "correct": 2,
+      "explanation": "地名录可以匹配已知的字符串,但不能将感官分解或概括到看不见的名称."
+    },
+    {
+      "stage": "check",
+      "question": "通用报告格式对NER的HMM的主要优势是什么?",
+      "options": [
+        "通用报告格式避免使用Viterbi算法",
+        "通用报告格式具有歧视性,可混合任意特征(形状、资本化、邻接)",
+        "通用报告格式更快",
+        "通用报告格式不需要培训数据"
+      ],
+      "correct": 1,
+      "explanation": "通用报告格式是歧视性的,允许你附带丰富的重叠特征。"
+    },
+    {
+      "stage": "check",
+      "question": "在BILSTM-CRF架构中,通用报告格式层发挥什么作用?",
+      "options": [
+        "执行符号化",
+        "替换嵌入",
+        "预留LSTM",
+        "通过在 LSTM 排放量之上建模标记到标签的转换来执行有效的 BIO 标记序列"
+      ],
+      "correct": 3,
+      "explanation": "LSTM之上的通用报告格式具有标签间依赖性模型,排除了非法序列。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么NER必须用实体级F1而不是符号级F1来评价?",
+      "options": [
+        "预测的跨度必须精确匹配真实的跨度; 符号级 F1 通过计算部分匹配来超标精确度",
+        "实体级 F1 由 HuggingFace 要求",
+        "托肯级 F1 无法处理 BIO",
+        "F1级实体更容易计算"
+      ],
+      "correct": 0,
+      "explanation": "Span精确匹配是有意义的度量衡;符号级的F1通过部分重叠来充值得分."
+    },
+    {
+      "stage": "post",
+      "question": "在HuggingFace NER输油管中,聚合='simple'是做什么的?.",
+      "options": [
+        "只有最有信心的实体才能返回",
+        "将毗连的 B- X 和 I- X 令牌合并为单个跨度",
+        "小写输出",
+        "跳过符号化"
+      ],
+      "correct": 1,
+      "explanation": "它将同类的毗连BIO符号合并为跨级实体."
+    },
+    {
+      "stage": "post",
+      "question": "为什么标准BIO在嵌套实体上失败?",
+      "options": [
+        "BIO 是一个平整的每根图案,不能表示不同类型两个重叠的跨度",
+        "BIO需要变压器",
+        "BIO 无法代表多子实体",
+        "BIO 丢弃类型标签"
+      ],
+      "correct": 0,
+      "explanation": "BIO为每个令牌指定一个标签;嵌套跨度需要多通道或跨度模型."
+    },
+    {
+      "stage": "post",
+      "question": "2026年古典NER(CRF或BiLSTM-CRF)何时仍然击败LLM?.",
+      "options": [
+        "关于开放域的叙述",
+        "在嵌入的实体",
+        "当输入为英语时",
+        "在紧迫的预算、丰富的标签、稳定的本体或非遗传性监管制约之下"
+      ],
+      "correct": 3,
+      "explanation": "古典NER在耐久性,标注数据制度,固定本体论,以及prem约束上获胜."
+    }
+  ]
+}

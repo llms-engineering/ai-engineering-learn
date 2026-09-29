@@ -1,0 +1,62 @@
+[
+  {
+    "question": "FP16中的7B参数模型需要多少VRAM只用于权重?",
+    "options": [
+      "14 GB 键",
+      "28 GB (英语).",
+      "7 个GB",
+      "56 GB (英语)."
+    ],
+    "correct": 0,
+    "explanation": "FP16中的每个参数为2字节. 70亿*2字节=14GB. 由于亚当优化器状态(2份)和梯度,在计算激活前,训练总内存约为56GB.",
+    "stage": "pre"
+  },
+  {
+    "question": "在分布式培训中使用的三种平行做法是什么?",
+    "options": [
+      "批量、序列和符号并行主义",
+      "向前、向后和优化平行主义",
+      "数据平行主义、抗辐射平行主义和管道平行主义",
+      "CPU, GPU, 和 TPU 并行"
+    ],
+    "correct": 2,
+    "explanation": "数据并行主义在每个GPU上复制模型,并分割数据. tensor并行主义将单层分解为跨GPU. 管道平行主义将模型的层分成跨GPU的阶段.",
+    "stage": "pre"
+  },
+  {
+    "question": "FSDP( Fully Sharded Data Affairs) 标准DDP 并不包含什么?",
+    "options": [
+      "它使用不同的优化器",
+      "它处理数据的速度更快",
+      "它支持更多GPU",
+      "它使模型参数、梯度和优化器处于跨GPU的状态,而不是在每个模型上复制完整的模型"
+    ],
+    "correct": 3,
+    "explanation": "标准DDP在每个GPU(浪费)上复制整个模型. FSDP在GPU的多个参数中, 参数按要求收集以进行计算,然后发布。",
+    "stage": "post"
+  },
+  {
+    "question": "什么是深射速ZERO阶段3?",
+    "options": [
+      "学习率表",
+      "它分解优化器状态,梯度,以及跨GPU的模型参数,实现最大内存效率",
+      "量化方法",
+      "数据处理预处理管道"
+    ],
+    "correct": 1,
+    "explanation": "ZeRO Stage 1 shards 优化器状态,第2阶段增加梯度sharding,第3阶段增加参数sharding. 阶段3给予最大内存节省,允许对远超单GPU内存的模型进行培训.",
+    "stage": "post"
+  },
+  {
+    "question": "为什么在数据平行训练中需要梯度同步?",
+    "options": [
+      "加速前进",
+      "每个GPU根据不同数据计算梯度; GPUs 平均梯度确保所有复制件都相同更新",
+      "减少内存使用",
+      "防止过度装修"
+    ],
+    "correct": 1,
+    "explanation": "在数据并行主义中,每个GPU处理一个不同的批次并计算不同的梯度. AllReduce在所有GPU中平均这些梯度,所以每个复制都应用相同的更新并保持同步.",
+    "stage": "post"
+  }
+]

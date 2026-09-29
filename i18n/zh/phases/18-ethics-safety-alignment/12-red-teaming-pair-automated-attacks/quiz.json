@@ -1,0 +1,78 @@
+{
+  "lesson": "12-red-teaming-pair-automated-attacks",
+  "title": "红队:平和自动攻击",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么人工红队不足以评估前沿模型?",
+      "options": [
+        "手动测试者无法读取模型输出",
+        "它没有规模;攻击成功率需要一个统计样本,与每个模型释放的移动目标相对比",
+        "手动提示总是被过滤器屏蔽",
+        "手动测试产生太多假阳性"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "PAIR代表什么,它做什么?",
+      "options": [
+        "行动前检查理由;防御脚手架",
+        "劝导性纵向奖励;用劝导者取代RM",
+        "平滑反推论路由; 跨模型的路线攻击",
+        "快速自动惯性优化;攻击者 LLM 迭代地为目标提出越狱建议,先前的尝试作为内在文本反馈"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么PAIR比GCG更有效率 对于黑盒目标?",
+      "options": [
+        "GCG 需要白框梯度访问,并生成无法使用内文本反馈的不可读后缀; PAIR 是黑框和自然语言,内文本学习",
+        "PAIR 忽略目标的反应",
+        "GCG 只攻击开源模型",
+        "PAIR使用比GCG更大的攻击器模型"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么必须同时报告询问预算和法官身份?",
+      "options": [
+        "因为法官总是同意",
+        "因为ASR跟允许攻击者问多少问题 以及LLM对越狱的反应不同",
+        "因为预算只由监狱的本奇设定",
+        "出口控制条例要求出口控制标准"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "这些自动攻击中哪一个最好被描述为\"有树突袭\"?",
+      "options": [
+        "性别小组",
+        "技术咨询方案",
+        "行动计划",
+        "自动窗口"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "哪个标准化基准在7个类别中使用510种行为,并进行语义和功能伤害测试?",
+      "options": [
+        "真实的QA",
+        "大规模毁灭性武器P",
+        "哈姆贝奇",
+        "破狱的奔驰"
+      ],
+      "correct": 2,
+      "explanation": ""
+    }
+  ]
+}

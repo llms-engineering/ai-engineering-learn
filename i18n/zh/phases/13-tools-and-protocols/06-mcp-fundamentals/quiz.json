@@ -1,0 +1,78 @@
+{
+  "lesson": "06-mcp-fundamentals",
+  "title": "MCP基本原则:无国籍请求和JSON-RPC",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "是什么在两个MCP 2026-07-28请求之间创建协议状态?.",
+      "options": [
+        "HTTP 连接",
+        "协议核心里什么都没有",
+        "麦克普会议",
+        "结构过程"
+      ],
+      "correct": 1,
+      "explanation": "现代协议核心是无国籍的. 每个请求都有自己的版本和能力。"
+    },
+    {
+      "stage": "check",
+      "question": "每个现代请求需要哪两个参数. meta 字段?",
+      "options": [
+        "客户端信息和缓存Scope",
+        "协议验证和客户端能力",
+        "会议议题和能力",
+        "服务器信息和 ttlM"
+      ],
+      "correct": 1,
+      "explanation": "需要协议版本和客户端能力。 推荐客户身份."
+    },
+    {
+      "stage": "check",
+      "question": "每个现代的MCP服务器必须采用何种方法进行前期发现?",
+      "options": [
+        "工具/清单",
+        "初始化",
+        "服务器/发现",
+        "通知/初始化"
+      ],
+      "correct": 2,
+      "explanation": "服务器/发现广告支持的版本,能力,指令,以及服务器身份."
+    },
+    {
+      "stage": "check",
+      "question": "错误代码 -32022是什么意思?",
+      "options": [
+        "内部错误",
+        "页眉不匹配",
+        "找不到方法",
+        "不支持的协议版本"
+      ],
+      "correct": 3,
+      "explanation": "不支持的ProtocolVersionError包含请求的版本和服务器支持的版本."
+    },
+    {
+      "stage": "post",
+      "question": "MCP 2026-07-28中哪些结果需要 ttlMs 和缓存Scope ?",
+      "options": [
+        "JSON- RPC 错误",
+        "工具/清单结果",
+        "工具/呼叫结果",
+        "取消通知"
+      ],
+      "correct": 1,
+      "explanation": "列出结果和资源/阅读是可缓存的结果,需要缓存提示."
+    },
+    {
+      "stage": "post",
+      "question": "服务器应该如何选择当前请求的能力 ?",
+      "options": [
+        "从麦克普会议看",
+        "从过程中推断出来",
+        "重用第一个请求的声明",
+        "从当前请求的元数据中读取"
+      ],
+      "correct": 3,
+      "explanation": "服务器不得从连接或先前请求状态推断出现代能力."
+    }
+  ]
+}

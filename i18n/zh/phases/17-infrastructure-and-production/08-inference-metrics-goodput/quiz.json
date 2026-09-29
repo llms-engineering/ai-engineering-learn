@@ -1,0 +1,78 @@
+{
+  "lesson": "08-inference-metrics-goodput",
+  "title": "推论计量——TTFT、TPOT、国际交易日志、Goodput、P99",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "TTFT( 从时间到第一个符号) 占主导地位 ?",
+      "options": [
+        "磁盘 I/O 重量",
+        "队列时间、网络请求时间和预补时间",
+        "Tokenizer GIL 间接费用",
+        "仅解码转发时间"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "哪个尺度的教训 被称为真正重要的一个产品?",
+      "options": [
+        "Goodput——同时满足每个SLO约束的要求的一小部分",
+        "每秒信使总吞吐量",
+        "平均国际交易日志",
+        "GPU 任职周期"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么报告LLM延时性的错误统计数据?",
+      "options": [
+        "LLM 潜伏分布为右侧扭曲;用户经常点击意味着隐藏的 P99 输出器",
+        "平均数从来无法计算在流响应上",
+        "仅用于预填, 不解码",
+        "GenAI- Perf 不支持平均值"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为何GenAI-Perf和LLMPerf对TPOT同一跑步有分歧?.",
+      "options": [
+        "他们抽取了不同的请求",
+        "GenAI- Perf 只运行于布莱克威尔",
+        "LLMPerf 使用微秒, GenAI- Perf 使用毫秒",
+        "GenAI-Perf 将 TTFT 排除在国际交易日志计算之外; LLMPerf 包括它, 因此工具选择更改编号"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "对于长期产出请求( > 500个令牌),哪一个衡量标准主导端到端的延迟?",
+      "options": [
+        "网络响应时间",
+        "TPOT 倍输出长度",
+        "TTFT 电话",
+        "冷启动时间"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "2026年的70B聊天模式,",
+      "options": [
+        "仅限P50,无百分位数以上",
+        "TTFT P99 800 ms, TPOT P99 25 ms, E2E P99 3 s, 用于 < 300吨产出, 良好产出% 99%",
+        "TTFT P99 8s, TPOT P99 200ms, 良好产量 50%",
+        "平均 TTFT 10 ms, 平均 TPOT 1 ms"
+      ],
+      "correct": 1,
+      "explanation": ""
+    }
+  ]
+}

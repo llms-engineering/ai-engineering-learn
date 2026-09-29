@@ -1,0 +1,90 @@
+{
+  "lesson": "04-multimodal-document-qa",
+  "title": "Capstone 04 — 多式联运文档QA(Vision-First PDF,表,图)",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么2026边疆偏好视觉-晚期互动而不是金融PDF和科学论文的OCR-当时的文字?",
+      "options": [
+        "OCR 管道 操纵表旋转 密集方程 和图表图像 失去一半的信号",
+        "OCR 无法运行在 GPU",
+        "远景模型每页便宜",
+        "OCR 比渲染慢"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "在ColPali风格的检索中,晚期互动是什么意思?",
+      "options": [
+        "每个查询令牌对每个补丁令牌的分数,每盘最大值通过MaxSim进行汇总",
+        "在用户点击结果后计算嵌入",
+        "排名只有最后一名候选人",
+        "嵌入时间推迟至 eval 时间"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "一个ColQuen嵌入器每页产生多少补丁矢量,这会产生什么存储问题?",
+      "options": [
+        "完全128个向量, 干净地装入任何向量 DB",
+        "每页约2048个补丁向量,与单向量指数相比,气球化原始存储",
+        "每页1个矢量, 无存储问题",
+        "16个可忽略不计的存储高空矢量"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "DocPruner在这管道里做什么?",
+      "options": [
+        "摄入前删除重复的 PDF 页面",
+        "通过将高信号补丁保持在50%左右且准确性可忽略不计的方式压缩多载体索引",
+        "以证据区域为界的作物",
+        "重写较短向量的查询嵌入"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么一个OCR文本通道仍然为一些页面所插图?",
+      "options": [
+        "VLM 无法在 180 DPI 读取图像",
+        "OCR 是主要检索模式",
+        "它提高了PDF渲染质量",
+        "公式密集和表格繁忙的页面从图像旁边的文本回落中受益"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "这个顶点指标是哪个基准?",
+      "options": [
+        "维多雷 v3",
+        "奖励奔驰-2",
+        "MMLU - Pro (法语)",
+        "SWE-bench Pro 软件"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "证据区定位意味着什么?",
+      "options": [
+        "p99尾部的复级潜伏",
+        "每次查询检索的页数总数",
+        "实际包含答案跨度的引用边框的分数",
+        "DocPruner 实现的压缩比"
+      ],
+      "correct": 2,
+      "explanation": ""
+    }
+  ]
+}

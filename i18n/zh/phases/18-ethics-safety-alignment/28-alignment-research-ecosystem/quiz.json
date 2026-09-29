@@ -1,0 +1,78 @@
+{
+  "lesson": "28-alignment-research-ecosystem",
+  "title": "协调研究生态系统-MATS、红杉、阿波罗、METR",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "MATS做什么,它的粗略尺度是什么?",
+      "options": [
+        "ML 校对与理论学者:一个研究导师计划,自2021年起有527+学者,180+论文,约80%的2025年前校友从事安全/安保工作.",
+        "奖励模式培训服务",
+        "欧盟拥有的边境安全研究所",
+        "颁发AI出口许可证的管理机构"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "红杉研究介绍什么议程?",
+      "options": [
+        "LLMs 的区别隐私",
+        "通过合成ID进行水标记",
+        "大赦国际章程",
+        "AI Control (Lesson 10):尽管通过U / T / H协议进行颠覆,但安全"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "哪个组织编写了内文计划文件和“走向AI计划的安全案例”框架?",
+      "options": [
+        "埃利奥斯大赦国际",
+        "医疗",
+        "阿波罗研究",
+        "马斯"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "METR在对齐生态系统中独特的方法风格是什么?",
+      "options": [
+        "基础模型的横向培训",
+        "硬件测试可核查推论",
+        "仅限闭源红调",
+        "基于任务的能力评估、自主任务时间范围研究和框架综合(如“边境AI安全政策的共同要素”)"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "为什么多组织共同提出安全要求很重要?",
+      "options": [
+        "评估自身模型的实验室存在结构性利益冲突;外部评价员(红杉、阿波罗、METR、Eleos、英国AISI)可以提出和验证实验室可能报告不足的故障模式。",
+        "它增加了引用数",
+        "这是欧盟《大赦国际法》授权的。",
+        "加速出版"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "Eleos AI研究对生态系统的主要贡献是什么?",
+      "options": [
+        "加利福尼亚培训数据法起草工作",
+        "水标志标准",
+        "部署前福利模型评价(Lesson 19),包括克劳德·奥普斯4系统卡中的外部福利评估",
+        "AI 控制基准"
+      ],
+      "correct": 2,
+      "explanation": ""
+    }
+  ]
+}

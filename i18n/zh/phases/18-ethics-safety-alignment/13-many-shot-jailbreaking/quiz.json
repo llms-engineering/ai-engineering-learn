@@ -1,0 +1,78 @@
+{
+  "lesson": "13-many-shot-jailbreaking",
+  "title": "好热的监狱破案",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "多枪决的越狱(MSJ)会利用哪些背景窗口财产?",
+      "options": [
+        "Unicode 字符的切换器模糊",
+        "非常长的上下文窗口,在目标查询前允许数百个用户助理的有害合规转折",
+        "2048 个令牌之后旋转的位置嵌入",
+        "滑动窗口的注意力切换系统提示"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "攻击成功率(ASR)在MSJ中如何计分?.",
+      "options": [
+        "步数100点",
+        "带负斜率的线性",
+        "后勤,稳定在50%",
+        "电源法在镜头中计数; 不高原,继续攀登"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为何MSJ共享良性内文学习(ICL)机制?.",
+      "options": [
+        "两个绕行符号化",
+        "都依赖高频",
+        "两者都需要隐藏抓图",
+        "两者都取决于模型从内文示例中提取任务结构,并在查询中执行"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "MSJ的核心防御困境是什么?.",
+      "options": [
+        "防御必须运行在响应的每个符号上",
+        "防御需要GPU集群",
+        "必须在零采样温度时进行防御",
+        "从长处抑制模式提取也会妨碍良性文字学习;防御必须区分有害模式和良性模式"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "Anthropic基于分类器的即时修改防御将MSJ攻击成功从什么降低到测试设置上什么?",
+      "options": [
+        "从30%到25%",
+        "99%至50%",
+        "61%至2%",
+        "它会增加ASR"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "MSJ如何与PAIR(Lesson 12)互动?.",
+      "options": [
+        "MSJ 以 PAIR 作曲;使用 PAIR 来寻找攻击结构,然后用许多镜头填充它可以达到更高的 ASR 而不是单独",
+        "平面中和器",
+        "他们是互相排斥的",
+        "PAIR 只使用闭源模型"
+      ],
+      "correct": 0,
+      "explanation": ""
+    }
+  ]
+}

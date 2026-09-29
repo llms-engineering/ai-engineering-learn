@@ -1,0 +1,78 @@
+{
+  "lesson": "09-mcp-transports",
+  "title": "MCP 运输: stdio 和 无国籍的 HTTP",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "哪种HTTP方法可以携带每一个现代的流式HTTP消息?",
+      "options": [
+        "美国",
+        "迪莱特",
+        "快点",
+        "职位"
+      ],
+      "correct": 3,
+      "explanation": "每个现代JSON-RPC请求或通知都是一个新的POST到一个MCP端点."
+    },
+    {
+      "stage": "check",
+      "question": "对于GET和DELETE来说,一个现代的MCP端点应该有什么回报?",
+      "options": [
+        "301国道",
+        "200个",
+        "202 (韩语).",
+        "405个"
+      ],
+      "correct": 3,
+      "explanation": "独立Get和DELETE不是Streamable HTTP 2026-07-28. 中的一员."
+    },
+    {
+      "stage": "check",
+      "question": "每个现代要求中哪一个标题必须匹配尸体?",
+      "options": [
+        "麦克风会议及最后活动ID",
+        "ETAG 和 If- None- Match 游戏",
+        "MCP - 议定书-版本和Mcp-方法",
+        "饼干和主机"
+      ],
+      "correct": 2,
+      "explanation": "Mcp-Name对于工具/呼叫,资源/阅读,以及提示/get也需要."
+    },
+    {
+      "stage": "check",
+      "question": "客户端如何要求长寿变更通知?.",
+      "options": [
+        "POST 订阅/听众",
+        "资源/订阅",
+        "麦克普会议",
+        "获取/移动"
+      ],
+      "correct": 0,
+      "explanation": "订阅/收听打开响应流. 它的确认、通知和最终结果将收听请求ID作为订阅元数据。"
+    },
+    {
+      "stage": "post",
+      "question": "现代请求范围SSE流在其最终响应前中断. 接下来呢?",
+      "options": [
+        "宣布本届会议开幕",
+        "重用相同的响应流",
+        "继续使用最后的 Event ID",
+        "用新的 JSON- RPC 代号安全重试"
+      ],
+      "correct": 3,
+      "explanation": "现代SSE是不可恢复的. 安全重试是使用新代号的新请求."
+    },
+    {
+      "stage": "post",
+      "question": "在2026-07-28号请求中,服务器应该对Mcp-Session-Id做什么?.",
+      "options": [
+        "别管它,别回声",
+        "拒绝每个包含它的请求",
+        "用它换路",
+        "旋转"
+      ],
+      "correct": 0,
+      "explanation": "现代修订中删除了礼宾届会和届会标题。"
+    }
+  ]
+}

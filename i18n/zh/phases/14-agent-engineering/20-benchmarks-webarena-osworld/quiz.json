@@ -1,0 +1,90 @@
+{
+  "lesson": "20-benchmarks-webarena-osworld",
+  "title": "基准:WebArena和OSWorld",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么WebArena自己主机其4个目标应用?",
+      "options": [
+        "为避免 TLS",
+        "对可复制的版本下注,所以评价以执行为主,而不是片面",
+        "为了省钱",
+        "要运行 GPU"
+      ],
+      "correct": 1,
+      "explanation": "固定的自备应用程序使基于执行的评价具有可靠性和长期可比性。"
+    },
+    {
+      "stage": "pre",
+      "question": "为什么OSWorld使用真实的OS截图而不是访问API?",
+      "options": [
+        "屏幕拍摄费用减少",
+        "无障碍 APIs 泄漏 PII",
+        "无障碍 API 速度太快",
+        "屏幕截图迫使代理在1920x1080年进行真正的GUI定位,匹配生产限制"
+      ],
+      "correct": 3,
+      "explanation": "屏幕截图驱动的评价力像素到元素地面,实际生产制约."
+    },
+    {
+      "stage": "check",
+      "question": "OSWorld是什么两种主要失败模式?",
+      "options": [
+        "延迟和带宽",
+        "迷幻和拒绝",
+        "嵌入漂流和信物泄漏",
+        "GUI 定位和业务知识"
+      ],
+      "correct": 3,
+      "explanation": "地面(像素对元素)和业务知识(菜单,快捷键)是头条阻塞器."
+    },
+    {
+      "stage": "check",
+      "question": "OSWorld-Human在基准之上添加什么?",
+      "options": [
+        "手工整理的金色动作轨迹,显示1.4-2.7x剂步效不足",
+        "更大的屏幕分辨率",
+        "更多任务",
+        "一个新的操作系统"
+      ],
+      "correct": 0,
+      "explanation": "黄金轨迹使轨迹效率可以衡量,而不仅仅是成功率."
+    },
+    {
+      "stage": "check",
+      "question": "韦伯阿雷纳的课是用哪一个发布时间编号?",
+      "options": [
+        "最佳药剂为50%,人类为50%",
+        "最佳代理商,全方位为0%",
+        "最佳药剂为99%,人类为100%",
+        "最佳GPT-4剂 成功率为14.41%,人类为78.24%"
+      ],
+      "correct": 3,
+      "explanation": "14.41%对78.24%的差距是WebArena发布时间数字."
+    },
+    {
+      "stage": "post",
+      "question": "当代理机使用DOM或访问API时,只进行截图评价时,该课会发出什么警告?",
+      "options": [
+        "没有变化",
+        "测试勉强通过",
+        "超过限值",
+        "你错过了地面挑战 OSWorld是用来测量"
+      ],
+      "correct": 3,
+      "explanation": "在屏幕截图基准上评价一个可访问性-API代理会跳过地面测试."
+    },
+    {
+      "stage": "post",
+      "question": "为什么忽略轨迹长度是基准失败?",
+      "options": [
+        "长度是唯一重要的衡量标准",
+        "它掩盖了成功率所忽略的成本和效率低下(1.4-2.7x差距OSWorld-Human表面)",
+        "轨迹无法测量",
+        "轨迹长度总是与金色相匹配"
+      ],
+      "correct": 1,
+      "explanation": "两位成功率达到60%的代理在步骤上可以有2-3x的不同;成本和效率只有在测量轨迹长度时才会出现."
+    }
+  ]
+}

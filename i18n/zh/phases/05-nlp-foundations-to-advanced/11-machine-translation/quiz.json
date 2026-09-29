@@ -1,0 +1,102 @@
+{
+  "lesson": "11-machine-translation",
+  "title": "机器翻译",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "BLEU测量什么?",
+      "options": [
+        "假设和参考之间的N-克精度(典型的1-4),使用简洁的处罚",
+        "嵌入同位素相似性",
+        "语文识别准确性",
+        "字符级 F 分数"
+      ],
+      "correct": 0,
+      "explanation": "BLEU是1-4克精度比参照的几何平均值,外加简洁的处罚."
+    },
+    {
+      "stage": "pre",
+      "question": "为什么用Sacrebleu而不是滚动自己的BLEU?",
+      "options": [
+        "它运行在GPU上",
+        "更准确一点",
+        "它使象征化正常化 所以得分在报纸上是可比较的",
+        "它支持流线"
+      ],
+      "correct": 2,
+      "explanation": "sacrebleu 冻结符号化,去除一个无法比较的 BLEU 数字的共同来源."
+    },
+    {
+      "stage": "check",
+      "question": "解码时哪个NLLB特定设置控制目标语言?",
+      "options": [
+        "弧线",
+        "强制   bos token id 设置为目标语言代码的代号 id",
+        "纳米线",
+        "长度( P)"
+      ],
+      "correct": 1,
+      "explanation": "NLLB通过强制 bos token id将第一个解码的代号强制到目标语言代码."
+    },
+    {
+      "stage": "check",
+      "question": "2026年生产MT质量的默认值是哪个计量家族存在标签数据?",
+      "options": [
+        "切换编辑距离",
+        "延迟",
+        "仅BLEU",
+        "知识度量衡,如彗星(和BERTScore/BLEURT)"
+      ],
+      "correct": 3,
+      "explanation": "知识度量衡,如 \" 彗星 \" 比仅BLEU/chrF更能与人类判断联系起来。"
+    },
+    {
+      "stage": "check",
+      "question": "ChrF何时比BLEU更能提供信息?",
+      "options": [
+        "对于形态丰富的语言,其中字符级匹配 捕捉不规则变体 BLEU 错过",
+        "使用光束搜索时",
+        "在非常短的句子上",
+        "每当有参考文献时"
+      ],
+      "correct": 0,
+      "explanation": "字符 F 分数捕捉部分形态匹配词级BLEU的低估."
+    },
+    {
+      "stage": "post",
+      "question": "在多语言的MT中,什么是非目标生成?",
+      "options": [
+        "丢弃命名实体的输出",
+        "模型解码为错误的目标语言(例如NLLB在请求法语时输出西班牙语)",
+        "输出太短",
+        "输出缺失点"
+      ],
+      "correct": 1,
+      "explanation": "离目标生成常见于稀有语言对;一个翻译后语言ID检查选中它."
+    },
+    {
+      "stage": "post",
+      "question": "为什么在几千个高品质域名对上的微调经常会比大得多的吵闹的网络数据要好?",
+      "options": [
+        "质量和域匹配占优势;噪音平行数据引入漂移和幻觉",
+        "较小型的数据集列车速度更快",
+        "网络数据非法使用",
+        "较大数据溢出 GPU 内存"
+      ],
+      "correct": 0,
+      "explanation": "清洁域对接对是最大的生产杠杆;噪音数据会降低适应性。"
+    },
+    {
+      "stage": "post",
+      "question": "2026年的LLM(如GPT-4)何时可能比专门的MT模型好?",
+      "options": [
+        "紧急关键浏览器翻译",
+        "异乎寻常的内容,长背景,通过提示的风格适应,或需要调调控制的内容",
+        "最高吞吐量批次翻译",
+        "带有数百万个平行句子的小型语言配对"
+      ],
+      "correct": 1,
+      "explanation": "LLMs在平庸,长文,或风格控制的翻译上获胜;专业的MT在吞吐量和延迟上获胜."
+    }
+  ]
+}

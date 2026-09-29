@@ -1,0 +1,78 @@
+{
+  "lesson": "14-model-context-protocol",
+  "title": "示范背景协议",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "在MCP 2026-07-28中,客户端在哪里发送其协议版本和能力?",
+      "options": [
+        "仅在 HTTP 饼干中",
+        "仅在初始化请求中",
+        "每一个请求的段落 meta",
+        "在服务器侧会话记录中"
+      ],
+      "correct": 2,
+      "explanation": "现代MCP无国籍. 每个请求都包含协议版本以及params. meta中的客户端能力."
+    },
+    {
+      "stage": "check",
+      "question": "每个现代的MCP服务器必须执行什么来进行前置版本和能力发现?",
+      "options": [
+        "服务器/发现",
+        "会话/创建",
+        "记录/设置级别",
+        "初始化"
+      ],
+      "correct": 0,
+      "explanation": "服务器/发现广告支持的版本,服务器能力和服务器身份."
+    },
+    {
+      "stage": "check",
+      "question": "MCP 2026-07-28中哪个流体HTTP形状是流体?.",
+      "options": [
+        "每次工具调用后都会有 DELETE 请求",
+        "Mcp-session-Id确定的WebSocket会话",
+        "每个 JSON- RPC 消息一个 POST; 请求 POST 接收 JSON 或请求范围 SSE",
+        "获取流加单独的 POST 端点"
+      ],
+      "correct": 2,
+      "explanation": "目前运输有一个POST端点. 请求POST接收JSON或请求范围SSE;接受的通知POST接收HTTP 202,无机."
+    },
+    {
+      "stage": "check",
+      "question": "服务器应该如何区分缺失的协议版本元数据与一个完善但不支持的版本?",
+      "options": [
+        "两种情况返回32022",
+        "返回缺失版本的 HTTP 301 和不支持版本的薄荷麦片",
+        "返回 -32602 的缺失或非字符串元数据, 以及 - 32022 支持/ 请求不支持字符串",
+        "接受缺失的版本并返回 -32601 不支持的版本"
+      ],
+      "correct": 2,
+      "explanation": "缺失或类型不齐的要求字段是配置不齐的JSON-RPC参数. 不支持的ProtocolVersionError只在提供版本字符串未执行时才适用."
+    },
+    {
+      "stage": "post",
+      "question": "一个多步骤的工具需要连续的呼叫。 什么是现代MCP设计?",
+      "options": [
+        "在客户端信息中设置可变状态",
+        "只为此工具恢复 Mcp- Session- Id",
+        "薄荷不透明手柄并需要它作为后期工具参数",
+        "TCP 连接后存储状态"
+      ],
+      "correct": 2,
+      "explanation": "交叉调用状态是明确的应用状态. 服务器智能控件作为普通,授权的参数进行运行."
+    },
+    {
+      "stage": "post",
+      "question": "现代服务器在工具操作中如何要求用户,模型或根输入?",
+      "options": [
+        "它把问题写给Stderr",
+        "它打开第二个SSE连接",
+        "它返回输入  需要, 客户端用输入重试",
+        "它发送一个独立的服务器对客户JSON-RPC请求"
+      ],
+      "correct": 2,
+      "explanation": "多回合请求模式将输入请求嵌入到输入 要求的结果中,并重试原操作."
+    }
+  ]
+}

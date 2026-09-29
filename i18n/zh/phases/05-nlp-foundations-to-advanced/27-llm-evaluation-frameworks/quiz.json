@@ -1,0 +1,102 @@
+{
+  "lesson": "27-llm-evaluation-frameworks",
+  "title": "LLM 评价——RAGAS、DeepEval、G-Eval",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么精确匹配和符号-F1不足以评价现代LLM输出?",
+      "options": [
+        "他们不是不一样的",
+        "他们错过了语义等同; 'June 29th, 2007' vs 'June 29, 2007' 得分 0 EM 尽管是正确的",
+        "他们需要GPU",
+        "他们太慢了"
+      ],
+      "correct": 1,
+      "explanation": "精确-匹配/F1无法识别人类会标记校正的参数化或格式化差异."
+    },
+    {
+      "stage": "pre",
+      "question": "RAGAS的忠诚度量是什么?",
+      "options": [
+        "延迟",
+        "每秒键数",
+        "通过NLI检索的上下文是否涉及答复中的每一项索赔",
+        "检索召回"
+      ],
+      "correct": 2,
+      "explanation": "忠诚度使用NLI的内涵,对照检索的上下文,检查每个答复要求。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么在信任得分之前需要对照人类标签进行判官模型校准?",
+      "options": [
+        "由GDPR规定",
+        "如果斯皮尔曼与人类标签的关联性太低(如低于0.7),则得分是噪声而不是信号.",
+        "校准会加快法官的速度",
+        "校准是一个象征性的问题"
+      ],
+      "correct": 1,
+      "explanation": "没有校准,你无法分辨评分是反映质量还是模型偏差."
+    },
+    {
+      "stage": "check",
+      "question": "自我评价在LLM-as-judge设置中有哪些偏差?",
+      "options": [
+        "法官在缓存产出上跑得更快",
+        "法官忽略系统提示",
+        "低延迟度",
+        "使用同一个LLM家族来生成和判断比独立法官高10-20%的分数"
+      ],
+      "correct": 3,
+      "explanation": "同一家庭生成者+裁判员偏差得分向上;用不同的模型家庭来判断."
+    },
+    {
+      "stage": "check",
+      "question": "G-Eval在天真\"0-1分数\"的提示上,",
+      "options": [
+        "更大的语境",
+        "带有命名评价步骤的明确思维链条,其得分更稳定",
+        "多语种积分",
+        "费用较低"
+      ],
+      "correct": 1,
+      "explanation": "G-Eval结构化的eval步比freeform'rate it points产生更可靠的分数."
+    },
+    {
+      "stage": "post",
+      "question": "为什么只报告总得分是危险的?",
+      "options": [
+        "总数需要GPU",
+        "总和忽略了法官",
+        "总数太大了",
+        "0.85 平均值可以隐藏5%的灾难性故障; 总是检查底质"
+      ],
+      "correct": 3,
+      "explanation": "意味着隐藏尾部故障;表面底部-10%以捕捉高强度问题."
+    },
+    {
+      "stage": "post",
+      "question": "为什么在CI中标注法官模型+版本?.",
+      "options": [
+        "由Anthropic公司要求",
+        "提升法官的素质,改变每个衡量标准;纵向比较,没有冻结法官",
+        "调试器漂移",
+        "费用较低"
+      ],
+      "correct": 1,
+      "explanation": "法官升级后静悄悄地改变衡量基线;定点可以保持跨运行的可比性。"
+    },
+    {
+      "stage": "post",
+      "question": "DeepEval相对于RAGAS适合哪里?.",
+      "options": [
+        "完全替换 RAGAS",
+        "DeepEval是一个标识器",
+        "DeepEval为LLMs(CI门,G-Eval,幻觉度量);RAGAS专门进行无参考RAG监测.",
+        "仅主机为 DeepEval"
+      ],
+      "correct": 2,
+      "explanation": "DeepEval主锚CI/CD回归测试;RAGAS处理无参考的RAG监测."
+    }
+  ]
+}

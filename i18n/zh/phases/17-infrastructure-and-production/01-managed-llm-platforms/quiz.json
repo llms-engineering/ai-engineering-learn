@@ -1,0 +1,90 @@
+{
+  "lesson": "01-managed-llm-platforms",
+  "title": "管理 LLM 平台 — Bedrock, Vertex AI, Azure OpenAI",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "如果顾客需要克劳德,Llama和Cohere 在一个API后面,你会先到达哪个平台?",
+      "options": [
+        "AWS 贝德洛克",
+        "Vertex 大赦国际",
+        "直肠性API",
+        "Azure OpenAI 服务"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "哪个超规模的赌注被称为独家合作而不是市场?",
+      "options": [
+        "Vertex 大赦国际",
+        "AWS 贝德洛克",
+        "OCI 基因人工智能",
+        "Azure 打开AI"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "Azure OpenAI(带有PTUs)和Llama 3.1 405B等效物的Bedrock点播时测得的TTFT中位值差距是多少?",
+      "options": [
+        "约250毫秒",
+        "~5 毫秒( 秒)",
+        "~100 毫秒( X)",
+        "~25毫秒(每分钟)"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "哪个Bedrock 2025的特性在Cloud Watch中 给出了最干净的人均成本归属?",
+      "options": [
+        "贝德洛克特工",
+        "贝德洛克知识库",
+        "应用程序推论配置文件",
+        "贝德洛克护栏"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "Azure PTUs 通常在哪个持续使用带上 与点播量相比是平衡的?",
+      "options": [
+        "40%-60%",
+        "80%-95%",
+        "5%-10%",
+        "20%-30%"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "为什么2026年推荐的教学政策是产品关键LLM调用的最低双提供者?.",
+      "options": [
+        "超缩放器拒绝签名 BAA 除非您也使用竞争对手",
+        "单货价格总是比较贵",
+        "SOC 2型机车需要它",
+        "边疆模范领导班子每月轮换,所以单范锁住就把你关在三分之二的边疆之外"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "哪一个声明最能描述FinOps跨三个平台的表面?",
+      "options": [
+        "所有三个都披露了相同的每个请求归属",
+        "Bedrock是最干净的原生,Vertex最灵活通过BigQuery,Azure最不透明没有仪器",
+        "Vertex根本没有归属表面",
+        "阿祖尔最干净 贝德洛克不透明"
+      ],
+      "correct": 1,
+      "explanation": ""
+    }
+  ]
+}

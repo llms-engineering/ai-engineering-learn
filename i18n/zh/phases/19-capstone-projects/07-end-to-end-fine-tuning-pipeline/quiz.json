@@ -1,0 +1,90 @@
+{
+  "lesson": "07-end-to-end-fine-tuning-pipeline",
+  "title": "Capstone 07 — 端到端的微调管道(数据到SFT到DPO到服务)",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "在编制数据时,污染情况如何?",
+      "options": [
+        "在 SFT 和 DPO 阶段之间漂移的切换器",
+        "从MMLU-Pro和MT-Bench-v2等公共基准渗入培训数据",
+        "GPU 驱动程序在培训和服务之间不匹配",
+        "GGUF 版本 skew 横跨 lama.cpp 构建"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "为何管道由SFT然后组成DPO(或GRPO),而不是单独由DPO组成?",
+      "options": [
+        "DPO 无法运行于定量重量",
+        "Axolotl 不执行 DPO",
+        "SFT在标注的完成上建立域行为,而DPO或GRPO则将模型与偏好对称或可核实的奖励对齐.",
+        "DPO需要单独的基建模型架构"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "EAGLE-3对VLLM服务阶段有什么贡献?",
+      "options": [
+        "OPA 工具调用政策",
+        "自动数据解密步骤",
+        "一个新的急切层",
+        "预言前方为 N 令牌的草稿头; 目标通过一次验证2-3x 吞吐量"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "哪些衡量标准报告推测解码草案与目标模式的一致程度?",
+      "options": [
+        "接受率",
+        "复杂",
+        "防扩散倡议",
+        "覆盖三角洲"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "输油管船是用来灵活部署的?",
+      "options": [
+        "GPTQ-INT4-马林,AWQ-INT4,以及GGUF-Q4 K M",
+        "FP32、FP16、BF16",
+        "仅3次运行的INT8",
+        "ONNX、 CoreML、 TFLite 数据"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "2026年的样板卡在这顶石上遵循什么框架公约?.",
+      "options": [
+        "拥抱 只面对 YAML 前题",
+        "OpenAI 模式卡格式",
+        "数据集数据表",
+        "2026年示范开放框架模板,涵盖数据、培训、电子、安全、许可证和可复制性"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "使用何种HPA度量衡来自动缩放服务复制品?",
+      "options": [
+        "GPU 温度",
+        "CPU 利用率",
+        "队列等待时间",
+        "网络 Egress 字节"
+      ],
+      "correct": 2,
+      "explanation": ""
+    }
+  ]
+}

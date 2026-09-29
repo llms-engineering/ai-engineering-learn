@@ -1,0 +1,78 @@
+{
+  "lesson": "21-fairness-criteria-group-individual-counterfactual",
+  "title": "公平标准 -- -- 团体、个人、反事实",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "哪些最符合A=a和A=a'组的人口-均等定义?",
+      "options": [
+        "不同群体之间相同的预测值",
+        "不同群体真实阳性和假阳性率相等",
+        "同等接受率: P(Y=1 → A=a)= P(Y=1 → A=a)",
+        "各组均匀的 Lipschitz 常数"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "Chouldechova/Kleinberg-Mullinathan-Raghavan 2017年不可能的结果是什么?",
+      "options": [
+        "在不平等的基准率下,人口均等、等价比和有条件的使用精确度平等不能同时维持",
+        "个人公平意味着对任何DAG的反事实公平",
+        "反事实公平意味着人口均等",
+        "团体公平总是可以通过重新加权实现的"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "Dwork等人2012年通过下列方式界定个人公平:",
+      "options": [
+        "带有敏感属性干预的因果DAG",
+        "受保护群体之间的准确度相同",
+        "相对于特定任务相似度度测量,决定图上的一个Lipschitz条件,因此类似个人得到类似决定",
+        "个人一级的人口均等"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "反事实公平(Kusner等人,2017年)要求:",
+      "options": [
+        "对所有群体均匀的 Lipschitz 常数",
+        "只有组级统计",
+        "无因果假设",
+        "因果关系DAG;当个人的敏感属性被反事实改变时,决定不变"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "背对反事实(arXiv:2401.13935)对遵守法律来说为何重要?",
+      "options": [
+        "它们取代基于嵌入的偏差衡量标准",
+        "他们不需要任何因果模型",
+        "他们证明不可能的定理是错误的",
+        "他们不干预一个受保护的属性(在法律上有问题),而是询问实际特征的哪一种组合会产生相反的结果。"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "ICLR Blogposts 2024 哲学调和的论据是什么?",
+      "options": [
+        "用一个明确的因果图,满足某些群体公平性措施需要反事实的公平性,因此,家庭之间的明显对立部分是使因果模型隐含的产物。",
+        "组和反事实公平无关",
+        "只有个人公平才是正当的",
+        "无法实现的定理通过重新加权来解决"
+      ],
+      "correct": 0,
+      "explanation": ""
+    }
+  ]
+}

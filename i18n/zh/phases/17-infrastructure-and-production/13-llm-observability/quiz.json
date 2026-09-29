@@ -1,0 +1,78 @@
+{
+  "lesson": "13-llm-observability",
+  "title": "LLM 监视堆栈选择",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "该课如何分割2026LLM可观察市场?.",
+      "options": [
+        "开发平台(与evals/prompts/sessions捆绑)与网关/遥测工具",
+        "Python 对类型脚本",
+        "供应商对开源",
+        "预告与云"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "哪个课程定位为麻省理工学院许可的核心,有强大的自主播故事和50K事件/月自由云级?",
+      "options": [
+        "凤凰",
+        "调整 AX",
+        "兰史密斯",
+        "兰福斯"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "相对于像Datadog这样的单层可观察堆栈,Arize AX的主要比例索赔是什么?",
+      "options": [
+        "总是更贵",
+        "通过零拷贝的Iceberg/Parquet集成在规模上大约100辆更便宜",
+        "1M次活动/天免费",
+        "10%的价格"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "对于可移植性来说,这个教训叫错仪器层是什么?",
+      "options": [
+        "HTTP/ OpenAI- SDK 层的仪器",
+        "成功抽样5%",
+        "使用 OpenTeleometry GenAI 语义规范",
+        "在你的代理框架内装配,因为它 将你与框架结合"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "哪些 OpenTelection 常规 课程将可观察性工具之间的2026 层识别为 2026 层 ?",
+      "options": [
+        "GenAI 语义惯例( gen ai. system, gen ai. request. model, gen ai.usage. input tokens)",
+        "OTel HTTP语义公约",
+        "OTel信息语义公约",
+        "OTel数据库语义公约"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "为什么该课认为完全追踪保留没有超过1M请求/天的规模?",
+      "options": [
+        "卖家挡住它",
+        "凤凰城只支持1M的痕迹",
+        "保留存储成本高于LLM自称;团队必须抽样(如100%错误,100%高成本,5%成功).",
+        "打开遥测盖微量"
+      ],
+      "correct": 2,
+      "explanation": ""
+    }
+  ]
+}

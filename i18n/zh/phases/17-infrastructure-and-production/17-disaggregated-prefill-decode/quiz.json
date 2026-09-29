@@ -1,0 +1,78 @@
+{
+  "lesson": "17-disaggregated-prefill-decode",
+  "title": "NVIDIA Dynamo和llm-d) 预填/分解",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么预填和解码要不同的最佳GPU配置?",
+      "options": [
+        "预填必须在AMD上运行,并在NVIDIA上解码",
+        "他们用不同的模型重量",
+        "预填值在matmul吞吐量上计算;解码值在HBM带宽上是内存,因此将它们叠加为浪费一个资源",
+        "解码需要更多的网络带宽"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "NVIDIA Dynamo在预填和解码池之间移动 KV 缓存使用什么运输工具?",
+      "options": [
+        "gRPC 仅标本",
+        "NIXL(RDMA/InfiniBand(可用时,TCP倒置))",
+        "普通 HTTP 软件",
+        "NFS 上共享文件系统"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "分门别类什么时候才有回报?",
+      "options": [
+        "有8K+前缀的RAG",
+        "Blackwell的教育部工作量",
+        "使用共享系统的多用户提示器",
+        "512个令牌以下的提示和200个令牌以下的输出,其中KV转移税占收益的主导地位."
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "迪纳摩和wllm-d的核心建筑区别是什么?.",
+      "options": [
+        "迪纳摩是开源的;llm-d是关闭的",
+        "Dynamo运行于CPU; llm-d运行于 GPU",
+        "Dynamo是一个堆叠之上的管弦乐器,在vLLM/SGLang/TRT-LLM之上;llm-d是Kubernetes-native,预填/解码/路由器作为独立服务.",
+        "迪纳摩需要AMD;llm-d需要NVIDIA"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "哪些Dynamo组件自动调谐 SLO的预填:decode比率?",
+      "options": [
+        "马林内核",
+        "规划师简介和苏丹解放军规划师",
+        "集群自动缩放器",
+        "侧车代理和代理过滤器"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "分解方式如何与第17-11阶段的缓存-知路由相互作用?",
+      "options": [
+        "分类功能完全禁用 KV 缓存重用",
+        "缓存- 意识路由器可以在已经持有其前缀的解码池上登陆请求; 在错过时它会流出预填 - > 解码, 所以两个复合体",
+        "他们是互相排斥的",
+        "缓存- 意识路径仅用于合用"
+      ],
+      "correct": 1,
+      "explanation": ""
+    }
+  ]
+}

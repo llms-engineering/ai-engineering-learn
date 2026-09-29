@@ -1,0 +1,78 @@
+{
+  "lesson": "26-compliance-frameworks",
+  "title": "遵守情况——SOC 2、HIPAA、GDPR、PCI-DSS、欧盟AI法、ISO 42001",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "欧盟AI法案何时开始执行高风险系统?",
+      "options": [
+        "已于2024年全面执行",
+        "2026年8月2日 (英语).",
+        "2025年2月2日 (中文(简体) ).",
+        "2030年1月1日 (英语)."
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "欧盟《大赦国际法》界定了何种两级罚款上限?",
+      "options": [
+        "如有违规行为,最高可达1万欧元",
+        "高风险系统义务最高达1 500万欧元或全球3%的年营业额(第99(4)条);禁止的人工智能做法最高达3 500万欧元或7%(第99(3)条)",
+        "违反规定最高100万欧元",
+        "没有罚款,只收场令"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么加工后PII清理不是可防的GDPR姿态?.",
+      "options": [
+        "模型已经看到了数据,所以实时推论层的编辑(在LLM调用之前)是可辩驳的2026年标准",
+        "GDPR 完全禁止编辑",
+        "规模太慢了",
+        "后处理与实时相同"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "SOC 2型与II型有什么实际区别?.",
+      "options": [
+        "类型 I 需要 HIPAA BAA",
+        "第一类比第二类更严格",
+        "第一类证明设计和记录的控制;第二类证明在6-12个月内有效运行的控制",
+        "II型只用于启动"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "跨框架控制绘图的目的是提供什么?",
+      "options": [
+        "取消审计",
+        "用ISO 42001取代所有框架",
+        "一种符合多种框架要求的控制政策(例如,访问ISO 27001 A.5.15-5.18的伐木地图,GDPR第32条,HIPAA §164.312(a))",
+        "每个框架更明确的控制"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "教训对HIPAA+LLM工作量有何建议?",
+      "options": [
+        "只使用预览模式, 从未管理",
+        "PHI号船给任何供应商;BAA是可选的",
+        "HIPAA 不适用于 LLMS",
+        "在没有署名的BAA的情况下,绝不将PHI发送到外部AI服务;所有三个超标器和主要的LLM API提供者都提供BAAs"
+      ],
+      "correct": 3,
+      "explanation": ""
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "lesson": "29-mcp-reliability-cancellation-and-flow-control",
+  "title": "MCP 可靠性、取消和流量控制",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "一个突变响应丢失,客户端用一个新的JSON-RPC id进行重试. 是什么使重试安全?",
+      "options": [
+        "新的 JSON- RPC id 自动去除变异",
+        "工具描述符包含一个像素Hint",
+        "具有相同参数的持久应用偶能键重用",
+        "重试使用相同的 HTTP 连接"
+      ],
+      "correct": 2,
+      "explanation": "JSON-RPC的标识与信息相关。 企业一能需要耐用钥匙,辩证指纹,存储承诺结果."
+    },
+    {
+      "stage": "check",
+      "question": "MCP 2026-07-28中,客户端如何在stdio上空取消飞行请求?.",
+      "options": [
+        "JSON-RPC 代号的调用任务/取消",
+        "发送通知/ 取消请求",
+        "关闭每个请求的 SSE 流",
+        "向 MCP 端点发送 DELETE 请求"
+      ],
+      "correct": 1,
+      "explanation": "stdio没有每个请求的响应流,因此客户端发送火灾和遗忘通知/取消通知."
+    },
+    {
+      "stage": "check",
+      "question": "客户端如何取消飞行中流式HTTP请求?.",
+      "options": [
+        "关闭请求的 SSE 响应流",
+        "POST 通知/注销到 MCP 端点",
+        "等待服务器发送通知/ 取消",
+        "以空值发送最后事件ID"
+      ],
+      "correct": 0,
+      "explanation": "对于现代流体HTTP,关闭请求特定响应流是取消信号."
+    },
+    {
+      "stage": "check",
+      "question": "每一次闲置超时前 进展都会提前到来 哪个期限必须结束一个逃跑的请求?",
+      "options": [
+        "从请求开始测量的绝对最大超时",
+        "下一页光标过期",
+        "代理保存间隔",
+        "任务投票间隔"
+      ],
+      "correct": 0,
+      "explanation": "有效的进度可能会重置闲置的时钟,但绝对的最长期限必须保持有效."
+    },
+    {
+      "stage": "post",
+      "question": "成功的任务/取消反应证明什么?",
+      "options": [
+        "持久结果被删除",
+        "工人已经停工了",
+        "服务器承认取消意图",
+        "任务最终必须取消"
+      ],
+      "correct": 2,
+      "explanation": "任务取消是合作的。 任务可以继续工作,先完成,或在工人检查站后取消。"
+    },
+    {
+      "stage": "post",
+      "question": "订阅 SSE 流在几个进度事件后下降 。 哪个恢复计划符合MCP 2026-07-28?.",
+      "options": [
+        "由 Last-Event-ID 恢复并重播每个飞行中突变",
+        "打开事件流并恢复 Mcp-session-ID",
+        "保留旧请求 ID 并假设没有丢失更新",
+        "打开新收听请求, 调试权威状态, 避免不安全的突变重放"
+      ],
+      "correct": 3,
+      "explanation": "现代MCP流不能与Last-Event-ID重现. 回收使用新的请求,加上权威的再试和明确的再试安全。"
+    }
+  ]
+}

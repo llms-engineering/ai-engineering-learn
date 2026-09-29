@@ -1,0 +1,102 @@
+{
+  "lesson": "01-text-processing",
+  "title": "文本处理——调试、调制、调制",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么一个语言模型在训练前需要预先处理?",
+      "options": [
+        "模型直接读取字符串",
+        "预处理改善GPU的利用率",
+        "模型消耗离散整数符号,而非原始文本",
+        "仅需要预处理无空白语言"
+      ],
+      "correct": 2,
+      "explanation": "模型在整数符号ID上运行;预处理桥连续语言到离散输入."
+    },
+    {
+      "stage": "pre",
+      "question": "哪个预处理操作是基于规则的后缀剥离?",
+      "options": [
+        "POS 标记",
+        "断层",
+        "闪光化",
+        "切换"
+      ],
+      "correct": 1,
+      "explanation": "断断续续的后缀有规则;速度很快,但可能是错误的。"
+    },
+    {
+      "stage": "check",
+      "question": "Porter的\"赛车手\"第1a步 回到\"赛车手\"这个词?",
+      "options": [
+        "波尼语",
+        "小马",
+        "小马",
+        "小马"
+      ],
+      "correct": 0,
+      "explanation": "'ies'规则将后缀替换为'i',产生'poni';在真正的波特中第1b步将其清理."
+    },
+    {
+      "stage": "check",
+      "question": "为什么Lemmatization通常需要POS标记?",
+      "options": [
+        "Unicode 处理",
+        "语法上下文将“ 更好” (ADJ) 对“ 更好” (VERB) 等形式区分开来",
+        "减少内存使用",
+        "速度"
+      ],
+      "correct": 1,
+      "explanation": "lemmas依赖于语法角色;没有标记,查找是模糊的."
+    },
+    {
+      "stage": "check",
+      "question": "当将 NLTK Penn Treebank POS 标记翻译为 WordNet 标记时, 从“ V” 地图开始的标记会用到什么 ?",
+      "options": [
+        "'r' (动词)",
+        "'a' (形容词)",
+        "'v' (动词)",
+        "'n'(名词)"
+      ],
+      "correct": 2,
+      "explanation": "Verb- prefixed Penn Treebank 标记映射到WordNet 'v' ."
+    },
+    {
+      "stage": "post",
+      "question": "NLP 预处理中的“ 训练/ 推论不匹配” 是什么 ?",
+      "options": [
+        "GPU 内存问题",
+        "培训和服务应用不同的预处理,所以模型在推论时会发现不熟悉的分布.",
+        "在笔记本中混合标识器库",
+        "不同批量的列车和试验"
+      ],
+      "correct": 1,
+      "explanation": "在训练与推断时不同的预处理是最常见的生产NLP故障."
+    },
+    {
+      "stage": "post",
+      "question": "在变压器管道中你会找到哪个工具,而不是传统的预处理?",
+      "options": [
+        "NLTK 单词  kenize",
+        "该型号自有的标致器(例如通过标致器/变压器).",
+        "sparCy en core web sm (中文(简体) ).",
+        "正则标记器"
+      ],
+      "correct": 1,
+      "explanation": "变形器模型运送一种配对的标致器;古典预处理被绕过."
+    },
+    {
+      "stage": "post",
+      "question": "为什么把 NLTK 和 SparCy 版本都写进要求中?",
+      "options": [
+        "新版本较慢",
+        "旧版本支持更多语言",
+        "轻度释放之间的切除器和轻度释放器行为转变,默默改变训练分布",
+        "许可证兼容性"
+      ],
+      "correct": 2,
+      "explanation": "图书馆升级可以改变符号化输出,从培训分发中漂移."
+    }
+  ]
+}

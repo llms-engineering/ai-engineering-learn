@@ -1,0 +1,90 @@
+{
+  "lesson": "18-agno-and-mastra-runtimes",
+  "title": "生产代理运行时间",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "课程建议每次运行时使用哪种语言配对?",
+      "options": [
+        "TypeScript 的 Agno, Python 的 Mastra",
+        "两个都是先锋",
+        "Python 的 Agno, 类型脚本的 Mastra",
+        "两者都是罗斯第一"
+      ],
+      "correct": 2,
+      "explanation": "Agno是Python(FastAPI-形状);Mastra是TypeScript(Vercel AI SDK-形状)."
+    },
+    {
+      "stage": "pre",
+      "question": "阿格诺推荐的生产部署形状是什么?.",
+      "options": [
+        "一个长寿的状态守护进程",
+        "一个没有服务器的 crun 工人",
+        "一个无国籍的会话范围 FastAPI 后端; 每个请求启动一个新代理, 会话状态生活在 DB 中",
+        "只使用 WebSocket 服务器"
+      ],
+      "correct": 2,
+      "explanation": "无国籍 FastAPI 每个请求; 会话状态外部化为 DB 。"
+    },
+    {
+      "stage": "check",
+      "question": "马斯特拉的三个原始人是什么?",
+      "options": [
+        "国家边缘节点",
+        "计划,工人,解决方案",
+        "探员们, 工具、工作流程",
+        "演员、 信件、 收件箱"
+      ],
+      "correct": 2,
+      "explanation": "代理(LLM + 角色),工具(Zod-typed),和Workflows是马斯特拉的三个原始人."
+    },
+    {
+      "stage": "check",
+      "question": "Agno目标按其文件计算大约需要多少钱?",
+      "options": [
+        "每剂约1秒和1吉B",
+        "约2微秒,每剂约3.75KiB",
+        "每剂约200毫秒和100米B",
+        "每名特工约10分钟4吉"
+      ],
+      "correct": 1,
+      "explanation": "阿格诺的文献引用了大约2微秒和约3.75KiB每剂."
+    },
+    {
+      "stage": "check",
+      "question": "马斯特拉的统一型号路由器给了什么?",
+      "options": [
+        "矢量 DB 层",
+        "许多供应商的数千个模型的单一客户端表面",
+        "一个图表检查符",
+        "工具调用队列"
+      ],
+      "correct": 1,
+      "explanation": "Mastra的统一型号路由器引用了94家供应商的3,300+型号."
+    },
+    {
+      "stage": "post",
+      "question": "perf's sake the wrong reason to pick Agno? 为何要选择阿格诺?",
+      "options": [
+        "使用 Langfuse 时",
+        "当工作量是每个请求一个缓慢的代理呼叫,而间接费用不是瓶颈",
+        "使用 Python 3. 13 时",
+        "部署到 AWS 时"
+      ],
+      "correct": 1,
+      "explanation": "2微秒在聊天风扇比例(calk fan-in scale)中处理事务,而不是每个请求一个慢调."
+    },
+    {
+      "stage": "post",
+      "question": "在放弃Mastra之前 你该仔细阅读什么许可证表?",
+      "options": [
+        "没有许可证文件",
+        "ee/ 目录是来源可用而非Apache 2.0,并限制商业使用",
+        "所有的马斯特拉都是GPL",
+        "马斯特拉要求CLA 但不审查执照"
+      ],
+      "correct": 1,
+      "explanation": "Mastra 是 Apache 2.0, 但 ee/ 除外, 因为 e/ 是可用源; 在伪造前检查限制 。"
+    }
+  ]
+}

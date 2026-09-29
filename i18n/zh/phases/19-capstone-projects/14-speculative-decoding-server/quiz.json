@@ -1,0 +1,90 @@
+{
+  "lesson": "14-speculative-decoding-server",
+  "title": "Capstone 14 — 光谱解析推论服务器",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "投机解码背后的两层机制是什么?",
+      "options": [
+        "每个符号换两个目标模型",
+        "嵌入模型和合成器",
+        "一个检索缓存和一个重新排序器",
+        "模式草案提出 k 候选代币;目标模式通过单次通过验证"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "EAGLE-3对正方形草稿没有做什么?",
+      "options": [
+        "这完全避免了象征化",
+        "它只在CPU上运行",
+        "它在目标模式的隐藏状态上训练草稿头 提高接受率",
+        "它取代了目标模式"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么p99的尾翼纬度在1,8和32的批量上报?",
+      "options": [
+        "稳定状态的符号每秒可以隐藏 拒绝的验证传递比香草解码更贵",
+        "vLLM 无法服务于 8以下的批量大小",
+        "p99 只处理批号32的事项",
+        "尾部不依赖批量大小"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么接受率在交通分配转移时会漂移?",
+      "options": [
+        "草稿对齐取决于输入分布: ShareGPT,代码,和域数据练习不同的模式",
+        "OS 调度器重排 GPU 内存",
+        "运行时的量化变化",
+        "vLLM 小时旋转模型"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "部署规模是哪个?",
+      "options": [
+        "磁盘 IOPS",
+        "CPU 利用率",
+        "等待推断请求的时间",
+        "集群自动缩放节点"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "P -EAGLE在EAGLE -3系列上加了什么?",
+      "options": [
+        "量化到FP4重量",
+        "目标模式的删除",
+        "横跨一棵树的平行投机活动 在一个目标通道中核实",
+        "自动数据集设置"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "根据非投机性基线,数字需求是指哪一个吞吐量目标?",
+      "options": [
+        "两种型号至少2.5x质量匹配",
+        "超过基准的任何改进",
+        "质量约1.1x",
+        "准确的10x吞吐量 任何质量"
+      ],
+      "correct": 0,
+      "explanation": ""
+    }
+  ]
+}

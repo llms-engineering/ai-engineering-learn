@@ -1,0 +1,78 @@
+{
+  "lesson": "phase-19/28-observability-otel-traces",
+  "title": "观测: OTel GenAI Spans和Prometheus Metrics",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "在阅读教训之前:用OTel GenAI属性形状书写你的吊带跨度有什么实际好处?",
+      "options": [
+        "每个OTel兼容的后端都可以不使用自定义解析器来读取.",
+        "OTel是一个只使用Python的标准,因此这个牵引装置获得类型提示.",
+        "这是HIPAA的要求.",
+        "OTel在磁盘上压缩得更好."
+      ],
+      "correct": 0,
+      "explanation": "这些公约是与更广泛的生态系统订立的契约。 Honeycomb, Grafana Tempo, Jaeger, 和 Datadog 全部解析 gen ai. * 属性出框 。"
+    },
+    {
+      "stage": "check",
+      "question": "在 SpanBuilder.span () 上下文中提出例外 。 课的建设者记录了什么?",
+      "options": [
+        "UNSET仍然保持地位,例外被默默吞没。",
+        "为了避免污染痕量,取消了这一期限。",
+        "status=ERROR,状态 消息包括例外类型和消息,并附上一个\"例外\"事件.",
+        "跨度被重新命名为'rror'."
+      ],
+      "correct": 2,
+      "explanation": "状态错误加例外事件匹配 OTel 规格 。 例外被重新提出,所以呼叫器代码可以反应."
+    },
+    {
+      "stage": "check",
+      "question": "直方图的普罗米修斯解析包括 bucket, sum,和 计数线. 为什么桶数累积(每个桶都包括所有较小的桶)?",
+      "options": [
+        "累计计数减少浮点错误.",
+        "累积计数让刮刮机通过减值计算,而不储存所有观测数据。",
+        "累积计数是唯一支持Grafana的格式 。",
+        "它们不是累积的;教训的阐述是非标准的."
+      ],
+      "correct": 1,
+      "explanation": "普罗米修斯的设计选择:一个后端读取累积计数,并计算每桶差异. 这使得时间序列成为每桶简单的单调计数器."
+    },
+    {
+      "stage": "check",
+      "question": "绳套将工具执行包裹在一个跨度. 哪些属性键将其识别为GenAI公约下的工具调用?",
+      "options": [
+        "操作+工具.name.",
+        "代理 哈尔尼斯 工具 +代理 哈尔尼斯 呼叫",
+        "gen ai. system + gen ai. request. model. (原始内容存档于2018-09-09).",
+        "gen ai.tool.name + gen ai.tool.call.id. (原始内容存档于2017-03-09)."
+      ],
+      "correct": 3,
+      "explanation": "gen ai.tool.name and gen ai.tool.call.id是GenAI公约中用于工具处决的教条密钥."
+    },
+    {
+      "stage": "post",
+      "question": "您想要查询“ 读取文件的p95 间隔” 。 你问什么文物?",
+      "options": [
+        "跨度状态( M) 。",
+        "计数工具 称为 total,除以时间窗口.",
+        "Prometheus 直方图工具 纬度 ms{tool=\"read file\"}刮过窗口 。",
+        "每个跨度的持续时间 ms in tracks.jsonl, 由脚本解析 。"
+      ],
+      "correct": 2,
+      "explanation": "直方图是百分位数的正确工具。 计数器只计数;跟踪包含原始跨度,但不预汇总."
+    },
+    {
+      "stage": "post",
+      "question": "一位评论员问道,为什么课会手卷而不是导入开元-sdk. 哪个答案是正确的?",
+      "options": [
+        "手卷式会教线条格式;SDK以后可以使用相同的属性密钥降入.",
+        "手卷在运行时更快.",
+        "SDK在导入时需要网络连接.",
+        "SDK不支持GenAI公约."
+      ],
+      "correct": 0,
+      "explanation": "这些公约在各执行过程中是稳定的。 手卷式版本为清晰而存在;SDK中生产线条,再用相同的gen ai.*键."
+    }
+  ]
+}

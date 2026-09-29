@@ -1,0 +1,78 @@
+{
+  "lesson": "10-cold-start-mitigation",
+  "title": "无服务器 LLMS 的冷启动缓解",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "寒冷的开始一般需要多久 70B型在新鲜的节点上没有缓解?",
+      "options": [
+        "3-8分钟",
+        "1小时以上",
+        "不到10秒钟",
+        "30-60秒"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "课中建议预播容器图像的 AWS 侧面特征会消失吗?",
+      "options": [
+        "从 EC2NodeClass 引用的瓶装双容量架构",
+        "斑点舰队布置",
+        "仅限 EBS 音量快照",
+        "ECS任务定义"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "哪个 Modal 特性通过将装入后状态直接解析为HBM,提供了最接近\"温GPU moot in seconds\"的东西?",
+      "options": [
+        "GPU 内存快照( 检查点)",
+        "分层 NVMe 到 DRAM 装载",
+        "运行:ai 型号串流器",
+        "实际移徙"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么活移传输输入符而不是节点之间的 KV 缓存?",
+      "options": [
+        "KV 缓存已加密, 无法移动",
+        "GDPR需要实时迁移",
+        "输入符号有更大的 en",
+        "在目的地重算 KV 比通过网络传输 KV 缓存的 GB 便宜"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "哪个没有服务器的层通过保持至少一个复制件的活性来引导GPU的成本以达到可预测的准备状态?",
+      "options": [
+        "分级加载",
+        "实际移徙",
+        "温暖的游泳池,带小工人 \\ 1",
+        "瓶状火箭预播"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "为什么教训说冷启动缓解必须分层堆放,而不是选为单一工具?",
+      "options": [
+        "Modal拥有整个堆栈",
+        "所有五层都装入 vLLM",
+        "这是管理要求",
+        "没有单层消除每个步骤(节点提供、图像拉动、重量载荷、引擎内装);堆叠层压缩每个步骤"
+      ],
+      "correct": 3,
+      "explanation": ""
+    }
+  ]
+}

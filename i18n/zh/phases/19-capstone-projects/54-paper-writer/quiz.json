@@ -1,0 +1,78 @@
+{
+  "lesson": "54-paper-writer",
+  "title": "写纸",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "写作者为何在写出任何散文之前将章节、数字和引用作为数据?",
+      "options": [
+        "因为 BibTeX 无法解决前置引用",
+        "因为 LaTeX 需要预先声明",
+        "因为模型需要系统快速",
+        "因为结构是契约: 牵引器在传人之前可以验证完整性"
+      ],
+      "correct": 3,
+      "explanation": "结构-首先让这一装置验证其独特性、引号覆盖面和数字覆盖面,然后才利用传导生成器。 骨架是合同"
+    },
+    {
+      "stage": "pre",
+      "question": "数字注入步骤从实验中显示出什么?",
+      "options": [
+        "具有稳定标识和路径的图表记录列表, 已正常化到纸张目录",
+        "书目根",
+        "根据文物汇编的PDF",
+        "带有图描述的模型提示"
+      ],
+      "correct": 0,
+      "explanation": "读取 实验 明显返回图记录。 ID是决定性的,路径是正常的,标题来自清单。"
+    },
+    {
+      "stage": "check",
+      "question": "在文件被写入之前, 哪些验证失败会引发 PaperValidation Error ?",
+      "options": [
+        "一个超过200字的抽象词",
+        "作者的奇数",
+        "引用书目中未声明的密钥的部分",
+        "磁盘上不存在的图路径"
+      ],
+      "correct": 2,
+      "explanation": "缺少文献目录密钥, 重复的图 ID, 空标题, 空抽象, 和未知的图 校对全部提高 PaperValidationError 。 由于 LaTeX 编译器稍后执行,磁盘上的存在不强制."
+    },
+    {
+      "stage": "check",
+      "question": "为什么散文生成器是一个可调用的注射到PaperWriter而不是它上的方法?",
+      "options": [
+        "因为测试可以把一个决定性的MockProseGenerator 换成一个模型调用,而不触碰编剧",
+        "因为 LaTeX 需要回调",
+        "因为数据类无法控制状态",
+        "因为Python不允许将纸作为论据的方法"
+      ],
+      "correct": 0,
+      "explanation": "编剧以传言生成者为依存者. 测试代用品MockProseGenerator. 生产替代了模型呼叫。 编者未变."
+    },
+    {
+      "stage": "post",
+      "question": "PaperWriter.write在成功时发出三个文件?",
+      "options": [
+        "页面存档备份,存于互联网档案馆 please.tex, reference.bib, express.json",
+        "express.json, prose.txt, papet.pdf 互联网档案馆的存檔,存档日期2013-07-02.",
+        "页面存档备份,存于互联网档案馆 please.tex, please.pdf, reference.bib",
+        "图解.json, paper.tex, 数字.tar"
+      ],
+      "correct": 0,
+      "explanation": "paper.tex是 LaTeX 源代码. 参考文献. bib 是文献目录. 明摆着的Json是下个评论圈所读的结构化文物"
+    },
+    {
+      "stage": "post",
+      "question": "为什么作家合同的明显部分 不只是LaTeX文件?",
+      "options": [
+        "因为下游的工具(批评,仪表板)读取结构化的运单,而不是LaTeX",
+        "因为公开. json是唯一接受BibTeX的文件",
+        "因为 LaTeX 太大, 无法分析",
+        "因为 LaTeX 编译器拒绝未键入的段落"
+      ],
+      "correct": 0,
+      "explanation": "运算表是下游阶段的稳定界面. 批评者和仪表板检查清单. json. LaTeX是人可读的文物,而不是机器接口."
+    }
+  ]
+}

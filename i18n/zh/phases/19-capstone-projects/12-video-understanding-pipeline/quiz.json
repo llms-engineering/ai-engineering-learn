@@ -1,0 +1,90 @@
+{
+  "lesson": "12-video-understanding-pipeline",
+  "title": "Capstone 12 — 视频理解管道( 场景, QA, 搜索)",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么即使一个长文本的VLM能够从本土读取一个2小时的视频,仍然需要一个场景级索引?",
+      "options": [
+        "场景切割是VLM唯一能理解的",
+        "矢量索引不支持视频文件",
+        "长文本 VLM 无法流出输出",
+        "将100小时的视频输入可查询程序需要现场检索,即使单个视频可以完整阅读"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "每个场景在多向量索引中会得到哪三种向量类型?",
+      "options": [
+        "音频波形、元光谱和MFCs",
+        "Pose、深度和光学流动",
+        "Hash、gzip和《儿童权利公约》",
+        "说明嵌入、键框嵌入和笔录嵌入"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "查询时如何合并三个检索流的结果 ?",
+      "options": [
+        "跨越三个排名列表的对等等级组合",
+        "通过平均余弦相似",
+        "通过选择标题只点击",
+        "通过拿工会 没有得分"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "时间定位步骤在顶部的场景中有什么改进?",
+      "options": [
+        "包含答案的(启动、结束)时间戳窗口",
+        "嵌入维度的关键框架",
+        "来自Whisper的文字记录",
+        "Qdrant 中存储的向量数量"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "哪个问题分类是单独报告的,因为它是一个已知的幻觉热点?",
+      "options": [
+        "翻译问题",
+        "发言者身份鉴定问题",
+        "计算和动作类型问题, VLMs 错误计算或错误排列事件",
+        "关于景色的说明性问题"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "标点值是多少?",
+      "options": [
+        "复杂",
+        "交汇区(IoU)",
+        "接受率",
+        "MRR@ 10"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "为什么管道在回答中需要引用时间戳?",
+      "options": [
+        "微声输出需要时间戳",
+        "Qdrant 有效载荷需要时间戳",
+        "它们减少嵌入维度",
+        "他们让查看器跳到精确的(video id, start, end),这样用户就可以验证要求"
+      ],
+      "correct": 3,
+      "explanation": ""
+    }
+  ]
+}

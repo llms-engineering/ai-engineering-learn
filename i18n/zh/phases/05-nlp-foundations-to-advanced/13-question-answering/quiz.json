@@ -1,0 +1,102 @@
+{
+  "lesson": "13-question-answering",
+  "title": "问答系统",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "采掘QA预测什么?.",
+      "options": [
+        "某个段落中答案周期的起始和结束符号指数",
+        "获取的通道ID",
+        "一个自然语言的答案",
+        "只有自信分数"
+      ],
+      "correct": 0,
+      "explanation": "提取质量保证输出包含答案的跨度。"
+    },
+    {
+      "stage": "pre",
+      "question": "哪些两个组成部分界定了基本的RAG管道?",
+      "options": [
+        "切换器和 POS 标记器",
+        "联合训练的编码器和解码器",
+        "复课和翻译",
+        "检索器(查找相关段落)和阅读器(摘录或生成答案)"
+      ],
+      "correct": 3,
+      "explanation": "RAG=检索器(查找相关上下文)+阅读器(从中解答)."
+    },
+    {
+      "stage": "check",
+      "question": "在SQuAD上,精确匹配(EM)测量什么?",
+      "options": [
+        "托肯级 F1",
+        "预测是否在正常化后完全匹配引用( 小写、 条形标注、 删除文章)",
+        "编辑距离",
+        "文字重叠"
+      ],
+      "correct": 1,
+      "explanation": "EM是经过确定的正常化步骤后严格的平等;部分匹配得分为零."
+    },
+    {
+      "stage": "check",
+      "question": "在SQuAD 1.1型号上,",
+      "options": [
+        "更大的上下文窗口",
+        "多语种支持",
+        "跨语言检索",
+        "对无法回答的问题进行培训,以便模型能够预测无效答案"
+      ],
+      "correct": 3,
+      "explanation": "SQuAD 2.0包括不可回答的项目;在其上训练的模型可以预测\"无答案\"."
+    },
+    {
+      "stage": "check",
+      "question": "哪个RAGAS维度是专门针对幻觉的?",
+      "options": [
+        "背景精确度",
+        "回答相关性",
+        "忠诚度,由NLI在答复要求和检索上下文之间的关联度衡量",
+        "背景回顾"
+      ],
+      "correct": 2,
+      "explanation": "忠诚度根据通过NLI检索的内容检查每项答复。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么要在评价读者准确性之前衡量检索回溯?",
+      "options": [
+        "读者的延迟取决于它",
+        "如果正确的段落不在顶端 K , 读者不能成功, 不管它有多好",
+        "回顾确定罗马尼亚",
+        "变压器要求"
+      ],
+      "correct": 1,
+      "explanation": "当右侧段落缺失时, 读者无法回答; retrieved reblocks records records records performation."
+    },
+    {
+      "stage": "post",
+      "question": "哪个快速模式能减少RAG生成中的幻觉?",
+      "options": [
+        "删除问题",
+        "包括更多段落",
+        "要求模型有创意",
+        "让模型只从提供的上下文回答,并在上下文不足时回答‘我不知道'"
+      ],
+      "correct": 3,
+      "explanation": "定位+明确拒绝指示大幅降低幻觉率."
+    },
+    {
+      "stage": "post",
+      "question": "2026年采掘QA何时仍然比基因RAG更受青睐?.",
+      "options": [
+        "需要权威来源文字引用的管制领域(法律、医学、审计)",
+        "打开域三维",
+        "对话性QA",
+        "多语种支持"
+      ],
+      "correct": 0,
+      "explanation": "采掘质量评估逐字引用了遵守情况所要求的权威文书。"
+    }
+  ]
+}

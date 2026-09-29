@@ -1,0 +1,78 @@
+{
+  "lesson": "03-direct-preference-optimization-family",
+  "title": "直接优化家庭",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么DPO可以跳过训练 一个明确的奖励模式?",
+      "options": [
+        "优先数据不需要分级奖励",
+        "DPO在第二次优化循环中隐含地训练自己的奖励模式",
+        "封闭式RLHF的优化 让你能表现奖励 作为政策的对数率 替代布拉德利 - 泰瑞的损失",
+        "Bradley - Terry的偏好 正好与奖励功能不相适应"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "IPO(Azar等人,2024年)主要在DPO中处理什么故障模式?",
+      "options": [
+        "对配对数据的要求",
+        "依赖参考政策",
+        "选定响应的长度偏差",
+        "微小优惠概率带来的无限制的隐含奖励差距"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "你什么时候才能在DPO上找到KTO?",
+      "options": [
+        "当您拥有未发售的单一标签( 可取/ 不受欢迎) , 并想要使用 损耗反省 工具",
+        "当您只有带强边的数据配对时",
+        "当你必须保证零隐含的回报漂移",
+        "当您想要完全取消 KL 处罚时"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "与DPO相比,SimPO有哪些财产是独有的?",
+      "options": [
+        "它取消了参考政策,并按顺序长度使日志的相似性正常化",
+        "用NLL的赔率损失",
+        "它把布拉德利-泰利的木头-西格莫德 放下来进行身份映射",
+        "它保留了参考政策,并增加了差值"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "BPO的目标是什么?",
+      "options": [
+        "所选的响应在推论中以低概率进行取样",
+        "选择的答复比拒绝的答复长",
+        "DPO 可以驱动所选响应的绝对对数测试, 只要被拒绝的对数测试更快下降",
+        "参考政策支持中缺少所选答复"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "Rafailov等人(NeurIPS 2024)关于直接对齐算法的缩放定律显示:",
+      "options": [
+        "DPO过度优化,但IPO和SimPO没有",
+        "DAAs通过设计消灭古德哈特",
+        "当配对数据超过100k例时,过度优化消失",
+        "DAAs在金奖上展现出同样的Gao等人的峰值和弯曲的过度优化形状"
+      ],
+      "correct": 3,
+      "explanation": ""
+    }
+  ]
+}

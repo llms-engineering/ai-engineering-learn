@@ -1,0 +1,78 @@
+{
+  "lesson": "10-ai-control-subversion",
+  "title": "AI 控制 - 安全尽管是 Subversion",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "哪个最能捕捉对齐和AI控制之间的区别?",
+      "options": [
+        "它们是同义词",
+        "控制涉及硬件; 对齐涉及软件",
+        "对齐询问 U 是否可信; 控制询问我们是否可以安全使用 U 而不信任它",
+        "控制替换损失函数, 而校正则更改优化器"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "AI控制威胁模型假设什么?",
+      "options": [
+        "U是不信任的强者 T是信任的弱者 H是信任的人类劳动",
+        "只有 U 存在",
+        "吴和T都是对手",
+        "所有三种资源(U、T、H)都值得信任"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "信任编辑所避免的不信任监测的关键风险是什么?",
+      "options": [
+        "T 无法编辑文本",
+        "硬件参数",
+        "有两例U可以串通或分享前科,所以协议必须花预算进行串通抵抗.",
+        "人类无法审计"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "在Greenblatt等人(ICML 2024)的密码后门任务上,\"信任编辑\"相对于\"不信任的监控\"取得了什么成就?.",
+      "options": [
+        "只有零人预算才能赢",
+        "他们完全一样",
+        "更严重",
+        "严格说来,Pareto居多:在每个安全级别都有更大的用处。"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "以下哪些不是教训的三大基本限制?",
+      "options": [
+        "Control作为副产品生产对齐模型",
+        "信任的弱模型最终落后于 U",
+        "如果 U 能 操纵 T 或 H 审计分布的理由, 控制可能会在更高的能力水平上失败",
+        "人类没有规模"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "安全控制案有什么争议?",
+      "options": [
+        "那个U是值得信赖的",
+        "那个T比U强",
+        "在最坏的情况下对U的假设,部署协议 限制一个不可接受的结果的概率",
+        "模型通过了人工越狱测试"
+      ],
+      "correct": 2,
+      "explanation": ""
+    }
+  ]
+}

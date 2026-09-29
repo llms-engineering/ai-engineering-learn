@@ -1,0 +1,102 @@
+{
+  "lesson": "07-pos-tagging-parsing",
+  "title": "POS  tagging 和 Syntactic 解析",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "POS 标记的目标是什么 ?",
+      "options": [
+        "翻译句子",
+        "检测情绪",
+        "提取命名实体",
+        "为每个符号指定语法类(名词,动词等)"
+      ],
+      "correct": 3,
+      "explanation": "POS 标记标签,每个符号都带有其语音部分."
+    },
+    {
+      "stage": "pre",
+      "question": "交叉语言工作默认是哪个标签集 ?",
+      "options": [
+        "宾树银行",
+        "CONLL-2003号",
+        "斯坦福附属公司",
+        "普遍依赖"
+      ],
+      "correct": 3,
+      "explanation": "通用属地提供一种较粗,语言不可知的17塔格集."
+    },
+    {
+      "stage": "check",
+      "question": "Bigram HMM POS标记器模型是什么?",
+      "options": [
+        "依赖参数",
+        "仅P( tags)",
+        "P(tag QQ前一个标签) 转换加 P( 单词 QQ标签) 排放, 用 Viterbi 解码",
+        "嵌入相似之处"
+      ],
+      "correct": 2,
+      "explanation": "Bigram HMM使用标记过渡和字词排放;Viterbi找到最高概率序列."
+    },
+    {
+      "stage": "check",
+      "question": "维特比算法计算出HMM标记器是什么?",
+      "options": [
+        "过渡矩阵",
+        "每个标签的边缘概率",
+        "只有前方概率",
+        "通过动态编程在标记网格上实现的单一最高概率标记序列"
+      ],
+      "correct": 3,
+      "explanation": "Viterbi用 O(n * QQT|^2) 动态编程找到 argmax 序列."
+    },
+    {
+      "stage": "check",
+      "question": "如何分析依赖性?",
+      "options": [
+        "NP/VP/PP标签的选区树",
+        "每个单词都有一个头词和标注语法关系的树",
+        "关联链",
+        "平整的 BIO 序列"
+      ],
+      "correct": 1,
+      "explanation": "依赖参数给出每字(头,关系)边缘;选区参数给出嵌入式短语结构."
+    },
+    {
+      "stage": "post",
+      "question": "为什么PTB POS标记的精度上限在97%-98%左右?",
+      "options": [
+        "模型在任何任务中不得超过98%",
+        "普遍依赖上限为98%",
+        "人类的注解员只同意97%的时间,所以高于~98%的模型可能过于匹配测试数据.",
+        "硬件限制"
+      ],
+      "correct": 2,
+      "explanation": "注释者分歧限制了可实现的准确性;非常高的数字往往信号过于吻合."
+    },
+    {
+      "stage": "post",
+      "question": "为什么POS标记在2026LLM管道中仍然重要?.",
+      "options": [
+        "表示性要求",
+        "Lemmatization,基于侧面的情绪,查询解析,结构化的输出验证,以及跨语言的传输都仍然消耗 POS 或依赖参数",
+        "替换变压器",
+        "没有它 LLMS 无法运行"
+      ],
+      "correct": 1,
+      "explanation": "POS和依赖性剖析为许多结构化的下游任务提供素材,即使LLMs生成传言."
+    },
+    {
+      "stage": "post",
+      "question": "在大多数制作 POS / 剖析任务中, 您应该访问哪个库 ?",
+      "options": [
+        "scikit 学习",
+        "sparCy(或Stanza/trankit,用于最高精度或更广泛的语言覆盖范围)",
+        "数字",
+        "翻滚自己的解析器"
+      ],
+      "correct": 1,
+      "explanation": "spanCy船快速生产级POS+依赖性剖析器; stanza/trankit涵盖更广泛的语言."
+    }
+  ]
+}

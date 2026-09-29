@@ -1,0 +1,78 @@
+{
+  "lesson": "11-multi-region-kv-locality",
+  "title": "多区域LLM 服务及 KV 缓存位置",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么对缓存的 LLM 推论来说, 圆robin 负载的平衡会积极有害 ?",
+      "options": [
+        "圆旋断开 TLS",
+        "圆robin 只对状态数据库有效",
+        "轮旋周期需要粘贴会议",
+        "不降落在持有前缀的节点上的请求会支付全部预填费用而不是缓存命中"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "缓存- 意识路由器会消耗什么 ?",
+      "options": [
+        "只有用户 id和租户 id",
+        "圆形 Robin 计数器和 TLS 键",
+        "复制件生成的 KV 缓存事件和收到的请求的前缀散列",
+        "随机洗牌和请求大小"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "缓存撞击和冷预填之间的 TTFT 间隙是多少?",
+      "options": [
+        "大约1000x",
+        "大约 10x(~80 ms 对~800 ms)",
+        "大约1.1x",
+        "同样的"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么跨区域的路由不会总是比缓存命中的区域路由要好?.",
+      "options": [
+        "无法跨区域进行缓存感知路径",
+        "所有超标者都禁止跨区域航线",
+        "GORGO 研究发现缓存命中无助于耐久性",
+        "已保存的预填可以被网络RTT矮化, 例如 440 ms 的绕行可以矮化800 至 80 ms 的预填保存"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "校对:Soup",
+      "options": [
+        "备份, 包括重量, 但却错过了指示器文件或定量配置",
+        "地区配额用尽",
+        "配置错误的负载平衡器",
+        "未加密的备份"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "关于商业跨区域推论,如Bedrock CRI,",
+      "options": [
+        "它们优化了可用性,而不是TTFT,并将推论视为不透明——你仍然需要一个应用层缓存-意识路由器",
+        "国家劳动和社会保障部禁止",
+        "它们是KV-cache-aware 并替换应用层路由",
+        "他们只在我们东部工作... 页:1"
+      ],
+      "correct": 0,
+      "explanation": ""
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "lesson": "07-memory-virtual-context-memgpt",
+  "title": "代理内存 — 虚拟上下文和内存页",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "MemGPT基于什么OS类比?",
+      "options": [
+        "虚拟内存:主上下文为内存,外部存储为磁盘,内存工具为页面进出",
+        "进程和线程",
+        "网络套接字",
+        "文件描述符"
+      ],
+      "correct": 0,
+      "explanation": "MemGPT地图迅速到RAM,外部存储到磁盘,以及内存工具到页面错误风格的传输."
+    },
+    {
+      "stage": "pre",
+      "question": "为什么更大的上下文窗口不能完全解决内存?",
+      "options": [
+        "模型拒绝长输入",
+        "长篇大论没有代价",
+        "过度流动、分散注意力和缺乏跨会场的持久性,即使有128千个窗口,也仍然会咬人",
+        "供货商以4千元代币封顶"
+      ],
+      "correct": 2,
+      "explanation": "Mem0测量到的128k窗口基线仍然缺少一个事实:一个有外部内存捕获量的4k剂;溢出、稀释和持久性依然存在。"
+    },
+    {
+      "stage": "check",
+      "question": "哪个不是MemGPT的犬科记忆工具?",
+      "options": [
+        "归档( M)",
+        "核心( M)",
+        "对话框  搜索",
+        "梯度  记忆  更新"
+      ],
+      "correct": 3,
+      "explanation": "没有梯度内存工具;表面是核心/存档/对话操作."
+    },
+    {
+      "stage": "check",
+      "question": "中断模式在MemGPT中做什么?",
+      "options": [
+        "它会阻止整个代理运行于任何错误",
+        "中和 代理引用一个内存工具,运行时间执行它,结果连结到下一转",
+        "它完全绕过上下文窗口",
+        "它触发模型再训练"
+      ],
+      "correct": 1,
+      "explanation": "内存-as-interrupt: 引用内存工具,运行时间抓取,结果返回作为下一个回合的新观察(像Unix读 ())."
+    },
+    {
+      "stage": "check",
+      "question": "2024年MemGPT发展为哪个生产系统?.",
+      "options": [
+        "皮内酮",
+        "记忆",
+        "泽普",
+        "莱塔"
+      ],
+      "correct": 3,
+      "explanation": "MemGPT在2024年9月成为Letta;研究的repo cpacker/MemGPT作为起源仍然存在."
+    },
+    {
+      "stage": "post",
+      "question": "在这种情况下,记忆中毒是什么?",
+      "options": [
+        "可用内存时从磁盘读取",
+        "嵌入模型版本漂移",
+        "损坏矢量索引的错误",
+        "攻击者的内容被存储为内存 并被重新吸收在未来的回忆"
+      ],
+      "correct": 3,
+      "explanation": "外部内存被检索到文本; 如果攻击者可访问的内容在内存注释中降落, 代理在下个会话中重新输入 。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么该课说生产记忆系统是MemGPT的变体?",
+      "options": [
+        "Letta, Mem0, 助理线程, 以及 Claude Agent SDK 都运行双层( 或更多) 的页式模版模式; 差异是操作形状",
+        "他们分享重量",
+        "他们使用相同的矢量 DB",
+        "MemGPT 拥有此商标"
+      ],
+      "correct": 0,
+      "explanation": "按操作形状选择,而不是图案;所有都共享MemGPT在/out骨架中的页面."
+    }
+  ]
+}

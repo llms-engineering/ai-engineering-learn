@@ -1,0 +1,78 @@
+{
+  "lesson": "16-mcp-security-oauth-2-1",
+  "title": "MCP 授权:CIMD、发行人捆绑、PKCE和升级",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "2026-07-28年新的MCP OAuth客户端注册选择何种机制?.",
+      "options": [
+        "URL 中的访问令牌",
+        "麦克普会议",
+        "客户端ID 元数据文档",
+        "动态客户注册"
+      ],
+      "correct": 2,
+      "explanation": "CIMD是首选的;DCR被贬值并保留为兼容路径."
+    },
+    {
+      "stage": "check",
+      "question": "在 DCR 倒置时, 具有回转重定向声明的桌面客户端应该使用何种程序  类型 ?",
+      "options": [
+        "网页",
+        "无国籍人",
+        "本地语言",
+        "机密资料"
+      ],
+      "correct": 2,
+      "explanation": "桌面,移动,命令行,和回路客户端都是本土应用程序."
+    },
+    {
+      "stage": "check",
+      "question": "客户端对授权响应必须做什么是价值?",
+      "options": [
+        "使其正常化并比较主机名",
+        "作为客户端存储Info",
+        "PKCE 成功后忽略它",
+        "在使用回复之前, 精确地与已记录的发行者比较"
+      ],
+      "correct": 3,
+      "explanation": "RFC 9207发行商检查防止发行商之间出现授权响应混合."
+    },
+    {
+      "stage": "check",
+      "question": "客户端的密钥发行人应如何识别 OAuth 证书和访问符 ?",
+      "options": [
+        "按发行人和按发行人加资源列出的记名证书",
+        "在一个全球客户名下的所有注册和签名",
+        "仅通过服务器显示名称",
+        "通过协议会话标识符"
+      ],
+      "correct": 0,
+      "explanation": "签发人和资源钥匙使伪造的证书无法通过安全当局或受众。 自行托管的CIMD URL仍可移植."
+    },
+    {
+      "stage": "post",
+      "question": "一个资源返回403,带有范围注释:delate. 下一步的正确步骤是什么?",
+      "options": [
+        "添加注释: 未经批准就删除本地",
+        "解释范围、获得同意、授权、再用新的请求编号重试",
+        "向下游API发送 MCP 令牌",
+        "重用当前符号并忽略挑战"
+      ],
+      "correct": 1,
+      "explanation": "步骤在重新试运行前获得新授权的符号."
+    },
+    {
+      "stage": "post",
+      "question": "用于MCP资源的RFC 9728元数据URL是什么 https://notes.example.com/mcp?",
+      "options": [
+        "https://notes.example.com/.well-nowledge/oauth-受保护-资源/mcp",
+        "https://auth.example.com/.well-nowledge/oauth-保护资源 (中文(简体) ).",
+        "https://notes.example.com/.well-nowledge/oauth-受保护-资源",
+        "https://notes.example.com/mcp/.well-nowledge/oauth-受保护-资源 互联网档案馆的存檔,存档日期2013-12-21."
+      ],
+      "correct": 0,
+      "explanation": "RFC 9728保留了已知段后的保护资源路径,因此需要/mcp后缀."
+    }
+  ]
+}

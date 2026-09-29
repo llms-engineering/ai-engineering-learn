@@ -1,0 +1,90 @@
+{
+  "lesson": "37-runtime-feedback-loops",
+  "title": "运行时间反馈循环",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "反馈者强迫特工做什么?",
+      "options": [
+        "对想象输出的反应",
+        "对事实的反应:从每个命令的循环中获取结构化的 stdout/stderr/exit/dult记录",
+        "跳过校验",
+        "使用不同的模式"
+      ],
+      "correct": 1,
+      "explanation": "跑者会关闭\"测试通过\"(想象中)和\"测试实际运行和退出0\"(记录)之间的差距."
+    },
+    {
+      "stage": "pre",
+      "question": "反馈与遥测有何不同?",
+      "options": [
+        "反馈用于此运行的下一回合; 遥测用于审查跨时间运行的操作员( 不同的文件, 不同的保留)",
+        "他们是一样的",
+        "支付遥测费",
+        "遥测使用OTel;反馈使用GraphQL"
+      ],
+      "correct": 0,
+      "explanation": "两者共享字段,但生活在不同的文件,保留内容也不同;反馈是运行内部,远程测量是交叉运行."
+    },
+    {
+      "stage": "check",
+      "question": "每一份反馈记录中都出现哪些字段 MUST ?",
+      "options": [
+        "exit code(而且一个无效的退出必须拒绝推进循环)",
+        "嵌入器( V)",
+        "模式( D)",
+        "提示( C)"
+      ],
+      "correct": 0,
+      "explanation": "exit code是明确的成功信号;无效退出表示没有进展."
+    },
+    {
+      "stage": "check",
+      "question": "跑者如何截断大型产出?",
+      "options": [
+        "用 gzip 压缩",
+        "随机取样",
+        "仅前10行",
+        "决定头 + 尾端带有“ 未运行的 N 线” 标记, 因此相同的输出总是产生相同的记录"
+      ],
+      "correct": 3,
+      "explanation": "定義短跑在限制符號成本的同时保持记录可重播;尾巴携带故障摘要."
+    },
+    {
+      "stage": "check",
+      "question": "为何在写作时间而不是阅读时间进行编辑?",
+      "options": [
+        "读取时间编辑断开 JSON",
+        "磁盘上的文件是攻击者所达到的; 仅在 JSONL 文件的已读密件上编辑",
+        "快点",
+        "压缩"
+      ],
+      "correct": 1,
+      "explanation": "编辑匹配 Bearer, 密码=, api  key=, AKIA..., xox[baprs] - 前附件; 每季度审计模式 。"
+    },
+    {
+      "stage": "post",
+      "question": "父命令  id 给了工作台什么 ?",
+      "options": [
+        "更快的文件 I/O",
+        "降低内存",
+        "检索其母尝试的链接, 以便审查者和审计者看到失败链; 没有它, 重复看起来像独立的成功",
+        "便宜的推论"
+      ],
+      "correct": 2,
+      "explanation": "父链接使得复试链条可以被审查者(Lesson 39)和校验门看到."
+    },
+    {
+      "stage": "post",
+      "question": "为什么要在1 MB 旋转时封顶反馈  record.jsonl ?",
+      "options": [
+        "磁盘太慢了",
+        "代理只读取当前文件; 旋转会保持运行时间成本限制, 而 CI 的文物会抓取完整集",
+        "JSON 不处理更大的文件",
+        "每字节的供应商收费"
+      ],
+      "correct": 1,
+      "explanation": "捆绑的当前文件+旋转的历史是相同的模式logrotate使用;热循环中可预见的成本."
+    }
+  ]
+}

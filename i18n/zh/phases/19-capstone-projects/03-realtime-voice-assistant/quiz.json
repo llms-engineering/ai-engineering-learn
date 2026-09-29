@@ -1,0 +1,90 @@
+{
+  "lesson": "03-realtime-voice-assistant",
+  "title": "Capstone 03——实时语音助理(ASR到LLM到TTS)",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么无法通过缝合三个屏蔽的REST电话来构建语音代理?",
+      "options": [
+        "REST 端点有 30 秒的困难超时",
+        "REST 与 WebRTC 不兼容",
+        "JSON 序列化对音频数据来说太慢了",
+        "800米以下的端到端间隙需要每个阶段的输油管"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "转弯探测器与VAD的作用是什么?",
+      "options": [
+        "将背景音乐混入输出流",
+        "检测到哪个发言者在多党电话中说话",
+        "读取部分笔录并评分用户是否真的完成了他们的言论",
+        "为代理机培训自定义语音克隆"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "当用户开始说话时,当代理是中回复时,驳船进入会有什么感觉?",
+      "options": [
+        "TTS 在生成前完成当前句子",
+        "代理商提高 TTS 的量来维护优先权",
+        "TTS 立即取消, 剩余 LLM 输出被放弃, ASR 重新武装",
+        "管道缓冲用户音频直到 TTS 完成"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么一个短的填充器,如“一秒钟,让我检查一下” 当一个工具超过大约300ms时,会发射?",
+      "options": [
+        "它会触发一个反向ASR模型",
+        "这样可以避免沉默,所以当侧通道工具运行时,对话不会停顿",
+        "它改进了WER 在下一个语音",
+        "它重置 WebRTC 抖动缓冲器"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "第一个音频块必须离开服务器 大约在第一个LLM 符号的多长时间内?",
+      "options": [
+        "200毫米口径",
+        "800 分钟",
+        "2秒钟",
+        "20分钟"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "哪些衡量标准直接衡量不当驳船或过度收割?",
+      "options": [
+        "卫生部",
+        "假截止日期",
+        "接受率",
+        "微风"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "输油管依赖哪两种适应行为?",
+      "options": [
+        "切换到更大的 LLM 并禁用 TTS",
+        "持有部分笔录并提高VAD语音门门槛",
+        "重新启动 LiveKit 房间",
+        "返回 PSTN 音频解码器"
+      ],
+      "correct": 1,
+      "explanation": ""
+    }
+  ]
+}

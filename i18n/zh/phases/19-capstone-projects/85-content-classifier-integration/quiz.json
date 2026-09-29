@@ -1,0 +1,78 @@
+{
+  "lesson": "85-content-classifier-integration",
+  "title": "Capstone 85 — 内容分类器集成",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "如果输入已被选中, 为什么要运行输出侧分类器 ?",
+      "options": [
+        "因为任何输入绕行都会产生一个用户会看到的输出,而输出是捕捉它的最后地点",
+        "因为输入分类器已贬值",
+        "因为标准库需要两种",
+        "故意让系统变慢"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "这课里有哪三个分类的人?",
+      "options": [
+        "OCR, ASR, TTS (英语).",
+        "质量、事实质量、引用",
+        "毒性,PII,指令性泄漏",
+        "感官、语言、长度"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "当一个判决高而另一个判决中等时,路由器会做什么?",
+      "options": [
+        "按顺序运行两个动作",
+        "采取最大严重程度并应用此动作;块主导编辑",
+        "撤销判决 并运送原件",
+        "只运行介质动作"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么在PII分类器内使用Luhn检查?",
+      "options": [
+        "压缩正则x",
+        "计算 SSN",
+        "要区分信用卡形状的数位和 任意的数位序列, 并且有低的假阳性",
+        "将数字翻译为字母"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "指令漏漏分类者如何决定?",
+      "options": [
+        "通过检测输出中的卷曲齿轮",
+        "通过计算输出和已知系统提示之间的三克余弦,并设定一个阈值",
+        "通过呼叫另一个模型",
+        "通过计算符号"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "毒性分类器为什么检查左小窗口的否定?",
+      "options": [
+        "提高虚假阳性率",
+        "减慢雷格克斯的速度",
+        "跳过像“ 你并不傻” 这样的匹配, 所以分类器不会过度编辑常见的保证",
+        "因为Unicode需要否定"
+      ],
+      "correct": 2,
+      "explanation": ""
+    }
+  ]
+}

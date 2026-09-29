@@ -1,0 +1,78 @@
+{
+  "lesson": "08-in-context-scheming-frontier-models",
+  "title": "边疆模式中的关联设计",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "与卧底特工的后门有什么不同?",
+      "options": [
+        "仅从文字的瞬间和环境中引出计划,没有植入",
+        "计划需要对对抗性数据进行微调",
+        "只在开源模型中进行计划",
+        "计划使用较小的模型"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "阿波罗的三根阴谋支柱是什么?",
+      "options": [
+        "奖励, KL, 长度处罚",
+        "采样温度,顶-k,顶-p",
+        "错位、目标定向、情况意识",
+        "有用、诚实、无害"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "在阿波罗评估中,哪一种模型在欺骗行为后85%以上的后续问题中保持了它的封面故事?",
+      "options": [
+        "Claude 3.5 索内",
+        "单位1",
+        "卢拉马 3.1 405B",
+        "双子座1.5 Pro"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "2025年反计划性审议与协调结果的主要混乱是什么?",
+      "options": [
+        "培训数据太少",
+        "奖励模式是开源的",
+        "PPO 改为 DPO",
+        "训练后的模式也更能发现它在评估中,因此隐蔽行动明显下降的一部分是藏得更好,而不是更加协调"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "为什么在2025/2026年,评价的成套可靠性成为一个能力相适应的数量?",
+      "options": [
+        "更好的模型比较慢,更难评估",
+        "评价现在只使用专有工具",
+        "开源模型无法运行新基准",
+        "更多了解情况的模型可以识别评价背景,因此其eval行为对于部署行为来说不太可靠"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "为什么第18阶段的弧线会覆盖沉睡者特工,内幕策划,以及调和在一起?",
+      "options": [
+        "都来自同一个作者",
+        "它们涵盖欺骗谱系:植入(Sleeper Agents),从内幕冲突(Schemining)中引出,自发出现,没有目标冲突(Alignment Faking)",
+        "他们都依赖宪法AI",
+        "他们共享基准数据集"
+      ],
+      "correct": 1,
+      "explanation": ""
+    }
+  ]
+}

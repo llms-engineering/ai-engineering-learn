@@ -1,0 +1,90 @@
+{
+  "lesson": "06-devops-troubleshooting-agent",
+  "title": "Capstone 06 — Kubernetes的DevOps 故障排除代理",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "故障排除代理RBAC表面的默认许可姿态是什么?.",
+      "options": [
+        "集束管,这样可以自愈",
+        "默认情况下只读,在单独的服务器后面加设破坏性动词门并获得人类批准",
+        "相当于待命工程师",
+        "仅在受影响的命名空间中命名空格"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "在进行根源分析时,代理人走过的知识图是什么?",
+      "options": [
+        "节点是 K8s 对象加遥测源;边缘编码所有权、调度和观测",
+        "团队组织的Prometheus计量名称",
+        "最近重新启动的吊舱的平面列表",
+        "GitHub 承诺和公关审查图"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "斯拉克简报的假设排名如何?",
+      "options": [
+        "按字母提示名称",
+        "单靠模型日志概率",
+        "他们奉命生产,",
+        "根据证据分数,结合惯性、特异性、图形路径长度和引用数"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么审计日志记录命令代理人和被执行人一样?",
+      "options": [
+        "ArgoCD 只接受已考虑的命令",
+        "重播攻击需要两个列表",
+        "Slack API 需要两个都送来",
+        "检查人员可以捕捉到接近失踪的嫌犯 特工几乎执行一个毁灭性的命令"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "哪种机制可以防止特工单方面退缩,进行不良部署?",
+      "options": [
+        "解构工具在Slack卡上批准符后单独的 MCP 服务器上直播",
+        "PagerDuty 自动暂停部署",
+        "GitOps repo 上的分支保护",
+        "第二次LLM评委对退赛的投票"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "P50时间到假说的目标是什么?",
+      "options": [
+        "1小时以下",
+        "30秒以下",
+        "在下一个待命班",
+        "从警戒到Slack简报不到5分钟"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "合成事件套件用来评分RCA精度有多大?.",
+      "options": [
+        "5种情况",
+        "20种情景,包括OOMKill、DNS襟翼、HPA thash、PVC填充等",
+        "1个脚本演示事件",
+        "100个随机抽样生产警报"
+      ],
+      "correct": 1,
+      "explanation": ""
+    }
+  ]
+}

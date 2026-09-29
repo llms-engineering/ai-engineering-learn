@@ -1,0 +1,78 @@
+{
+  "lesson": "phase-19/26-sandbox-runner-denylist",
+  "title": "带有拒绝列表和路径监狱的沙盒运行器",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "在阅读课前:沙盒检查argv形状,",
+      "options": [
+        "口译完全不能安全地装沙箱。",
+        "口译员的预算很慢,而且是废物代理。",
+        "带有 -c 的解译器是另一个名称的 shell 调用并绕过可执行的拒绝列表 。",
+        "模特儿没有他们就写得更好"
+      ],
+      "correct": 2,
+      "explanation": "Python3 -c, bash -c, node -e, 朋友在功能上与给模型一个外壳完全相同. 屏蔽可执行名称是不够的 。"
+    },
+    {
+      "stage": "check",
+      "question": "沙盒配置为工程 root=/ work. 一个路径参数以 ./src/main.py 到达. 监狱检查情况如何?",
+      "options": [
+        "连接绝对路径的 os.path. realpath 将检查一个/ 工作前缀。",
+        "沙盒拒绝每一个相对路径。",
+        "字串前缀对应/工作.",
+        "沙盒产出子进程,并在事实发生后检查工作目录."
+      ],
+      "correct": 0,
+      "explanation": "realpath解决了连锁。 字面前缀检查被工程根向外指向的连结所绕过. realpath加上前缀或等值是安全检查."
+    },
+    {
+      "stage": "check",
+      "question": "A SandboxResult 带回拒绝=True,定时 out=False,退出 代码=-100. 什么是犬科解释?",
+      "options": [
+        "沙盒从未产出子进程;执行前拒绝该呼叫.",
+        "子进程明确返回 - 100 。",
+        "子进程启动后被SIGKILLL杀死.",
+        "时钟超时发射."
+      ],
+      "correct": 0,
+      "explanation": "哨兵出口  代码 - 100 对齐拒绝= True 表示在子进程. run被调用前的沙盒短路."
+    },
+    {
+      "stage": "check",
+      "question": "为什么沙盒更喜欢贝壳? 默认的虚假和拒绝的外壳元化?",
+      "options": [
+        "子进程不接受 shell= 对马科斯来说是真的",
+        "这让测试套房更简单.",
+        "贝壳解析使整个壳DSL暴露在模型上,这就是沙盒试图缩小的表面.",
+        "shell=True在CPython中速度较慢."
+      ],
+      "correct": 2,
+      "explanation": "shell=True 将 argv 变成 shell 解释的字符串. 管道,方向转换,命令替换, 和光荣都变得可用。 一旦弹壳剖析出来,沙盒无法有意义地拒绝有效载荷。"
+    },
+    {
+      "stage": "post",
+      "question": "您想要在沙盒中添加每个进程内存限制 。 课的沙盒不执行这一点。 下一步的正确步骤是什么?",
+      "options": [
+        "跳过它:一个否定列表足以用于内存炸弹.",
+        "增加时钟超时以补偿.",
+        "使用 os. setrlict( RLIMIT  AS) 在预执行中传递到子进程. run 。",
+        "在拒绝列表中添加限制为字符串 。"
+      ],
+      "correct": 2,
+      "explanation": "sub process.run 接受 preexec fn(POSIX)或类似的机制. setrlict(RLIMIT AS)为孩子的地址空间设定上限. 此课中的沙盒不会运送这个; 第29课的端到端演示会讨论如何在顶端分层容器级别限制."
+    },
+    {
+      "stage": "post",
+      "question": "该模型以 argv= ['cat', 'src/./src/main.py'] 引用沙盒. 文件存在于 project root 下 。 电话应该通过 路径监狱?",
+      "options": [
+        "这取决于用户是否是根.",
+        "是: realpath 崩溃 src/./src 到 src ,解析的路径在工程 root 内部.",
+        "不:argv在沙盒看到之前被regex门拒绝.",
+        "不,任何... 路径都是自动拒绝的"
+      ],
+      "correct": 1,
+      "explanation": "现实道路是正常的。 沙盒不是毛毯背面的.标志;它检查已解决的目标。 这是有意的:合法的道路有时合法通过."
+    }
+  ]
+}

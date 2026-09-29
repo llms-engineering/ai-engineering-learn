@@ -1,0 +1,78 @@
+{
+  "lesson": "14-ascii-art-visual-jailbreaks",
+  "title": "第二届特别会议 艺术和视觉监狱破裂",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么信使级和语义级安全过滤器错过ArtPrompt风格的攻击?",
+      "options": [
+        "ArtPrompt 总是使用基数64编码",
+        "艺术Prompt需要精细调整模型",
+        "ArtPrompt在视觉识别层面运作:过滤器看到无害的标点,而模型读取的字母是一个单词",
+        "ArtPrompt只在多式联运模式方面有效"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "如Jiang等人(ACL 2024)所述,ArtPrompt的两个步骤是什么?",
+      "options": [
+        "切换器不匹配, 然后切换上下文",
+        "随机搜索,然后模糊性增强",
+        "翻译成法文,然后回译",
+        "安全相关标志的文字识别,然后是ASCII艺术替代和隐形瞬间生成"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么在ArtPrompt上PPL防御失败?",
+      "options": [
+        "默认禁用复杂度过滤器",
+        "ASCII 艺术中无法衡量其复杂性",
+        "隐形输入时的复杂度总是等于零",
+        "ASCII 艺术有很高的迷惑性,但是任何合理的结构化输入也一样;阻断攻击的阈值也会阻断合法内容"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "VITC基准衡量什么?",
+      "options": [
+        "该模型的培训数据毒性",
+        "该模型的工具调用精度",
+        "该模型能够读取非语义视觉提示(ASCII 艺术,翅膀,相似的编码文本).",
+        "该模型压缩视觉数据的能力"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "结构思维将艺术Prompt概括到什么?",
+      "options": [
+        "仅图像输入",
+        "长篇小说",
+        "通过梯度搜索的横向符号后缀",
+        "不常见的文本编码结构(UTES):树,图,巢JSON,CSV-in-JSON,diff式代码等."
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "虚拟培训中心结果意味着哪些能力-安全权衡?",
+      "options": [
+        "更大的上下文窗口减少ArtPrompt 成功",
+        "视觉识别与ArtPrompt成功无关",
+        "模型越能读到非语义视觉文本,ArtPrompt风格的攻击就越有效",
+        "更小的车型总是比较安全"
+      ],
+      "correct": 2,
+      "explanation": ""
+    }
+  ]
+}

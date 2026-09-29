@@ -1,0 +1,102 @@
+{
+  "lesson": "02-bag-of-words-tfidf",
+  "title": "词汇包、 TF- IDF 和文本代表",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "\"言语包\"丢掉什么?",
+      "options": [
+        "标点",
+        "按键顺序",
+        "词汇大小",
+        "文件长度"
+      ],
+      "correct": 1,
+      "explanation": "BOW计算每个文档的符号,但丢弃其序列."
+    },
+    {
+      "stage": "pre",
+      "question": "为什么用以色列国防军系数来衡量TF?",
+      "options": [
+        "规范文档长度",
+        "每个文档中出现的话都很少带有歧视性的信号,应该减量",
+        "删除标点符号",
+        "加快培训"
+      ],
+      "correct": 1,
+      "explanation": "以色列国防军惩罚无处不在的言辞,煽动罕见的言辞。"
+    },
+    {
+      "stage": "check",
+      "question": "在平滑的以色列国防军公式日志((N+1)/(df+1)+1)中,后面的+1能保证什么?",
+      "options": [
+        "大 N 的数值稳定性",
+        "与原始数的兼容性",
+        "每份文件中出现的一个字仍然有以色列国防军1号,而不是0号。",
+        "更快的计算"
+      ],
+      "correct": 2,
+      "explanation": "+1 保留了 IDF=1 的无所不在的单词, 因此它们不会被零除, 匹配 scikit- learn 的默认值 。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么L2将TF-IDF列在同位素相似性之前正常化?",
+      "options": [
+        "将稀疏的矢量转换为稠密",
+        "否则较长的文档将主导相似性分数; 正常化将所有文件置于单位超层",
+        "删除零项",
+        "压缩词汇"
+      ],
+      "correct": 1,
+      "explanation": "L2正常化可以消除文档长度偏差,并将余弦相似性转化为点产品."
+    },
+    {
+      "stage": "check",
+      "question": "TfidfVectorizer 设置对情绪分析有风险吗?",
+      "options": [
+        "子线性  tf= True",
+        "ngram range=(1, 2) (中文( ) ).",
+        "分钟 df=2",
+        "stop  words=“英语”"
+      ],
+      "correct": 3,
+      "explanation": "英文的句号列表会像“不”一样删除否定语,"
+    },
+    {
+      "stage": "post",
+      "question": "TF-IDF在2026年仍然赢得了哪些任务?.",
+      "options": [
+        "机器翻译",
+        "不限成员名额对话",
+        "图像标题",
+        "垃圾邮件检测、日志异常标记和低纬度窄分类"
+      ],
+      "correct": 3,
+      "explanation": "TF-IDF在文字存在是信号和可解释性或速度物质时会比嵌入物."
+    },
+    {
+      "stage": "post",
+      "question": "TF-IDF为何在\"电影不好看\"对\"电影很出色\"的对战中失败?.",
+      "options": [
+        "TF-IDF 需要 bigrams 才能工作",
+        "两种文档都共享大多数符号;字包没有否定或字序的概念",
+        "TF- IDF 无法处理止句",
+        "嵌入重叠太高"
+      ],
+      "correct": 1,
+      "explanation": "没有文字顺序或合成上下文,BOW无法模拟\"不\"翻转\"好\"的情绪."
+    },
+    {
+      "stage": "post",
+      "question": "TF-IDF加权嵌入式混合动力是什么?",
+      "options": [
+        "装配 BoW 和密集嵌入",
+        "运行 TF- IDF 上的 PCA 然后重新嵌入",
+        "使用 TF- IDF 权重作为每根嵌入物的集合权重,然后进行平均",
+        "BERT关于TF-IDF特征的培训"
+      ],
+      "correct": 2,
+      "explanation": "混合式加权法通过它的TF-IDF分数和平均值来嵌入每个令牌,将语义能力与稀有字的强调相混合."
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "lesson": "04-glove-fasttext-subword",
+  "title": "GloVe、 FastText 和子词嵌入",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "GloVe对Word2Vec的贡献是什么?",
+      "options": [
+        "更深的神经网络",
+        "子词 n- gm 嵌入",
+        "以加权损失计值的单词共发生矩阵的直接因数",
+        "字节级符号化"
+      ],
+      "correct": 2,
+      "explanation": "GloVe 将全球共发生矩阵因子化,并带有深思熟虑的加权对数损失。"
+    },
+    {
+      "stage": "pre",
+      "question": "FastText 解决Word2Vec和GloVe没有的问题是什么?",
+      "options": [
+        "减少培训费用",
+        "多语种传译",
+        "杂交体分裂",
+        "通过编组字符 n-gm 生成未见词的矢量"
+      ],
+      "correct": 3,
+      "explanation": "FastText从它的子词n-gram组成一个单词矢量,所以OOV单词仍然得到一个明智的矢量."
+    },
+    {
+      "stage": "check",
+      "question": "在GloVe中,加权函数f(x)=(x/x max)^alpha扮演什么角色?",
+      "options": [
+        "选择负面样本",
+        "将矢量规范为单位长度",
+        "随机初始化权重",
+        "体重低的双胞胎非常频繁,所以不会在损失中占主导地位"
+      ],
+      "correct": 3,
+      "explanation": "权重使无处不在的共同事件无法主导训练。"
+    },
+    {
+      "stage": "check",
+      "question": "BPE 合并步骤如何选择下一步合并的对 ?",
+      "options": [
+        "随机对",
+        "词典上的第一对",
+        "最常见的 相邻的标志 双跨体",
+        "以国防军最高的一对"
+      ],
+      "correct": 2,
+      "explanation": "BPE迭代合并了最频繁的相邻对."
+    },
+    {
+      "stage": "check",
+      "question": "为什么GPT-2使用字节级的BPE?",
+      "options": [
+        "256字节的基础词汇涵盖任何输入,完全取消省外",
+        "字节列车比字符快",
+        "字节保护外壳",
+        "字节 BPE 跳过合并训练"
+      ],
+      "correct": 0,
+      "explanation": "从256字节开始,意味着每个UTF-8字符串的符号化;没有什么是OOV."
+    },
+    {
+      "stage": "post",
+      "question": "微调预训变压器时,您应该使用哪一种指示器?",
+      "options": [
+        "总是字节级的 BPE",
+        "总是句子Piece",
+        "哪个词汇最多",
+        "运出的模型的确切标识符; 不匹配断开嵌入"
+      ],
+      "correct": 3,
+      "explanation": "Tokenizer-model不匹配无声地腐蚀了输入;总是将运出的标致器与其模型配对."
+    },
+    {
+      "stage": "post",
+      "question": "您何时从 GloVe 上选择 FastText 用于预训单词矢量 ?",
+      "options": [
+        "当你需要50d型号时",
+        "当时间最紧的时候",
+        "当体积很小的时候",
+        "对于形态学上丰富的语言或领域,经常出现新语和错拼现象."
+      ],
+      "correct": 3,
+      "explanation": "FastText的子词组成处理GloVe所不能的反射,新词,和误写."
+    },
+    {
+      "stage": "post",
+      "question": "WordPiece, BPE, 和PriendPiece词汇表的底部是哪个单位?",
+      "options": [
+        "判决",
+        "全词",
+        "段 次 页 次",
+        "字位以下的子字块(字符,n-gm,或学到的合并)"
+      ],
+      "correct": 3,
+      "explanation": "这三个词都是子词的代词;它们在如何学习合并或片段方面有所不同,而不是作为子词."
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "lesson": "24-agent-observability-platforms",
+  "title": "Agent Observatority: Langfuse,凤凰,奥皮克",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "在2025年6月开放原商业模块后,Langfuse号的船舶根据什么许可证?",
+      "options": [
+        "Apache 2.0 (英语).",
+        "GPLv3 常规",
+        "弹性许可证2.0",
+        "麻省理工学院"
+      ],
+      "correct": 3,
+      "explanation": "Langfuse是麻省理工学院,包括LLM-as-a-judge,注释队列,即时实验,2025年6月之后的游戏场."
+    },
+    {
+      "stage": "pre",
+      "question": "根据教训,阿里兹·凤凰最强的是什么?",
+      "options": [
+        "深剂特异性评价:痕量集群,异常检测,RAG检索相关性,OpenInference自动仪器",
+        "自动优化循环",
+        "提示版本",
+        "代码静态分析"
+      ],
+      "correct": 0,
+      "explanation": "凤凰网关注行为漂移和RAG评价,并使用OpenInference自动仪器."
+    },
+    {
+      "stage": "check",
+      "question": "哪些平台与护栏自动进行快速优化(PII编辑、专题限制)和LLM判断的幻觉检测?",
+      "options": [
+        "兰福斯",
+        "凤凰",
+        "贾格",
+        "奥皮克 Opik"
+      ],
+      "correct": 3,
+      "explanation": "奥皮克以优化+护轨环为中心."
+    },
+    {
+      "stage": "check",
+      "question": "课程建议采用哪一个平台,即时管理?",
+      "options": [
+        "奥皮克 Opik",
+        "数据犬 APM",
+        "凤凰",
+        "兰福斯"
+      ],
+      "correct": 3,
+      "explanation": "Langfuse覆盖跟踪+即时管理+evals+会话重播端对端."
+    },
+    {
+      "stage": "check",
+      "question": "经验教训对供应商公布的平台基准有何看法?",
+      "options": [
+        "它们是确定的",
+        "把它们当作方向; 测量自己的体积",
+        "只有奥皮克才是可靠的",
+        "它们是被OpenTelemote 禁止的"
+      ],
+      "correct": 1,
+      "explanation": "即使是奥皮克和朗福斯之间的14x差距,在决定之前也要根据自己的数据来衡量."
+    },
+    {
+      "stage": "post",
+      "question": "为何没有评价的追查被认为是昂贵的伐木?",
+      "options": [
+        "跨度收费供应商",
+        "你可以看到运行,但你没有得分, 所以回归是隐形的, 截断是不可能的",
+        "磁盘成本高于 CPU",
+        "无法重播 Spans"
+      ],
+      "correct": 1,
+      "explanation": "Evals是将痕迹转化为可操作质量信号的元素."
+    },
+    {
+      "stage": "post",
+      "question": "关于自选LLM法官的教训是什么?",
+      "options": [
+        "CRITIC适用:法官需要外部证据进行事实核查或加盖橡胶印章",
+        "他们必须运行GPU",
+        "他们被Apache 2.0禁止",
+        "他们只在 TypeScript 工作"
+      ],
+      "correct": 0,
+      "explanation": "没有外部基于工具的核查,LLM法官就转向了橡胶印章(CRITIC,Lesson5)。"
+    }
+  ]
+}

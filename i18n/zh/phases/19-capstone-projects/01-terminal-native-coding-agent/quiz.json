@@ -1,0 +1,90 @@
+{
+  "lesson": "01-terminal-native-coding-agent",
+  "title": "Capstone 01 — 终端编码代理",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "2026终端编码代理共享哪个循环形状?.",
+      "options": [
+        "获取、嵌入、排位、合成",
+        "计划,行动,观察,恢复",
+        "培训、评价、部署、监测",
+        "编码、解码、样本、流"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "为什么要在E2B或Daytona沙盒里 运行每个任务?",
+      "options": [
+        "启用代理循环的 GPU 访问",
+        "绕过模型提供者的费率限制",
+        "将文件系统和工具执行从主机中分离出来, 以便工作树完成后被撕毁",
+        "用于计算冷缓存的符号吞吐量"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "哪个内置的钩子是执行前 屏蔽破坏性壳命令的自然地点?",
+      "options": [
+        "停下来",
+        "后工具使用",
+        "工具预用",
+        "会话启动"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "每个工具的盖子都以大约4k的符号产生. 哪种失败模式能主要防止?",
+      "options": [
+        "超标工具调用跟踪",
+        "通过恶意外壳元化器的沙盒逃脱",
+        "整个续会的 Stale 计划状态",
+        "当一个工具返回一个大垃圾堆时, 背景中毒和逃跑成本"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "PreCompact钩在150k-token标记上做什么?.",
+      "options": [
+        "取消运行并退还用户预算",
+        "强制驱动当前分支以备份进度",
+        "总结一下旧的变成以前状态的块 这样计划和新的观察仍然合适",
+        "将支持模型切换为较小的模型草稿"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "在30个SWE-bench Pro子集上,顶点石将它的牵引力比作何种基线?",
+      "options": [
+        "助手",
+        "小型安全代理公司",
+        "现场特工",
+        "打开代码"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "可交付的衡量标准是哪一套?",
+      "options": [
+        "WER,MOS,和第一-自动退出",
+        "MRR@10和nDCG@10",
+        "BLEU和ROUGE的复杂性",
+        "传球@ 1, 转弯/ 任务, 和美元/ 任务"
+      ],
+      "correct": 3,
+      "explanation": ""
+    }
+  ]
+}

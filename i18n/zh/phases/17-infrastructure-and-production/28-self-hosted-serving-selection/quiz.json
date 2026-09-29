@@ -1,0 +1,78 @@
+{
+  "lesson": "28-self-hosted-serving-selection",
+  "title": "自控服务选择——将引擎匹配到硬件和规模",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "课选哪个引擎为 Dev-laptop 单指令默认 ?",
+      "options": [
+        "拉玛. cpp",
+        "虚拟LLM",
+        "TGI 主题",
+        "奥拉玛"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "2025年事件会改变新项目的默认值远离TGI?",
+      "options": [
+        "TGI 于 2025 年 12 月 11 日进入维护模式 — 只有 bug 修正要前进",
+        "TGI 放弃了 CUDA 支持",
+        "TGI 涨价",
+        "TGI 被 Anthropic 收购"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "哪些硬件约束迫使 lama.cpp 并排除 vLLM / TRT-LLM ?",
+      "options": [
+        "只有CPU( 无加速器)",
+        "AMD MI300X号卫星",
+        "NVIDIA 霍普尔",
+        "苹果公司M4"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "由于RadixAttenty,对于代理多转盘和前缀重负的工作量,哪个引擎是课时位置?",
+      "options": [
+        "SGLang 软件",
+        "奥拉玛",
+        "TGI 主题",
+        "拉玛. cpp"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "课中建议相同的GGUF或HF重量是多少?",
+      "options": [
+        "到处都是TGI",
+        "Ollama in dev and Ollama in prod 互联网档案馆的存檔,存档日期2013-12-02.",
+        "ollama in dev, lama.cpp in conduction, vLLM (或称 SGLang for prefix-havy) in prod",
+        "只有 TRT- LLM, 从上到下"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "为何奥拉玛劝阻共享生产?.",
+      "options": [
+        "无法装入 GGUF",
+        "它只在视窗上运行",
+        "这是封闭的源",
+        "Go HTTP 序列化增加了间接费用, 货币管理比 vLLM 简单, OpenTeleometry 支持滞后"
+      ],
+      "correct": 3,
+      "explanation": ""
+    }
+  ]
+}

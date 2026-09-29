@@ -1,0 +1,90 @@
+{
+  "lesson": "21-computer-use-agents",
+  "title": "计算机使用:克劳德,OpenAI CUA,双子座",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Claude电脑用什么输入? 它发出什么?",
+      "options": [
+        "屏幕截图(基于视觉),键盘/mouse命令退出",
+        "访问树,键盘/鼠标命令退出",
+        "DOM XML 进入, JavaScript 退出",
+        "JSON进来,SQL出来"
+      ],
+      "correct": 0,
+      "explanation": "Claude读取像素并发出键盘/mouse动作;没有使用OS访问API."
+    },
+    {
+      "stage": "pre",
+      "question": "双子座2.5计算机用途的显著安全特性是什么?",
+      "options": [
+        "一步步安全服务,在实施前评估每项行动并拒绝不安全行动",
+        "默认只读模式",
+        "硬码 WAF 规则",
+        "强制性CAPTCHA"
+      ],
+      "correct": 0,
+      "explanation": "双子座2.5 计算机 使用每步安全分类器的船舶作为定义特征."
+    },
+    {
+      "stage": "check",
+      "question": "所吸取的教训认为,在所有三种模式中,哪些是不可信的投入?",
+      "options": [
+        "没什么,一切都可信",
+        "只有HTTPS 回复",
+        "屏幕截图、 DOM 文本、 工具输出、 PDF 内容、 检索到的任何东西",
+        "只有PDF 内容"
+      ],
+      "correct": 2,
+      "explanation": "只有直接用户指令算作许可;其他一切都是不信任的."
+    },
+    {
+      "stage": "check",
+      "question": "在OpenAI CUA发布时,",
+      "options": [
+        "未报告的数字",
+        "OSWorld 99%,韦伯阿雷纳 99%",
+        "OSWorld 0%,韦伯阿雷纳 0%",
+        "OSWorld 38.1%,WebArena 58.1%,WebVoyager 87%"
+      ],
+      "correct": 3,
+      "explanation": "这些是上面提到的发射号。"
+    },
+    {
+      "stage": "check",
+      "question": "2026年的汇合列表中没有哪个防御模式?",
+      "options": [
+        "导航目标的允许列表/块列表",
+        "逐步安全分类器",
+        "用于敏感行动的 \" 人类 \"",
+        "通过对话框自动单击以节省时间"
+      ],
+      "correct": 3,
+      "explanation": "自动点击对话框与安全相反;教训建议明确确认."
+    },
+    {
+      "stage": "post",
+      "question": "对计算机使用人员的主要攻击是什么?",
+      "options": [
+        "网络中断",
+        "操作系统更新滞后",
+        "缓慢渲染",
+        "一个恶意的页面或 PDF 嵌入到被检索内容中的指令,模型视其为用户意图"
+      ],
+      "correct": 3,
+      "explanation": "信任截图或 DOM 文本为权限,是cononical间接-即时注入失败."
+    },
+    {
+      "stage": "post",
+      "question": "何时专门推荐人行走确认?",
+      "options": [
+        "永远",
+        "关于登录、购买、删除文件等敏感动作",
+        "只有在模特问起的时候",
+        "仅读导航"
+      ],
+      "correct": 1,
+      "explanation": "敏感行动(金钱、数据曝光、新登录)需要明确的人类确认。"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "lesson": "19-subword-tokenization",
+  "title": "子词切变——BPE,WordPiece,Unigram,句子Piece",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "字面符号化比字面词汇还贵吗?",
+      "options": [
+        "更快的培训",
+        "较小的模型",
+        "更好的嵌入",
+        "稀有的单词分解成已知的子词块, 在保留词汇时删除 OOV"
+      ],
+      "correct": 3,
+      "explanation": "子词符号通过分解来覆盖任何输入,去除OOV的词层vocab问题."
+    },
+    {
+      "stage": "pre",
+      "question": "为什么GPT-2使用字节级的BPE而不是字符级的BPE?",
+      "options": [
+        "变压器要求",
+        "256字节的基础词汇覆盖任何 UTF-8 输入,保证没有 [UNK] 符号",
+        "字节较小",
+        "字节 BPE 跳过合并"
+      ],
+      "correct": 1,
+      "explanation": "字节级的BPE起源于256字节,所以每个输入编码;没有什么是OOV."
+    },
+    {
+      "stage": "check",
+      "question": "Unigram 指示器如何构建其词汇表 ?",
+      "options": [
+        "贪婪的经常同父异母的合并",
+        "随机取样",
+        "从一个大型的选手套装开始,迭代的微调符号,其去除最不会伤害人体记录",
+        "贪婪的以色列国防军加权"
+      ],
+      "correct": 2,
+      "explanation": "Unigram符合unigram LM,并迭代删除最不有用的符号以达到目标vocab大小."
+    },
+    {
+      "stage": "check",
+      "question": "WordPiece的合并标准与BPE的标准有什么区别?",
+      "options": [
+        "WordPiece 使用字节",
+        "WordPiece 跳过合并",
+        "WordPiece 没有监督",
+        "WordPiece 合并对子,使培训-公司可能性最大化,而 BPE 合并了最常见的对子"
+      ],
+      "correct": 3,
+      "explanation": "WordPiece通过概率选择合并;BPE通过原始频率选择."
+    },
+    {
+      "stage": "check",
+      "question": "哪个工具直接在原始多语言 Unicode 文本上训练一个指示器?",
+      "options": [
+        "垃圾邮件",
+        "tiktoken",
+        "标记器-升",
+        "PriedPiece(将白空间编码为特殊标记并列车BPE或Unigram)"
+      ],
+      "correct": 3,
+      "explanation": "PriedPiece在原始文本上进行BPE/Unigram的列车,而不进行预token化;tiktoken只编码."
+    },
+    {
+      "stage": "post",
+      "question": "为什么生产CI必须检查部署的标致剂. json?",
+      "options": [
+        "Tokenizer 漂移产生不同的代号 与那些被训练的模型, 无声地腐蚀输出",
+        "压缩存储",
+        "能减少词汇大小",
+        "拖动面部需要"
+      ],
+      "correct": 0,
+      "explanation": "即使是小的示意器也会改变移位ID;在到达用户之前,一次散列检查会捕获漂移."
+    },
+    {
+      "stage": "post",
+      "question": "单一的爱莫吉人 拿走许多信物是什么常见的原因?",
+      "options": [
+        "Emojis是停止字符",
+        "爱莫吉是预留的",
+        "多编码点的emojis编码成多个UTF-8字节;没有专用的符号每个字节是自己的子词",
+        "爱莫吉斯是作为漂浮物储存的"
+      ],
+      "correct": 2,
+      "explanation": "复合emojis编码为数个字节;字节级的代碼器可能每个glyph使用多个代号."
+    },
+    {
+      "stage": "post",
+      "question": "新的单一语言变换器的词汇大小是多少?",
+      "options": [
+        "匹配培训体积",
+        "1B参数下的模型大约32k;1-10B的模型大约50-100k;多语言或边疆模型大约200k+",
+        "总是1M",
+        "总是8000"
+      ],
+      "correct": 1,
+      "explanation": "具有模型和语言覆盖的Vocab大小尺度;这些都是粗糙的社区默认值."
+    }
+  ]
+}

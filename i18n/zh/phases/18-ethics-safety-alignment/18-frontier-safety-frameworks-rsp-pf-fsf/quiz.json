@@ -1,0 +1,78 @@
+{
+  "lesson": "18-frontier-safety-frameworks-rsp-pf-fsf",
+  "title": "边境安全框架 -- -- RSP、PF、FSF",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Anthropic的 ASL 结构模型本身是什么?",
+      "options": [
+        "欧盟AI法案类别",
+        "生物安全水平(BSL)",
+        "互联网RFC级",
+        "ITL事件断裂"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "哪个 OpenAI 备战框架 v2 标准捕获“ 伤害发生快或无法撤销 ” ?",
+      "options": [
+        "净新",
+        "可能",
+        "可计量",
+        "瞬间不可补救"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "在DeepMind的FSF v3.0(2025年9月)中增加了哪些关键能力级?",
+      "options": [
+        "有害操纵",
+        "网络提升",
+        "提升生物武器",
+        "ML 研发加速"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "2025+边境安全框架的“竞争者调整条款”是什么?",
+      "options": [
+        "如果同行实验室没有类似的保障措施,允许实验室减少安全要求",
+        "出口管制豁免",
+        "示范卡披露要求",
+        "API 访问的定价规则"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "课程中描述的安全案例的三个标准支柱是什么?",
+      "options": [
+        "有用、诚实、无害",
+        "监测、不易识别、无能力",
+        "速度、准确度、费用",
+        "内,外,间"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "在Anthropic的“能力阈值”、“OpenAI的“高能力阈值”和DeepMind的“关键能力水平”之间有哪些结构对齐?",
+      "options": [
+        "无公开记录",
+        "结构调整:分级前沿能力阈值与公布的评价标准,尽管术语不同",
+        "相同术语和数字截断",
+        "所有三个都使用完全相同的评价"
+      ],
+      "correct": 1,
+      "explanation": ""
+    }
+  ]
+}

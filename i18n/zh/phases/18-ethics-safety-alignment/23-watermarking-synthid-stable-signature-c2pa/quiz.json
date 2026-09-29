@@ -1,0 +1,78 @@
+{
+  "lesson": "23-watermarking-synthid-stable-signature-c2pa",
+  "title": "水标记 - 合成ID、稳定签名、C2PA",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Kirchenbauer风格(合成-文本)标志性水标记如何嵌入信号?",
+      "options": [
+        "用公钥加密输出",
+        "在每一个解码步骤上,将以前的 K 令牌散开, 将词汇分割为绿色/ 红色组合, 并偏向绿色采样; 检测通过 Z 分数计算绿色令牌",
+        "通过插入隐藏的 HTML 注释",
+        "通过修改快捷模板"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "文字水印对释义的主要限制是什么?",
+      "options": [
+        "参数只影响图像水印",
+        "他们实际上幸存下来的句子",
+        "语句加强水印",
+        "重写或翻写文本会破坏绿色托肯统计信号"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "稳定签名(Fernandez等人,ICCV 2023)做什么?",
+      "options": [
+        "在图像的角落中添加可见的水印",
+        "用私钥签名元数据",
+        "使用 C2PA 在上传时签名图像",
+        "微调潜在扩散解码器,使每个生成的图像都带有从潜在中可探测到的固定嵌入式信息"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "2024年5月的\"稳定签名是不稳定的\"结果显示什么?.",
+      "options": [
+        "水印是不可原谅的",
+        "水印需要 C2PA 才能运行",
+        "水印仅在 JPEG 压缩时失败",
+        "生成后对解码器进行微调,可以在保持图像质量的同时去除水印,破坏对抗力强性"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "C2PA元数据和水标记如何相互补充?",
+      "options": [
+        "C2PA 完全替换水印",
+        "元数据可以剥去,但带有丰富的来源链;水印通过转码持续,但携带的位数很少;分层,它们提供了一个有用的来源故事",
+        "水印由与 C2PA 相同的密钥签名",
+        "它们是可交换的"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "为什么“ 没有合成信号” 不证明真实性( 人源 ) ?",
+      "options": [
+        "因为合成ID是闭源",
+        "因为合成体总是在人体文字上产生假阳性",
+        "因为 SynthID 只从 SynthID 启用的模型中创建水印; 没有 SynthID 的任何模型中的内容默认是未加水印",
+        "因为合成ID只操作双子座输出"
+      ],
+      "correct": 2,
+      "explanation": ""
+    }
+  ]
+}

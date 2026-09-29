@@ -1,0 +1,90 @@
+{
+  "lesson": "15-constitutional-safety-harness",
+  "title": "Capstone 15 — 宪法安全策略+红色团队范围",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "层层安全在这顶石上是什么意思?",
+      "options": [
+        "纵贯输入消毒、政策栏杆、分类仪门、模型、输出过滤器和HITL级",
+        "仅在输入上运行一个强大的分类器",
+        "单一基于规则的对产出的监管",
+        "对每项答复进行人工审查"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "哪个分类人员处理大约132种语言的多语种覆盖?",
+      "options": [
+        "拉玛卫队4",
+        "Nemotron 3 内容安全",
+        "X 守护",
+        "盾牌Gemma-2"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么在像XSTest这样的良性套房里衡量过度反弹?",
+      "options": [
+        "追踪假阳性块 这样模型就有用了 同时改善无害性",
+        "认证护卫框架",
+        "替换红队评分",
+        "用于基准值吞吐量"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "这颗石碑里面的宪法自律圈是什么?",
+      "options": [
+        "一个RLHF奖励模式从零开始训练",
+        "批评 LLM 对照成文宪法评分, 提示模型重写反对的产出, SFT 运行在改进后的对上",
+        "单向前进穿过Llama卫队4",
+        "一个比候选人越狱更高级的提示"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "在调查结果中,越狱的成功程度如何?",
+      "options": [
+        "通过生成反应的模型",
+        "使用 CVSS 4.0 并带有攻击矢量、复杂性和撞击,加上披露时间表",
+        "以原始的符号计算",
+        "在操作员选择的手调 1-10 尺度上"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "红队射程是哪六个攻击家庭?",
+      "options": [
+        "PSI、KL、MMD、KS、JS和Wasserstein",
+        "PAIR、TAP、GCG、编码(ASCII/base64/rot13)、多回合人a和多语种代码交换器",
+        "残酷的力量、字典、重播、MITM、钓鱼和CSRF",
+        "布莱克、鲁格、米特尔、伯茨丘尔、彗星基维和克里夫"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "为什么射程自动化(cron + 提醒)是主题的一部分?",
+      "options": [
+        "Cron是打给OPA的唯一办法",
+        "需要自动化来禁用Llama Guard 4",
+        "明确要求手动运行",
+        "连续的预定探测器在攻击成功率中捕获漂移,并随时间推移出现过度反演"
+      ],
+      "correct": 3,
+      "explanation": ""
+    }
+  ]
+}

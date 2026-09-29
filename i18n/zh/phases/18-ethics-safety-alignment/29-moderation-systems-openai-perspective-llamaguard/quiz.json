@@ -1,0 +1,78 @@
+{
+  "lesson": "29-moderation-systems-openai-perspective-llamaguard",
+  "title": "温和系统 - OpenAI, 透视, Llama Guard",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "什么是OpenAI的 omni-modelation-latest (2024) ?",
+      "options": [
+        "C2PA 水标记终点",
+        "一个基于GPT-4o的节制分类器,在一个呼叫中处理文本和图像,返回一个13类响应计划(骚扰,仇恨,自我伤害,性,暴力,非法,有子类别),对大多数开发者免费",
+        "高频奖励模式",
+        "以推理为重点的前沿模式"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "其中哪些不属于OpenAI Moderation的主要顶级类别?",
+      "options": [
+        "选举干预",
+        "暴力行为",
+        "自我伤害",
+        "骚扰"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "标准2026节制模式的三层是什么?.",
+      "options": [
+        "投入节制(生产前)、产出节制(生产后)、定制节制(领域规则)",
+        "望远镜/近视/微镜",
+        "探测/探测/控制",
+        "切除器/ 型号/ 解剖器"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "何为视角 API(Google Jigsaw) 主要设计得分 ?",
+      "options": [
+        "对用户满意程度的奖励",
+        "质量",
+        "水印强度",
+        "毒性(具有严重毒性、侮辱性、亵渎性、威胁性、身份攻击性次阴茎),作为LLM时代前内容修改基准"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "仅限输入的节制失败模式是什么?",
+      "options": [
+        "它不会捕获模型输出失败或幻觉;编码攻击(Lessons 12-14)可以完全绕过输入分类器",
+        "它不能运行在 GPU 上",
+        "它总是屏蔽合法的内容",
+        "它取消了对输出分类器的需要"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "Azure Contents主持人堕落和移民目标是什么?",
+      "options": [
+        "合并到Llama警卫队4",
+        "替换为 Purview API",
+        "2024年2月贬值,2027年3月15日退役;迁移目标为Azure AI内容安全(LLM基于,与Azure OpenAI集成).",
+        "立即折旧,无替换"
+      ],
+      "correct": 2,
+      "explanation": ""
+    }
+  ]
+}

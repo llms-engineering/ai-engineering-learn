@@ -1,0 +1,78 @@
+{
+  "lesson": "12-edge-inference",
+  "title": "边缘推论——苹果神经引擎,Qualcomm Hexagon,WebGPU/WebLLM,Jetson",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "何谓核心制约, 使得移动 LLM 推论比数据中心慢,",
+      "options": [
+        "储存能力",
+        "Wi-Fi 延迟",
+        "计算吞吐量",
+        "内存带宽(移动 DRAM at 50-90 GB/s vs HBM3 at 2-3 TB/s)"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么苹果的\"神经引擎\"会避免CPU-NPU的复制在间接费用上?.",
+      "options": [
+        "苹果硅船统一内存——CPU和ANE共用同一个池.",
+        "它使用 PCIe 5.0",
+        "核心 ML 禁用 KV 缓存",
+        "它在复制前将权重转换为 FP4"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "在浏览器中为 WebGPU + WebLLM 推荐的课程是哪一种量化格式 ?",
+      "options": [
+        "GGUF 问题4 K M",
+        "NVFP4 自动取款机",
+        "FP8 目标",
+        "Q4 MLC (q4f16 1) 通过 mlc llm 转换  重量"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "大约2026年的教学报告是多少WebGPU的移动报道?.",
+      "options": [
+        "10%以下",
+        "只有iOS 萨法里",
+        "大约70-75%,还有Firefox Android在追赶",
+        "所有浏览器的100%"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "为什么在典型的电话上保留128K上下文是不切实际的?",
+      "options": [
+        "切换器故障超过 8K",
+        "32K 令牌的模型权重加 KV 缓存加 OS 间接费用 很容易超过 8 GB 内存预算",
+        "4K 的 WebGPU 上下文",
+        "iOS 禁止长上下文"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "为什么声音被强调为边缘推论的杀手应用?",
+      "options": [
+        "语音模型不需要 KV 缓存",
+        "语音模型总是适合 50 MB",
+        "语音代理对耐久性敏感(第一令牌 < 500ms) 本地推论完全消除网络耐久性",
+        "只有WebAssembly的语音运行"
+      ],
+      "correct": 2,
+      "explanation": ""
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "lesson": "07-building-an-mcp-server",
+  "title": "构建 MCP 服务器: 无国籍 Python 和 TypeScript",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "现代MCP服务器在哪里读取客户端能力?.",
+      "options": [
+        "来自麦克普会议",
+        "从第一个初始化的电话",
+        "从当前每个请求",
+        "从过程环境中"
+      ],
+      "correct": 2,
+      "explanation": "MCP 2026-07-28在每个请求的params. meta中搭载客户端能力."
+    },
+    {
+      "stage": "check",
+      "question": "现代服务器必须采用哪种方法?",
+      "options": [
+        "初始化",
+        "服务器/发现",
+        "资源/订阅",
+        "关闭"
+      ],
+      "correct": 1,
+      "explanation": "服务器/发现器在现代服务器上是强制性的,尽管客户端可能先调用另一种方法."
+    },
+    {
+      "stage": "check",
+      "question": "在工具/清单中需要哪些成功的成果领域?",
+      "options": [
+        "协议版本和工具",
+        "结果类型、 ttlMs、 缓存范围、 工具",
+        "初始化和工具",
+        "会话Id和工具"
+      ],
+      "correct": 1,
+      "explanation": "现代列表结果被键入并可缓存."
+    },
+    {
+      "stage": "check",
+      "question": "为什么服务器要定级工具?",
+      "options": [
+        "稳定缓存和模式上下文",
+        "创建会话",
+        "谈判协议",
+        "取代授权"
+      ],
+      "correct": 0,
+      "explanation": "稳定的订单使等同的登记处作出同等的答复。"
+    },
+    {
+      "stage": "post",
+      "question": "有效的工具调用运行, 但域操作失败 。 哪个形状合适?",
+      "options": [
+        "通知/初始化",
+        "HTTP 丢弃",
+        "完整的工具结果为真",
+        "新服务器请求"
+      ],
+      "correct": 2,
+      "explanation": "工具级的失败通过内容保留在模型的可见度,是Error."
+    },
+    {
+      "stage": "post",
+      "question": "Stdio服务器的运输寿命应该结束什么?",
+      "options": [
+        "EOF 在 Stdin 时",
+        "获取请求",
+        "强制关闭RPC",
+        "麦克普会议结束"
+      ],
+      "correct": 0,
+      "explanation": "EOF是手提式Stdio关闭信号. 它没有结束现代协议会议。"
+    }
+  ]
+}

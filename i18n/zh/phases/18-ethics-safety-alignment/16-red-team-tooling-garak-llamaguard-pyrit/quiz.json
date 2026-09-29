@@ -1,0 +1,78 @@
+{
+  "lesson": "16-red-team-tooling-garak-llamaguard-pyrit",
+  "title": "红队工具 - Garak、Llama Guard、PyRIT",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Llama Guard在典型的2026年部署中扮演什么角色?",
+      "options": [
+        "一个思考链的推理脚手架",
+        "RLHF的奖励模式",
+        "符号替代",
+        "在LLM前后放置的MLCommons危险类别的输入和/或输出安全分类器"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "大约有多少MLComons危险类别是Llama Guard 3覆盖的?",
+      "options": [
+        "3个",
+        "第40条",
+        "第 14 条",
+        "页:1"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "加拉克的建筑结构如何?",
+      "options": [
+        "探测器(攻击发电机)、探测器(输出计分器)、Harneses(营地管理人员)",
+        "嵌入器、检索器、重新排序器",
+        "工具、资源、提示",
+        "路由器、代理、队列"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "派瑞特主要是为了什么,它与加拉克有什么区别?",
+      "options": [
+        "PyRIT进行深层多转弯运动(转换链,管弦乐手如Crescendo和TAP,评分),而Garak则运行数千个单转探测器",
+        "二者在范围和受众方面是相同的",
+        "PyrIT是Llama Guard的变种;Garak是快速守护的变种.",
+        "PyrIT是奖赏模特教练;Garak是象征性的"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "推荐的2026年默认红队堆栈配置是什么?.",
+      "options": [
+        "使用 PAIR 而不是任何工具",
+        "在发射时跑一次加拉克",
+        "仅用人工审查取代 LLM 评价",
+        "让Llama Guard在模型两侧, 运行Garak夜以继夜的回归, 运行 PyrIT 预释放运动"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "在Llama Guard、Garak和Pyrit之间共享什么评价陷阱?",
+      "options": [
+        "他们需要白箱访问",
+        "他们只用英语",
+        "它们不能运行在GPU上",
+        "报告的攻击/防卫率取决于法官的身份和探测器的停滞程度;在模型补齐时,必须指定法官和刷新探测器"
+      ],
+      "correct": 3,
+      "explanation": ""
+    }
+  ]
+}

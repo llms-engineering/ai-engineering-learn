@@ -1,0 +1,90 @@
+{
+  "lesson": "05-autonomous-research-agent",
+  "title": "Capstone 05——自主研究代理(AI-科学家级).",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "AI-科学家级特工用什么搜索形状来探索实验?.",
+      "options": [
+        "Bradeth- first 扩展随机评分",
+        "Beam 搜索符号输出",
+        "纯粹强化从人类反馈中学习",
+        "在实验节点上进行最佳第一树搜索,并有新颖的x质量x预算分数"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "为什么沙盒的配置是 -- network=无和限定的资源封顶?",
+      "options": [
+        "强迫特工使用快速缓存",
+        "防止网络进化,并在可复制的信封内包含实验副作用",
+        "执行决定性浮点算术",
+        "默认允许 GPU 通过"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "视觉批评在编剧圈里的作用是什么?",
+      "options": [
+        "从截图中生成新的实验想法",
+        "在渲染时替换 matplotlib",
+        "将数字转换成条形图",
+        "将 LaTeX 草稿编译为 PDF , 然后再有 VLM 批判版式、 数字清晰度、 以及 索赔证据校正"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "审阅员综艺团怎么把管道关上?.",
+      "options": [
+        "审查者匿名投票,多数获胜",
+        "5位评委在NeurIPS风格的标语上得分,加权总和必须清除一个阈值,否则循环草稿会回到编目中",
+        "一个法官在二进制旗帜上接受或拒绝",
+        "仅在出版后进行审查"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "封顶石每张纸都执行什么成本纪律?",
+      "options": [
+        "跟踪GPU小时,但从未封顶",
+        "通过Langfuse柜台和运行前估计数追踪30美元硬预算",
+        "在不进行质量检查的情况下,只优化成本",
+        "无限制计算, 硬墙点数"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "哪些评分函数将树节点排序为进一步扩展?",
+      "options": [
+        "相关文件的引用数",
+        "随机统一优先级",
+        "输出长度和符号数",
+        "新事物x质量x剩余预算"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "红色小组报告对系统有何反作用?.",
+      "options": [
+        "沙盒-逃逸尝试,如叉子炸弹、网络过滤、文件系统逃逸",
+        "系统提示的缓存命中率",
+        "向量 DB 中多租户数据泄漏",
+        "包内丢失的不便尾巴"
+      ],
+      "correct": 0,
+      "explanation": ""
+    }
+  ]
+}

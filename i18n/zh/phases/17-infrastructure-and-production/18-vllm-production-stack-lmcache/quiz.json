@@ -1,0 +1,78 @@
+{
+  "lesson": "18-vllm-production-stack-lmcache",
+  "title": "生产服务堆栈- KV 卸载和缓存软件运行",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "LMCACH在VLLM部署中主要处理什么问题?",
+      "options": [
+        "Tokenizer GIL 参数",
+        "网络入侵过滤",
+        "冷启动图像拉",
+        "HBM 中的 KV 缓存压力导致同一前缀的预置和重置"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "VLLM API 引入可插件 KV 缓存后端 ?",
+      "options": [
+        "前缀标记",
+        "vLLM v. 9.0 中的连接器 API",
+        "页:1",
+        "断开 预填 API"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "VLLM 0.11.0(2026年1月)的发布会给KV卸载路径增加什么?.",
+      "options": [
+        "删除 LMCache 支持",
+        "强制 FP8 KV 缓存",
+        "同步卸载路径, 这样引擎不会在普通情况下阻断卸载",
+        "只同步卸载"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "什么时候你应该从原产地CPU卸载中挑选LMCACHE?",
+      "options": [
+        "仅在CPU上运行时",
+        "当多个引擎在租户之间共享前缀时,LORA变体,或重复的RAG上下文,所以跨引擎再利用支付",
+        "当单个引擎有HBM压力且没有前缀共享时",
+        "如果您想要完全禁用 KV 缓存"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "当KV脚印远远低于HBM时,LMCACH会有什么好处?",
+      "options": [
+        "LMCACH 自动禁用",
+        "配置与基线相匹配,间接费用约为3%-5%,没有实际效益",
+        "引擎崩溃",
+        "仍能增加一倍的吞吐量"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "为什么LMCACH由分类服务(第17阶段)组成?",
+      "options": [
+        "KV 从预填到解码 LMCache 中的土地; 后期的查询可以从 LMCache 中提取并跳过预填, 因此缓存- 意识路由器可以选择本地或 LMCache- 共享缓存匹配的引擎",
+        "它并不——它们是相互排斥的。",
+        "因为LMCACH取代了NIXL",
+        "因为LMCACH运行在和引擎相同的GPU上"
+      ],
+      "correct": 0,
+      "explanation": ""
+    }
+  ]
+}

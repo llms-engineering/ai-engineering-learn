@@ -1,0 +1,78 @@
+{
+  "lesson": "01-instruction-following-alignment-signal",
+  "title": "指令跟随对齐信号",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么一个原始的预训语言模型经常用另一个提示而不是代码来响应“写一个反转列表的 Python 函数” ?",
+      "options": [
+        "它的温度默认为零",
+        "它的词汇缺少 Python 符号",
+        "培训它以完成网页样式的文本,其中的提示会以更多的提示继续",
+        "不进行微调, 它不能代表函数签名"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "指令GPT奖赏模型使用哪一种比对偏好标签的损耗 ?",
+      "options": [
+        "预言和真实的回报之间的交错",
+        "标签上的平均平方差错",
+        "固定保证金的兴格损失",
+        "布拉德利-特里: -log sigmoid(r(x,y w) - r(x,y l)))."
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "在《防止洗钱法》第3阶段,KL惩罚主要针对什么?",
+      "options": [
+        "灾难性地忘记了象征性的统计数据",
+        "利用奖赏模式寻找对抗性高回报线的优化者",
+        "采样时上下文窗口流过",
+        "PPO 梯度更新中的数字不稳定性"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "PPO-ptx将什么问题混入RL目标以缓解?",
+      "options": [
+        "调整税:RLHF基准回归没有目标",
+        "SFT 和 RM 之间的切换器不匹配",
+        "KL 词变为负数",
+        "PPO期间漂流的奖励模型"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "在大约70%的时间里,比175B基础的GPT-3更倾向于使用1.3B InstructGPT. 这对配合和能力有什么看法?",
+      "options": [
+        "对齐是不同于能力的轴线,基础模型设定了能力底线",
+        "50%以上的优惠率证明代理奖励等于人类价值",
+        "能力与对齐在规模上是相同的轴",
+        "更大的基础模型总是输给小对齐模型"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "以下哪些是InstructGPT初始化的奖励模式?",
+      "options": [
+        "LM头完好无损的基底预训模型",
+        "带有 LM 头的 SFT 模型被一个 scalar 头取代",
+        "单独的只编码器变压器",
+        "随机的无预训的缩放"
+      ],
+      "correct": 1,
+      "explanation": ""
+    }
+  ]
+}

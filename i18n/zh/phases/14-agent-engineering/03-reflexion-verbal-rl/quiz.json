@@ -1,0 +1,90 @@
+{
+  "lesson": "03-reflexion-verbal-rl",
+  "title": "折射:口头强化学习",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "反射在标准强化学习中有什么替代?",
+      "options": [
+        "带有参数记忆的 Episodic 内存",
+        "在审判之间储存自然语言反射的渐进更新",
+        "随机搜索的政策网络",
+        "不断的奖励"
+      ],
+      "correct": 1,
+      "explanation": "Reflexion使用自然语言的反射在偶发记忆中,而不是重量更新."
+    },
+    {
+      "stage": "pre",
+      "question": "什么是三个组成部分定义了反射系统?",
+      "options": [
+        "规划员、工人、解决办法",
+        "选择器、 扩展器、 后宣传器",
+        "发电机、批评器、优化器",
+        "演员、评价员、自我反思员"
+      ],
+      "correct": 3,
+      "explanation": "折射因子会将代理人计入一个运行轨迹的演员,一个评分员,以及一个写课的自我反射员."
+    },
+    {
+      "stage": "check",
+      "question": "哪个评价者类型使用外部二进制信号,如单位测试或已知的正确答案?",
+      "options": [
+        "高压",
+        "斯卡拉尔",
+        "自我评价",
+        "计票"
+      ],
+      "correct": 1,
+      "explanation": "Scalar评价员从地面真理读取过/故障信号(ALFWorld成功,HumanEval测试)."
+    },
+    {
+      "stage": "check",
+      "question": "为什么自我评价的信号比标量反馈要弱?",
+      "options": [
+        "模型本身没有外部的地基 这样它就能在自己的答案上贴上胶印",
+        "计算得比较慢",
+        "总是需要更大的模型",
+        "它不能运行在工具上"
+      ],
+      "correct": 0,
+      "explanation": "Self-eval缺乏外部检查,因此自信的幻觉得分良好;将其与基于工具的验证配对."
+    },
+    {
+      "stage": "check",
+      "question": "校对:Soup",
+      "options": [
+        "外部的瞬间故障,如网络被关闭",
+        "热点QA 多跳问题",
+        "用于测试的代码生成",
+        "ALFWorld 导航任务"
+      ],
+      "correct": 0,
+      "explanation": "思考暂时的外部停电,会产生无助于未来运行的反射."
+    },
+    {
+      "stage": "post",
+      "question": "在反射模式中记忆腐烂是什么?",
+      "options": [
+        "进程重新启动时失去反射",
+        "反射提示超过上下文窗口",
+        "反射由提供者加密",
+        "临时缓冲器充斥着过时或错误的反射以及今后审判的缓慢或偏差"
+      ],
+      "correct": 3,
+      "explanation": "累积的 Stale 或 错误的反射会降解行为; 通过收缩或 TTL 来缓解."
+    },
+    {
+      "stage": "post",
+      "question": "什么样的生产模式是 课最清楚的匹配 反射?",
+      "options": [
+        "Claude Code的CLAUDE.md 学习准备 未来届会",
+        "Anthropic的快速缓存",
+        "光标的应用编辑流",
+        "OpenAI 的批次 API"
+      ],
+      "correct": 0,
+      "explanation": "CLAUDE.md的学习,亲工作流的学习规则,和Letta的睡眠时间计算所有外化的偶发反射缓冲."
+    }
+  ]
+}

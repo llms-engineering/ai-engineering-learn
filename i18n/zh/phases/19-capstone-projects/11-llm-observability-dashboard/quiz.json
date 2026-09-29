@@ -1,0 +1,90 @@
+{
+  "lesson": "11-llm-observability-dashboard",
+  "title": "Capstone 11 — LLM 可观察性和Eval 数据板",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Langfuse、Phoenix和OpenLLMetry 都靠哪一种办法?",
+      "options": [
+        "普罗米修斯展览格式",
+        "OpenTeleometry GenAI 语义规范对OTLP HTTP",
+        "每个供应商专有JSON",
+        "普通 CSV 日志文件"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "为什么在存储层将 ClickHouse 和 Postgres 分开 ?",
+      "options": [
+        "它们是可互换的,一个是随机选择的",
+        "后枪对摄入速度更快",
+        "在Postgres 持有用户、会话和应用程序元数据时,点击之家处理跨度的列分析",
+        "点击之家不能存储字符串"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "OpenTeleometry Collection 中的尾端采样处理器是做什么的?.",
+      "options": [
+        "决定是否在完成后保持追踪,使用诸如保留错误和抽样成功的规则",
+        "将旧的痕迹重放到 Postgres",
+        "无条件流出每个字节",
+        "宽度低于100米"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "仪表盘如何探测到几周内漂移?",
+      "options": [
+        "计算唯一痕量的ID",
+        "计算集合快速嵌入的PSI或KL差异,并观察等分数趋势",
+        "手动观察仪表板",
+        "读取最新的部署时间戳"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "可交付品的MTTR目标是什么? 注射PII漏退?",
+      "options": [
+        "1小时以下",
+        "24小时内",
+        "从窃听器到Slack警报不到5分钟",
+        "在下一个待命班内"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "哪个SDK家庭必须生产Canonic GenAI 跨度才能达到跟踪覆盖值?",
+      "options": [
+        "仅限 OpenAI 和 Anthropic",
+        "SDK就够了",
+        "仅限 vLLM",
+        "至少六个:OpenAI、Anthropic、Google GenAI、LangChain、LlamaIndex和vLLLM"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "评价结果如何与最初的LLM呼叫联系起来?",
+      "options": [
+        "作为单独的 Postgres 表格,没有跟踪ID",
+        "作为CSV的夜间电子邮件",
+        "仅作为黑消息",
+        "由于 eval 在 ClickHouse 中作为 父母微量子女所写"
+      ],
+      "correct": 3,
+      "explanation": ""
+    }
+  ]
+}

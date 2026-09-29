@@ -1,0 +1,90 @@
+{
+  "lesson": "02-rag-over-codebase",
+  "title": "Capstone 02 — 代码库上的RAG( Cross- Repo语义搜索)",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么对原始块的天真余弦搜索不足以进行跨repo代码检索?",
+      "options": [
+        "矢量指数不能存储大于1KB的有效载荷",
+        "编码嵌入中未定义余弦相似性",
+        "嵌入模型不将代码视为符号",
+        "它毒害生成的代码,单列波重复,以及很少导入的符号"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "在摄入管道中AST-意识的块化意味着什么?",
+      "options": [
+        "将代码拆分为固定的 256 托肯 窗口",
+        "在存储前用 gzip 压缩块",
+        "在树保姆节点边界( 如函数和类间距) 剪切",
+        "在嵌入前丢弃注释和空白"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "每个块有哪三种可回收的模式?",
+      "options": [
+        "原始文本、 gzip 和散列",
+        "脚本ID、语法树和调用图表",
+        "AST, IR, 和字节代码",
+        "Dense 嵌入、 BM25 术语和自然语言摘要"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "混合检索步骤后交叉编码器重新排序的作用是什么?",
+      "options": [
+        "它对每个查询 - 扫描对齐 精确度高于仅余弦",
+        "它重写块以删除生成的代码",
+        "它以不同的模式重现查询",
+        "它在发送到合成器之前压缩块"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么合成器拒绝没有(repo/path:start-end)锚的答案?",
+      "options": [
+        "引用忠贞之门 答案让用户可以验证每个说法",
+        "矢量数据库计划需要锁定",
+        "锁定器减少合成电话的象征性费用",
+        "下游BM25重排需要锁定"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "递增的再指数在50个文件的推力上需要60秒以下的多少?.",
+      "options": [
+        "完全丢弃符号图",
+        "放弃BM25指数,从零开始重建",
+        "重新装入关于每项罪行的完整的2M-LOC程序",
+        "只重新嵌入文本已更改的块并重新计算受影响的符号边缘"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "在消息来源中,哪些衡量尺度是可核实的?",
+      "options": [
+        "引用忠诚",
+        "p95 查询间隔",
+        "nDCG@ 10 (韩语)",
+        "MRR@ 10"
+      ],
+      "correct": 0,
+      "explanation": ""
+    }
+  ]
+}

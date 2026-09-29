@@ -1,0 +1,90 @@
+{
+  "lesson": "23-otel-genai-conventions",
+  "title": "OpenTeleometry GenAI 语义规范",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "哪个名称代表GenAI公约中的代理人?",
+      "options": [
+        "引用 agent(可选后缀为 gen ai.agent.name)",
+        "代理。 启动",
+        "代理服务器( L)",
+        "运行链"
+      ],
+      "correct": 0,
+      "explanation": "引用  agent 是cononial 名称; 设置时代理名称属性出现在跨度名称中 。"
+    },
+    {
+      "stage": "pre",
+      "question": "GENAI SIG 定义了哪些三个跨类别?",
+      "options": [
+        "前端、 后端、 db",
+        "读、写、执行",
+        "延迟、 错误、 流量",
+        "模型/客户、代理、工具"
+      ],
+      "correct": 3,
+      "explanation": "模型/客户(LLM calls),代理(create/invoke),工具(per reference)是分类."
+    },
+    {
+      "stage": "check",
+      "question": "何时使用 CLIENT 对INNAL 的引用范围?",
+      "options": [
+        "总是内部",
+        "仅用于 HTTPS 的 CLIENT",
+        "永远是",
+        "远程代理服务中心(OpenAI助理、Bedrock代理);内部流程框架中心(LangChain、CrewAI、当地ReAct)"
+      ],
+      "correct": 3,
+      "explanation": "远程代理呼叫是CLIENT;进程内代理运行是INNAL."
+    },
+    {
+      "stage": "check",
+      "question": "内容捕捉(输入和输出)的默认规则是什么?",
+      "options": [
+        "默认抓取一切",
+        "仪器不应默认抓取; 抓取是通过 gen ai. * 属性选择的 。",
+        "只抓取错误",
+        "只抓取输出, 绝不输入"
+      ],
+      "correct": 1,
+      "explanation": "默认关闭的内容捕捉保护PII和秘密;选入是明确的."
+    },
+    {
+      "stage": "check",
+      "question": "哪些属性能识别出要检索的委托书或仓库?",
+      "options": [
+        "gen ai.data source.id (中文(简体) ).",
+        "gen ai.professor.name (中文(简体) ).",
+        "gen ai.agent.name (原始内容存档于2019-09-29).",
+        "gen ai. request.model (英语)."
+      ],
+      "correct": 0,
+      "explanation": "gen ai.data source.id 标签为 RAG 或 store 点击检索 。"
+    },
+    {
+      "stage": "post",
+      "question": "经验教训建议如何在生产中储存及时的内容?",
+      "options": [
+        "外部存储内容( S3, 日志存储) , 并记录参考ID",
+        "作为纯文本在每一段内抓取全部提示",
+        "在跨度属性中加密提示",
+        "从不存储任何内容"
+      ],
+      "correct": 0,
+      "explanation": "使用指针ID的外部存储可以避免PII泄露到操作人员可以读取的痕迹中."
+    },
+    {
+      "stage": "post",
+      "question": "你如何选择进入GenAI常规的实验性稳定预览?",
+      "options": [
+        "领执照",
+        "编辑 OTel 收藏器配置",
+        "设置 OTEL SEMCONV STABILITY OPT IN=gen ai latest exitental 操作",
+        "从源头重建 SDK"
+      ],
+      "correct": 2,
+      "explanation": "内脏会给实验性公约打上针 所以属性不会默不作声地重新命名"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "lesson": "03-word-embeddings-word2vec",
+  "title": "字词嵌入器 — Word2Vec from Scratch",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "分配假设是什么?",
+      "options": [
+        "所有文字都可以嵌入300维",
+        "经常用词最有意义",
+        "你从公司那里知道一个字",
+        "单词在文档中统一分布"
+      ],
+      "correct": 2,
+      "explanation": "Firth's (1957) 分布假设:类似上下文隐含着类似的含义."
+    },
+    {
+      "stage": "pre",
+      "question": "Word2Vec语中, 平庸的软调词组为何不切实际?",
+      "options": [
+        "软max 无法模拟概率",
+        "软max 没有梯度",
+        "100k+词汇单词的计算软max昂贵,每个培训步骤都太贵了",
+        "导致渐变"
+      ],
+      "correct": 2,
+      "explanation": "全vocabulary软max过于昂贵;负采样重塑为二进制分类."
+    },
+    {
+      "stage": "check",
+      "question": "跳图和CBOW有什么区别?",
+      "options": [
+        "Skip-gram 从中心预测上下文词; CBOW 从上下文预测中心",
+        "Skip-gram 从上下文预测中心词; CBOW 做反向",
+        "Skip-gram列车是深层网络;CBOW是浅层的",
+        "Skip-gram 使用 bigrams; CBOW 使用 unigrams 。"
+      ],
+      "correct": 0,
+      "explanation": "跳过- gram: 中 - > 上下文 。 CBOW:上下文 ->中心."
+    },
+    {
+      "stage": "check",
+      "question": "在负取样中,正对对的目标是什么(中心,上下文)?",
+      "options": [
+        "最小化它们的点产品",
+        "强迫他们做正交",
+        "最大化 sigmoid( W[中] 点 W' [context]) 使其接近 1",
+        "装饰向量"
+      ],
+      "correct": 2,
+      "explanation": "1附近为正对火车西格莫德;0附近为底片取样火车西格莫德."
+    },
+    {
+      "stage": "check",
+      "question": "训练Word2Vec后,哪个重量矩阵成为嵌入词?",
+      "options": [
+        "单独的培训后预测",
+        "两者并举",
+        "隐藏到输出的 W 矩阵",
+        "输入到隐藏的 W 矩阵( 中字表)"
+      ],
+      "correct": 3,
+      "explanation": "中字表W是标准嵌入输出;W'经常被丢弃或平均输入."
+    },
+    {
+      "stage": "post",
+      "question": "Word2Vec为何在多聚体(例如“ Bank”)上失败?",
+      "options": [
+        "负采样下降",
+        "它忽略了稀有的话语",
+        "窗口大小太小",
+        "它每个字分配一个静态矢量, 所以“ 河岸” 和“ 金融银行” 共享同一个矢量"
+      ],
+      "correct": 3,
+      "explanation": "静态嵌入不能分解感官;上下文嵌入(ELMo/BERT)可以固定这一点."
+    },
+    {
+      "stage": "post",
+      "question": "2026年你什么时候才能在变压器上找到Word2Vec?",
+      "options": [
+        "当对话框质量重要时",
+        "当您需要解析背景时",
+        "轻量级的、安装的、特定域名的检索,其中单行搜索是延迟预算",
+        "当投入非常长时"
+      ],
+      "correct": 2,
+      "explanation": "Word2Vec通过微小的潜伏性预算,基于设备推论,或者快速的域特异性训练而获胜."
+    },
+    {
+      "stage": "post",
+      "question": "是什么使得著名的类比\"国王——男人+女人~王后\"?",
+      "options": [
+        "皇室词汇上的跳动格子列车",
+        "矢量算术 捕捉线性方向,如“ royal ” 。",
+        "模型将版税编码为旗号",
+        "内分泌的相似性与性别无异"
+      ],
+      "correct": 1,
+      "explanation": "嵌入空间编码关系特征的方向,因此加/减系统移动."
+    }
+  ]
+}

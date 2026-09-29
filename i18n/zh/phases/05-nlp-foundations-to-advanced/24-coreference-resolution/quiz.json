@@ -1,0 +1,102 @@
+{
+  "lesson": "24-coreference-resolution",
+  "title": "引用分辨率",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "校对结果的目标是什么?",
+      "options": [
+        "所有提及(名称、名义、代名词)指同一个现实世界实体的集群",
+        "提取关系",
+        "标注语音部分",
+        "将代词翻译为名词"
+      ],
+      "correct": 0,
+      "explanation": "Coref集群提到,它们都指同一个实体。"
+    },
+    {
+      "stage": "pre",
+      "question": "什么样的表达式是“名义”提法?",
+      "options": [
+        "一个动词",
+        "像\"她\"这样的代词",
+        "只是一个合适的名词",
+        "名词短语,如\"CEO\"或\"公司\""
+      ],
+      "correct": 3,
+      "explanation": "名义上提及是名词短语,如\"公司\";名义上提及是代名词."
+    },
+    {
+      "stage": "check",
+      "question": "什么是现代(Lee等人,2017年)coref建筑?.",
+      "options": [
+        "仅基于规则的合成",
+        "决策树",
+        "端到端的跨度: 列出跨度, 分数提及, 然后以贪婪的方式对先前的概率和集群进行评分",
+        "BM25 检索"
+      ],
+      "correct": 2,
+      "explanation": "端对端神经核f列出跨度,并共同学习提及+前置积分."
+    },
+    {
+      "stage": "check",
+      "question": "CONLL F1平均是多少?",
+      "options": [
+        "MUC,B型和CEAF-phia F1分数",
+        "精确和召回",
+        "F1 各语文",
+        "键和横跨 F1"
+      ],
+      "correct": 0,
+      "explanation": "CoNLL F1是MUC,B-孵化,以及CEAF-phia 度量衡的平均值."
+    },
+    {
+      "stage": "check",
+      "question": "什么是连接 anaphora ?",
+      "options": [
+        "暗含的参考语如\"车轮\" 意为前面提到的车的车轮",
+        "翻译错误",
+        "一个代名词在它的参考者之前",
+        "无前科的代词"
+      ],
+      "correct": 0,
+      "explanation": "将提及部分实体或相关实体联系起来,这些实体被暗示但未明确说明。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么LLM-仅Coref对长文件不可靠?.",
+      "options": [
+        "Coref需要一个CFG",
+        "LLMs 无法读取文本",
+        "切换器失败",
+        "单调 LLMS 过度出现或无声下降,涉及50多个段落;需要滑窗加合并"
+      ],
+      "correct": 3,
+      "explanation": "Long-doc LLM coref 降解;与跨窗口合并的滑动窗口减轻."
+    },
+    {
+      "stage": "post",
+      "question": "为什么在下游任务之前将coref集群合并为NER结果?",
+      "options": [
+        "维基数据要求",
+        "因此,下游任务每个组一个实体而不是每个表层一个实体,大幅提高覆盖面",
+        "低延迟度",
+        "增加符号数"
+      ],
+      "correct": 1,
+      "explanation": "不合并, NER 将每个表层分别计算,并忽略了60%-80%的实体提及."
+    },
+    {
+      "stage": "post",
+      "question": "为什么硬编码的性别规则在核心数据系统中是脆弱的?",
+      "options": [
+        "他们打破了非二进制的裁判,组织和动物;学得的分数更强",
+        "他们不能使用 POS 标签",
+        "他们需要GPU",
+        "他们跑得太快了"
+      ],
+      "correct": 0,
+      "explanation": "性别推力论在人口多样性的文本中失败;人们倾向于学习模式。"
+    }
+  ]
+}

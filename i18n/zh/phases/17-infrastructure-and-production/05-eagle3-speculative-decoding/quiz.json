@@ -1,0 +1,78 @@
+{
+  "lesson": "05-eagle3-speculative-decoding",
+  "title": "EAGLE-3 生产中的分光解码",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么投机解码会利用在平版解码中存在的漏洞?",
+      "options": [
+        "批量解码没有好处",
+        "解码器是内存绑定的,所以GPU大多闲置等待HBM读取重量",
+        "解码器是计算带的,所以添加更多的计算是免费的",
+        "解码需要比预填更多的网络带宽"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "阿尔法的接受率是多少?",
+      "options": [
+        "模式草案的延迟间接费用",
+        "目标模式所接受的拟议代词的分数",
+        "KV 缓存的缓存命中率",
+        "解码时使用的 GPU 内存的分数"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "与EAGLE-2相比,EAGLE-3在一般聊天中将alpha推向大约0.6-0.8的变化是什么?",
+      "options": [
+        "草稿头在多个目标层上训练,而不仅仅是最后一层",
+        "它使用一个全尺寸的模型 同一个家庭",
+        "它运行在CPU而不是GPU上",
+        "完全删除校验步骤"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "下面大概是什么α 教训说投机解码 成为净负值 在高货币 在大多数2026硬件?",
+      "options": [
+        "0.85 (韩语).",
+        "0.95 (简体中文).",
+        "0.05 (简体中文).",
+        "0.55 (中文(简体) )."
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "在翻开EAGLE-3之后,即使平均国际交易日志下降,你应该最密切地看哪一个衡量标准?",
+      "options": [
+        "GPU 内存利用率",
+        "冷启动时间",
+        "E2E 平均耐久性",
+        "P99 国际交易日志,因为被拒绝的两条通道草稿可在整批中序列化"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "为何在vLLM 2026中,",
+      "options": [
+        "它与 Paged 注意不符",
+        "只用布莱克威尔GPU",
+        "需要另外一张执照",
+        "接受率取决于工作量 不测量阿尔法就打开 是一种生产反模式"
+      ],
+      "correct": 3,
+      "explanation": ""
+    }
+  ]
+}

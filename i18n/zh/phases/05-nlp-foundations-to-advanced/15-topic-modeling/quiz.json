@@ -1,0 +1,102 @@
+{
+  "lesson": "15-topic-modeling",
+  "title": "专题建模——LDA和BERTOPIC",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "LDA对每份文件都假设什么?",
+      "options": [
+        "每个文件都属于一个主题",
+        "文件为句子",
+        "每个文件是专题的混合体;每个专题是逐字分发",
+        "文件独立于专题"
+      ],
+      "correct": 2,
+      "explanation": "LDA的基因故事是混合会员制:每个博士都有专题分布,每个专题都有单词分布."
+    },
+    {
+      "stage": "pre",
+      "question": "BERTOPIC用什么来组成主题集群?",
+      "options": [
+        "运行 BM25 后继 k 表示",
+        "带有句子变压器的编码文件, 使用 UMAP 降低维度, 然后用 HDBSCAN 集群",
+        "列车LSTM端对端",
+        "词汇表的直接软度"
+      ],
+      "correct": 1,
+      "explanation": "BERTOPIC = 嵌入式+ UMAP + HDBSCAN,主题词以类为主的TF-IDF."
+    },
+    {
+      "stage": "check",
+      "question": "为什么Scikit-learn的LDA期望原始计数(CountVectorizer),而不是TF-IDF?",
+      "options": [
+        "LDA 无法处理浮点",
+        "LDA 概率模型被定义为整数; TF- IDF 扭曲了基础分布",
+        "内存限制",
+        "TF- IDF 速度太慢"
+      ],
+      "correct": 1,
+      "explanation": "LDA概率假设计数;输入TF-IDF值违反模型假设."
+    },
+    {
+      "stage": "check",
+      "question": "HDBSCAN的 -1标签在BERTOPIC输出中意味着什么?",
+      "options": [
+        "词组",
+        "基于密度的算法无法自信地指定一个离群文件",
+        "保留类别",
+        "顶级话题"
+      ],
+      "correct": 1,
+      "explanation": "HDBSCAN用 -1 标记未集群的点;在 BERTopic 中,这些是不符合任何主题的文件。"
+    },
+    {
+      "stage": "check",
+      "question": "主题模型评价的共同缺省是哪些一致性指标?",
+      "options": [
+        "溴化铀",
+        "c v 通过 NPLI 来协调顶级主题词的滑动窗口",
+        "准确性",
+        "仅含混"
+      ],
+      "correct": 1,
+      "explanation": "c v一致性(Roder等人,2015年)是犬科自动主题一致性的衡量标准."
+    },
+    {
+      "stage": "post",
+      "question": "LDA什么时候通常比BERTOPIC更合适?",
+      "options": [
+        "当嵌入声响",
+        "每个文档需要单个话题时",
+        "长期文件,其中混合成员专题分布有用,嵌入会缩短输入",
+        "在短短的微博上"
+      ],
+      "correct": 2,
+      "explanation": "长文件得益于LDA的混合会员制模式;BERT编码器截断输入."
+    },
+    {
+      "stage": "post",
+      "question": "为何BERTOPIC一般在短文(短文,头条)上获胜?",
+      "options": [
+        "短文的主题较少",
+        "它支持更多的语言",
+        "嵌入空间的语义相似性 捕捉到字包数太少的地方",
+        "快点"
+      ],
+      "correct": 2,
+      "explanation": "BERT嵌入为短文本提供了语义上的相似性,当文字重叠统计失败时."
+    },
+    {
+      "stage": "post",
+      "question": "您应该监视话题的 LDA 常见失败模式是什么 ?",
+      "options": [
+        "完全匹配标签类别的主题",
+        "文件太少的专题",
+        "吸收句子或极为频繁术语的混乱话题",
+        "文件混合物,总和为1"
+      ],
+      "correct": 2,
+      "explanation": "LDA可以创建吸收句子的垃圾话题;更紧的min df/max df和句子过滤减轻."
+    }
+  ]
+}

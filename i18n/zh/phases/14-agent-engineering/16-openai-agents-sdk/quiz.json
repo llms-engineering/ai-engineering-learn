@@ -1,0 +1,90 @@
+{
+  "lesson": "16-openai-agents-sdk",
+  "title": "OpenAI 特工 SDK: 交接,护栏,追踪",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "OpenAI Agents SDK的五个原始人是什么?",
+      "options": [
+        "计划、工人、解决方案、评估员、反射员",
+        "工具、提示、模型、内存、追踪",
+        "代理,汉道,卫道,会话,追踪",
+        "节点、边缘、缩小器、检查点、子图"
+      ],
+      "correct": 2,
+      "explanation": "SDK飞船这五个原始人."
+    },
+    {
+      "stage": "pre",
+      "question": "模特儿怎么会看到交接?",
+      "options": [
+        "作为特殊标志",
+        "作为系统消息",
+        "作为自定义的 HTTP 端点",
+        "作为名为 transfer to  agent name的工具"
+      ],
+      "correct": 3,
+      "explanation": "Handoffs 被曝光为带有 transfer to  agent > 名称形状的工具 。"
+    },
+    {
+      "stage": "check",
+      "question": "SDK飞船是哪三种护卫型的?",
+      "options": [
+        "坚硬,柔软,最好的护栏",
+        "前卫、后卫和内卫",
+        "输入、输出和工具护栏",
+        "静态、动态和联邦式护栏"
+      ],
+      "correct": 2,
+      "explanation": "输入(第一代理),输出(最后一代理),以及工具(每个函数工具)守护符."
+    },
+    {
+      "stage": "check",
+      "question": "平行和阻塞的护栏有什么区别?",
+      "options": [
+        "平行运行与主LLM( 低潜度, 行程中的废物代号); 屏蔽先运行( 行程中没有浪费的代号)",
+        "只屏蔽输出",
+        "平时要花更多钱",
+        "屏蔽为同步; 平行为同步"
+      ],
+      "correct": 0,
+      "explanation": "平行优化延迟,在绊倒时以浪费的符号为代价;屏蔽保存符号但增加延迟."
+    },
+    {
+      "stage": "check",
+      "question": "SDK是如何启用追踪的?",
+      "options": [
+        "仅在主机仪表板上",
+        "默认关闭; 启用每个代理",
+        "仅通过 OpenTeleometry 收藏器",
+        "默认情况下; OPENAI  AGENTS DISBAL TRACING=1 选择退出"
+      ],
+      "correct": 3,
+      "explanation": "LLM 的 Spans, 工具, 交接, 和守护铁道默认发射; 一个 env var 使其失效 。"
+    },
+    {
+      "stage": "post",
+      "question": "什么是交接漂流,教训如何建议减轻这种漂流?",
+      "options": [
+        "特工A手移到B手,在循环中将手移回A;增加一个跳动计数器",
+        "会话溢出; 归档旧会话",
+        "追踪落后;减少跨度体积",
+        "脱氧铁道;再培训"
+      ],
+      "correct": 0,
+      "explanation": "跳跃式反帽在无限制循环前会传递链条."
+    },
+    {
+      "stage": "post",
+      "question": "为什么内置工具是护栏漏洞?",
+      "options": [
+        "他们不支持交割",
+        "工具护栏仅对函数工具着火;内置工具(文件阅读器、网络获取器)需要单独的策略",
+        "它们无法追踪",
+        "它们比函数工具慢"
+      ],
+      "correct": 1,
+      "explanation": "每个工具的护栏覆盖功能工具;内置工具需要单独的政策层."
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "lesson": "25-security-secrets-audit",
+  "title": "安全-保密、API 密钥旋转、审计日志、护栏",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "LLM服务证书的2026标准模式是什么?.",
+      "options": [
+        "快速配置文件中的硬码 API 键",
+        "向每个工程师发送密钥",
+        "在 Slack 通道中存储密钥",
+        "中央化金库在运行时由AI网关通过IAM角色拉动;在金库中旋转,所有应用程序在几分钟内接通"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "校对:Soup",
+      "options": [
+        "在90天内,尽可能实现自动化,在手工操作时进行记录和跟踪",
+        "只有在泄漏时",
+        "永远",
+        "每五年一次"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么在PII洗涤时使用一致的标记(Mesh方法)?",
+      "options": [
+        "它把提示加密到模型上",
+        "这是ISO 27001要求的",
+        "相同的源值映射到相同的占位符, 因此 LLM 保存代码和关系语义到 label",
+        "它的内存比regex少"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "课程建议LLM服务子网采用什么Egress态势?.",
+      "options": [
+        "Whitelist 一组小域( api.openai.com, api.harmic.com, 矢量 DB, 保险库), 并放下其它所有, 仅限允许列表的 DNS 解析器",
+        "封锁包括供应商在内的所有 Egress",
+        "允许 DNS 但屏蔽 HTTP",
+        "允许所有出入境交通"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "2026年Vercel供应链事件对CI/CD证书有何教诲?.",
+      "options": [
+        "CI/CD 证书风险低,可以留在env文件中",
+        "无法盗取 CI/CD 机密",
+        "Vercel没有受到影响",
+        "CI/CD证书是等同的——储存在金库、范围狭小、积极轮换"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "经验教训建议为每个LLM呼叫保留哪些审计日志字段?",
+      "options": [
+        "只有费用",
+        "时间戳、用户/租户、即时散列(非原始)、型号+版本、令牌计数、成本、响应散列、任何护栏旅行",
+        "只是原始的提示",
+        "只有回应"
+      ],
+      "correct": 1,
+      "explanation": ""
+    }
+  ]
+}

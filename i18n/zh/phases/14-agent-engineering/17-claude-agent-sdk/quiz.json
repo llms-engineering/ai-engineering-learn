@@ -1,0 +1,90 @@
+{
+  "lesson": "17-claude-agent-sdk",
+  "title": "作为图书馆的和谐——子代理和会话存储",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Anthropic客户端SDK和克劳德特工SDK有什么区别?.",
+      "options": [
+        "客户端 SDK 是原始消息 API; Agent SDK 是 Claude Code 调制形状, 带有内置工具, MCP, 钩子, 子代理, 和会话存储",
+        "没有什么区别",
+        "客户端 SDK 仅用于 Python",
+        "客户端 SDK 已支付; 代理 SDK 是免费的"
+      ],
+      "correct": 0,
+      "explanation": "客户SDK给你回路;代理SDK运送预建回路."
+    },
+    {
+      "stage": "pre",
+      "question": "副剂的两个记载目的是什么?",
+      "options": [
+        "认证和认证",
+        "记录和计量",
+        "缓存和费率限制",
+        "平行和背景隔离"
+      ],
+      "correct": 3,
+      "explanation": "副代理人同时进行独立工作,通过孤立上下文来保留管弦乐团的上下文预算."
+    },
+    {
+      "stage": "check",
+      "question": "哪种方法不是会话存储面的一部分?",
+      "options": [
+        "附录",
+        "编译( S)",
+        "装入",
+        "列表( 子密钥)"
+      ],
+      "correct": 1,
+      "explanation": "会话存储器附加, 负载, 列表  会话, 删除, 列表  子密钥; 编译   即时不是会话 API 。"
+    },
+    {
+      "stage": "check",
+      "question": "哪个不是克劳德特工SDK的生命周期钩子?",
+      "options": [
+        "预选",
+        "工具预用",
+        "后工具使用",
+        "预约"
+      ],
+      "correct": 0,
+      "explanation": "Hooks包括PreTooLus,PostTooLus,SessionStart/End,用户PromptSubmit,PreCompact,Stop,通知. 预释非钩."
+    },
+    {
+      "stage": "check",
+      "question": "跟踪上下文如何在代理和CLI子进程中传播?",
+      "options": [
+        "只有通过供应商的仪表板",
+        "通过文件系统",
+        "仅通过环境变量",
+        "通过 W3C 跟踪上下文头传递到 CLI 子进程"
+      ],
+      "correct": 3,
+      "explanation": "OTel在调用器上跨度通过W3C跟踪上下文传播到CLI子进程,因此整个多进程运行是一个跟踪."
+    },
+    {
+      "stage": "post",
+      "question": "潜质过量喷发又何时发生?",
+      "options": [
+        "产生比CPU核心更多的子剂",
+        "会话开始前的植入",
+        "生产100个副剂,用于100项以管理为主的小任务;代之以批量",
+        "忘记关闭子剂"
+      ],
+      "correct": 2,
+      "explanation": "副剂有俯冲;批量小任务而不是产卵各一个."
+    },
+    {
+      "stage": "post",
+      "question": "Claude的经纪人和自办的SDK有什么交易?",
+      "options": [
+        "追踪流量",
+        "内存工具",
+        "费用延迟",
+        "控制管理下的基础设施(长期运行的Aync、内置的快速缓存、内置的紧凑)"
+      ],
+      "correct": 3,
+      "explanation": "管理代理是长期Aync工作的主机替代;控制较少,操作表面较少."
+    }
+  ]
+}

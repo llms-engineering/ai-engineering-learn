@@ -1,0 +1,90 @@
+{
+  "lesson": "10-skill-libraries-voyager",
+  "title": "技能图书馆和终身学习(Voyager)",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Voyager将什么视为动作空间?",
+      "options": [
+        "初级排雷命令",
+        "强化学习Q值",
+        "只有文本提示",
+        "可执行代码( JavaScript 函数) 存储、检索和编译"
+      ],
+      "correct": 3,
+      "explanation": "Voyager的贡献是把动作编码:技能是程序,而不是原始命令."
+    },
+    {
+      "stage": "pre",
+      "question": "哪些三个组成部分定义了Voyger代理?",
+      "options": [
+        "检索器、 生成器、 分级器",
+        "编码器、解码器、值头",
+        "自动课程、技能库、迭代提示",
+        "规划员、执行员、法官"
+      ],
+      "correct": 2,
+      "explanation": "Voyager围绕课程、技能库和迭代激励来构建代理商。"
+    },
+    {
+      "stage": "check",
+      "question": "3个信号能从技能处决中返回?",
+      "options": [
+        "成功、 错误( 有堆栈跟踪) 、 自验证失败",
+        "通过,失败,重试",
+        "心跳,AK,纳克",
+        "绿色、黄色、红色"
+      ],
+      "correct": 0,
+      "explanation": "Voyager的迭代提示机制是由这三种信号折叠回到下一个版本驱动的."
+    },
+    {
+      "stage": "check",
+      "question": "自动课程如何选择下一个任务?",
+      "options": [
+        "随机制服在动作空间上",
+        "刚刚超过目前的能力,基于环境状况和技能清单(勘探甜点)",
+        "总是最难完成的任务",
+        "只提供用户列表"
+      ],
+      "correct": 1,
+      "explanation": "提案人的目标是完成刚刚超过目前能力的任务,以便进展稳定。"
+    },
+    {
+      "stage": "check",
+      "question": "哪些2026年的产品是课最清晰的 匹配Voyager技能?",
+      "options": [
+        "Claude Agent SDK 技能: 命名, 可检索代码加按要求加载指令",
+        "AWS Lambda 层",
+        "皮内酮指数",
+        "OpenAI 微调"
+      ],
+      "correct": 0,
+      "explanation": "SDK特工技能与Voyager命名-检索-可构成代码模式相匹配."
+    },
+    {
+      "stage": "post",
+      "question": "为何该课建议为技能库写字?",
+      "options": [
+        "不拆卸, 同样的技能会多次添加, 描述略有不同; 检索应返回一个犬形版本",
+        "供应商拒绝复制",
+        "Git 块重复",
+        "盘子很贵的"
+      ],
+      "correct": 0,
+      "explanation": "近似重复的描述 崩溃到单一的峡谷技能 所以检索保持干净。"
+    },
+    {
+      "stage": "post",
+      "question": "技能漂移有什么问题?",
+      "options": [
+        "Python 升级后技能停止编译",
+        "父母技能默默地取出一个从未测试过的精细儿童版本;通过固定技能版本进行修复",
+        "技能在存储中加密",
+        "检索未返回"
+      ],
+      "correct": 1,
+      "explanation": "没有版本的pinning,对孩子的改进会悄悄地改变父母的行为."
+    }
+  ]
+}

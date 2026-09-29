@@ -1,0 +1,90 @@
+{
+  "lesson": "42-agent-workbench-capstone",
+  "title": "Capstone: 一艘可再利用的代理工作舱包",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "盖石能产生什么?",
+      "options": [
+        "监测仪表板",
+        "一个版本的滴入目录(agent-workbench-pack/),带有7个表面加一个bin/install.sh,将它们设为一元.",
+        "研究论文",
+        "一个新的LLM"
+      ],
+      "correct": 1,
+      "explanation": "包是食谱;每个安装都是服务."
+    },
+    {
+      "stage": "pre",
+      "question": "哪些不是包布局的一部分?",
+      "options": [
+        "销售商 专有 重量/",
+        "计划/",
+        "AGENTS.md + 文件编号/",
+        "脚本/"
+      ],
+      "correct": 0,
+      "explanation": "包布局为AGENTS.md,docs/,schemas/,脚本/,bin/,README.md. 包是框架和供应商不可知的。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么包里有VERSION文件?",
+      "options": [
+        "追踪代理 IQ",
+        "给道德操守办公室",
+        "在黑客新闻上做广告",
+        "需要迁移的图/标本更改的主要折叠; 添加的次要; 仅 doc 的补丁; 目标回波记录, 其安装的对应版本"
+      ],
+      "correct": 3,
+      "explanation": "与npm, Cargo, pyproject.toml相同的形状;VERSION是合同,而不是营销."
+    },
+    {
+      "stage": "check",
+      "question": "这包里面的跨工具分配是什么样子的?",
+      "options": [
+        "一个有同义链接的源文件(在-s AGENTS.md CLAUDE.md,.cursor/rules/,.github/copilot-instructions.md),所以同一源的粉丝向每个编码代理都发出.",
+        "每个工具手动复制",
+        "硬码每个工具的路径",
+        "每个工具有一个供应商锁"
+      ],
+      "correct": 0,
+      "explanation": "Nx的nx ai-setup是参考物;包的安装器在对齐链路上也做同样的事情."
+    },
+    {
+      "stage": "check",
+      "question": "教训如何推荐未安装者的行为?",
+      "options": [
+        "只删除文件",
+        "拒绝非三角状态; 绝不删除用户代理  state. json, task board. json, 或输出/; 只删除计划、 脚本、 docs, 和 AGENTS. md( 带有选择退出)",
+        "删除包括状态在内的所有内容",
+        "禁用 git 键"
+      ],
+      "correct": 1,
+      "explanation": "国家属于用户; 包不拥有它。"
+    },
+    {
+      "stage": "post",
+      "question": "包里还有什么?",
+      "options": [
+        "脚本",
+        "图表",
+        "特定项目的任务,供应商SDK的电话,团队登机传言——包是框架不可知的,住在登机的旁边,而不是里面",
+        "安装器"
+      ],
+      "correct": 2,
+      "explanation": "任务属于目标Repo的板,而不是包;供应商SDK的电话会把包锁在一个框架上."
+    },
+    {
+      "stage": "post",
+      "question": "包船通过什么渠道 立刻对许多编码代理?",
+      "options": [
+        "SkillKit风格的分布(skillkit安装代理-workbench-pack)从单一来源在32个AI代理中铺设.",
+        "电子邮件附件",
+        "手抄本",
+        "仅 GitHub 发布注释"
+      ],
+      "correct": 0,
+      "explanation": "Pack Repo是真理的来源;skillKit是发行渠道;供应商锁定崩溃."
+    }
+  ]
+}

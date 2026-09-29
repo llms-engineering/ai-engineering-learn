@@ -1,0 +1,90 @@
+{
+  "lesson": "22-voice-agents-pipecat-livekit",
+  "title": "语音代理: 管道和LiveKit",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "管道管用哪两个流线?",
+      "options": [
+        "读写",
+        "热和冷",
+        "进出境",
+        "DUSTREAM( 源头沉没) 和 UPSTREAM( 反馈、 取消、 驳船)"
+      ],
+      "correct": 3,
+      "explanation": "框架向下游源汇和上游流动,用于控制和取消。"
+    },
+    {
+      "stage": "pre",
+      "question": "峡谷管道是什么?",
+      "options": [
+        "VAD - > STT - > LLM - > TTS - > 运输",
+        "音频 - > JSON - > SQL - > 反应",
+        "LLM - > 嵌入 - > 检索 - > 答案",
+        "TTS - > STT - > LLM - > 瓦达"
+      ],
+      "correct": 0,
+      "explanation": "VAD检测语音活动,STT translats,LLM响应,TTS说话,运输交付."
+    },
+    {
+      "stage": "check",
+      "question": "LiveKit探员是哪两个语音代理班的?",
+      "options": [
+        "批量代理和流代理",
+        "文本代理和语音代理",
+        "多式联运代理(直接音频)和VoicePipeline代理(STT/LLM/TTS级联)",
+        "本地代理和云代理"
+      ],
+      "correct": 2,
+      "explanation": "多模式代理使用直接音频(Realtime-tyle);VoicePipeline代理使用STT->LLM->TTS进行文本级别控制."
+    },
+    {
+      "stage": "check",
+      "question": "什么是闯进来,它是如何处理的?",
+      "options": [
+        "LLM 成本飙升; 减少符号",
+        "用户在代理发言时中断; UPSTREAM 取消帧停止 TTS 中切除",
+        "Captcha 失败; 重试",
+        "供应商断电;转换区域"
+      ],
+      "correct": 1,
+      "explanation": "Barge-in是用户中断;UPSTREAM取消是Pipecat如何干净处理的."
+    },
+    {
+      "stage": "check",
+      "question": "该课描述的是什么端到端的耐久性?",
+      "options": [
+        "大约450-600毫秒",
+        "大约1500毫秒",
+        "大约50毫秒",
+        "大约5000毫秒"
+      ],
+      "correct": 0,
+      "explanation": "Premium堆积在450-600 ms左右;800-1200 ms常见;超过1500 ms感觉断裂."
+    },
+    {
+      "stage": "post",
+      "question": "如果忽略了STT的信心,有什么不对?",
+      "options": [
+        "打电话要便宜点",
+        "及时性提高",
+        "TTS变快了",
+        "低信心记录为 LLM 输入, 仿佛福音, 产生错误的答案; 置信门或请求确认"
+      ],
+      "correct": 3,
+      "explanation": "将低自信的STT视为真理是一种顶级语音代理失败模式."
+    },
+    {
+      "stage": "post",
+      "question": "为什么这个教训建议在运输之前总结部分延迟?",
+      "options": [
+        "WebRTC 需要时间",
+        "每个组件增加50-200 ms;总和决定经验是否感觉断裂",
+        "按时间划分的供应商账单",
+        "它符合遵守要求"
+      ],
+      "correct": 1,
+      "explanation": "将连锁(VAD + STT + LLM + TTS + 运输)在运输前进行总和;目标紧凑."
+    }
+  ]
+}

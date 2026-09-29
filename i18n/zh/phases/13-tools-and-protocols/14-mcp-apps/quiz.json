@@ -1,0 +1,78 @@
+{
+  "lesson": "14-mcp-apps",
+  "title": "MCP 磁共振 关于无国籍人议定书的申请",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "现代的MCP App应该将其UI资源绑在哪个工具上?",
+      "options": [
+        "仅在最后文本结果中",
+        "在独立的 HTTP 中获取流",
+        "在 MCP 会话饼干中",
+        "通过工具/列表返回的工具定义"
+      ],
+      "correct": 3,
+      "explanation": "工具定义上的 Nested  meta.ui.resourceUri 让主机在引用前预先加载并审查UI."
+    },
+    {
+      "stage": "check",
+      "question": "2026-07-28客户端如何广告MCP Apps支持.",
+      "options": [
+        "有通知/已初始化",
+        "与麦克普会议",
+        "在io.modelcontextprotocol/Client Capabilitys中,每个请求的扩展",
+        "通过接受所有ui://资源"
+      ],
+      "correct": 2,
+      "explanation": "扩展通过每个请求客户端能力地图进行选择。"
+    },
+    {
+      "stage": "check",
+      "question": "ii/初始化初始化是什么 ?",
+      "options": [
+        "协议级服务器会话",
+        "OAuth 客户端注册",
+        "iframe 和主机之间的 Apps 后Message 桥",
+        "可流式 HTTP 获取通道"
+      ],
+      "correct": 2,
+      "explanation": "ui/初始化属于Apps桥方言,与被移除的MCP核心握手分离."
+    },
+    {
+      "stage": "check",
+      "question": "对用户独立捆绑的 App 来说, 哪一种资源响应是最安全的 ?",
+      "options": [
+        "无结果类型和缓存策略",
+        "结果 Type 完成, 带边框的 ttlMs, 公共缓存Scope, 拒绝首个 CSP",
+        "HTML 中嵌入的会话符号",
+        "无限 ttlM 和通配符 CSP 域"
+      ],
+      "correct": 1,
+      "explanation": "一个完整的结果,明确的缓存提示,以及狭义的CSP使得线条和浏览器政策可以检查."
+    },
+    {
+      "stage": "post",
+      "question": "一个主机为一个URI接收一个资源/读取正文,但有一个不同的Mcp-Name头. 怎么办?",
+      "options": [
+        "打开两种资源",
+        "首选标题",
+        "更喜欢尸体",
+        "返回带有 JSON- RPC 错误的 HTTP 400 - 32020"
+      ],
+      "correct": 3,
+      "explanation": "运行头和机体必须在版本支持或特性策略被评价前匹配;运输返回HTTP 400与JSON-RPC错误 -32020."
+    },
+    {
+      "stage": "post",
+      "question": "没有 MCP Apps 支持的主机的正确回落是什么 ?",
+      "options": [
+        "返回 HTML 作为可信任的主机铬",
+        "用普通文本或结构化输出保留工具并省略 UI 绑定",
+        "创建隐藏会话并重试",
+        "自动批准扩展"
+      ],
+      "correct": 1,
+      "explanation": "可选扩展不能使基础工具对不与之谈判的客户无法使用."
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "lesson": "11-planning-htn-and-evolutionary",
+  "title": "使用 HTN 和 Evolutionary 搜索进行规划",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "一个HTN在自由形式的LLM计划中会增加什么?",
+      "options": [
+        "更好的嵌入",
+        "便宜的推论",
+        "当操作员的先决条件和效果得到落实时可证明的正确性",
+        "更短的提示"
+      ],
+      "correct": 2,
+      "explanation": "HTN具有先决条件和效果的象征性运营商通过建筑保证了健全的性能."
+    },
+    {
+      "stage": "pre",
+      "question": "AlphaEvolve是哪个问题班的?",
+      "options": [
+        "多回合聊天内存",
+        "自由形式传教",
+        "矢量搜索排名",
+        "优化机检,定型健身功能."
+      ],
+      "correct": 3,
+      "explanation": "进化搜索需要一个确定性评价器; AlphaEvolve 目标域。"
+    },
+    {
+      "stage": "check",
+      "question": "ChatHTN如何在使用LLM的同时保持计划的合理性?",
+      "options": [
+        "它使用矢量数据库",
+        "LLM 建议仅作为候选解析器输入,对操作员的计数进行验证;符号层拥有正确性",
+        "它没有,声音是最好的",
+        "微调了HTN追踪的LLM"
+      ],
+      "correct": 1,
+      "explanation": "LLM 扩展方法库,但不能绕过操作员的前提条件和效果."
+    },
+    {
+      "stage": "check",
+      "question": "课程中引用的是何种AlphaEvolve结果?",
+      "options": [
+        "56年来4x4复杂矩阵乘法第一次改进于斯特拉森",
+        "P=NP的第一个证明",
+        "在HumanEval上殴打GPT-4",
+        "加速对双子座的推断"
+      ],
+      "correct": 0,
+      "explanation": "AlphaEvorve为4x4复杂的matmul发现了48个scalar乘法,这是56年来对斯特拉森的第一次改进."
+    },
+    {
+      "stage": "check",
+      "question": "HTN的哪一种元素是具有先决条件和效果的原始直接可执行的行动?",
+      "options": [
+        "状态",
+        "任务",
+        "方法",
+        "运算符"
+      ],
+      "correct": 3,
+      "explanation": "操作员是原始人;方法分解复合任务;状态是一组事实."
+    },
+    {
+      "stage": "post",
+      "question": "没有真正的评估者,关于AlphaEvolve的教训是什么?",
+      "options": [
+        "这是慢的",
+        "它不能运行在 GPU 上",
+        "询问 LLM 代码是否更好不是健身功能;评估者必须具有决定性和快速性",
+        "这违反了Apache 2.0"
+      ],
+      "correct": 2,
+      "explanation": "没有确定性评价员,搜索就没有信号可汇合。"
+    },
+    {
+      "stage": "post",
+      "question": "什么时候你应该联系ReAct或ReWOO而不是HTN或AlphaEvolve?",
+      "options": [
+        "从来没有; HTN 严格来说更好",
+        "当您不需要正式的健全或机器检查的健身能力时;大多数代理都在这里工作",
+        "当您有可用的 GPU 集群时",
+        "当潜伏在100毫秒以下时"
+      ],
+      "correct": 1,
+      "explanation": "该课明确警告不要过度工程化:大多数任务不需要正式的规划或进化搜索."
+    }
+  ]
+}

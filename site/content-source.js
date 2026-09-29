@@ -42,6 +42,8 @@
   function repoUrl(path) {
     var safe = clean(path);
     if (isLocal()) return '../' + safe;
+    // Self-host: serve curriculum from this origin (phases/, certifications/, ...).
+    if (window.__AIFS_SELF_HOST) return '/' + safe;
     return rawRepoUrl(safe);
   }
 

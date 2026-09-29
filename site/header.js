@@ -5,13 +5,16 @@
 (function () {
   'use strict';
 
+  // Self-hosted fork: load UI/lesson i18n from same-origin /i18n (see deploy/server.js).
+  window.__AIFS_SELF_HOST = true;
+
   var REPO = 'rohitg00/ai-engineering-from-scratch';
   var CACHE_KEY = 'gh:stars:' + REPO;
   var CACHE_TTL_MS = 10 * 60 * 1000; // 10 minutes
   var COMPACT_HEADER_QUERY = '(max-width: 1400px)';
   var NARROW_HEADER_QUERY = '(max-width: 820px)';
   var NARRATION_VERSION = '20260829a';
-  var UI_I18N_VERSION = '20260923a';
+  var UI_I18N_VERSION = '20260929a';
   var navId = 0;
 
   function isStaticPreview(locationValue) {
